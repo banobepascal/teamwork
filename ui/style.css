@@ -43,6 +43,10 @@ body {
   padding: 1em;
 }
 
+.navbar {
+  display: none;
+}
+
 nav ul li:first-child {
   display: none;
 }
@@ -188,24 +192,9 @@ footer ul {
     background: none;
   }
 
-  .navbar {
-    display: block;
-  }
-
-  .navbar ul li {
-    display: inline-block;
-    font-size: 10px;
-    color: #000;
-    font-size: 1em;
-  }
-
-  .navbar input {
-    height: 40px;
-    width: 90%;
-  }
-
   .content {
     padding: 0;
+    margin: 0;
   }
 
   .sidebar {
@@ -215,8 +204,6 @@ footer ul {
       rgba(130, 125, 254, 1)
     );
     padding-top: 3em;
-    /* position: fixed; */
-    /* flex: 1; */
   }
 
   .search {
@@ -253,35 +240,38 @@ footer ul {
     max-width: 960px;
   }
 
-  #inputBox {
-    width: 70%;
-    margin: 0px !important;
-  }
-
   header {
-    padding: 10px;
+    padding: 25px;
     color: white;
-    width: 70vw;
     display: flex;
     background: #34495e;
     flex-flow: wrap;
     justify-content: space-between;
   }
 
-  #searchit {
+  #search-topic {
     font-family: "Montserrat", sans-serif;
     font-size: 1em;
+    flex: 1;
   }
 
   #inputBox {
     font-family: "Quicksand", sans-serif;
     border: none;
     padding-left: 6px;
-    font-size: 1em;
+    font-size: 0.8em;
     margin: 0px 20px;
+    flex: 2;
+    height: 40px;
   }
 
   #inputBox::placeholder {
     color: lightgray;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    display: block;
   }
 }
