@@ -1,0 +1,149 @@
+body {
+    background: #eff1f7;
+}
+
+.content {
+    grid-ares: content;
+    background: #eff1f7
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: linear-gradient(to right, rgba(240, 107, 142, 1), rgba(218, 103, 230, 1), rgba(138, 125, 253, 1));
+    justify-content: center;
+}
+
+.container {
+    font-size: 1.5em; 
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+        "sidebar"
+        "content"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 130px 800px 250px; 
+}
+
+.content,
+.sidebar,
+.footer{
+    padding: 1em;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+nav li {
+    list-style: none;
+    padding: 1em 0;
+}
+
+nav li a {
+    color: #fff;
+    font-weight: 700;
+    opacity: 0.6;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav li a:hover {
+    opacity: 1;
+}
+
+.hero {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero img {
+    width: 208px;
+}
+
+.hero h1 {
+    font-size: 2em;
+    font-weight: 300;
+    color: #373046;
+}
+
+hero p {
+    font-weight: 300;
+    line-height: 1.8em;
+    color: #98a0ad;
+}
+
+.action-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    background: #867bfb;
+    padding: 0.5em 2em;
+    border-radius: 40px;
+    margin: 1em 0;
+    transition: 0.3s;
+
+}
+
+.action-btn:hover{
+    box-shadow: 0 10px 50px rgba(188, 197, 216);
+}
+
+footer ul {
+    padding: 0;
+    display: flex;
+}
+
+@media (min-width: 1040px){
+    .container {
+        grid-template-areas: 
+            "sidebar content"
+            "sidebar footer";
+        grid-template-columns: 300px 1fr;
+        grid-template-rows:  1fr auto;
+    }
+
+    .nav ul {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        background: linear-gradient(
+            rgba(240, 107, 142, 1),
+            rgba(218, 103, 230, 1),
+            rgba(130, 125, 254, 1)
+        );
+        padding-top: 3em; 
+    }
+
+    .hero {
+        text-align: left;
+        margin: 2em auto;
+    }
+
+    .hero img {
+        width: 250px;
+        float: right;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        width: 60%;
+    }
+
+    footer {
+        max-width: 960px;
+    }
+}
