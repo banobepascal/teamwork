@@ -240,6 +240,10 @@ footer ul {
     max-width: 960px;
   }
 
+  .navbar {
+    display: block;
+  }
+
   header {
     padding: 25px;
     color: white;
@@ -267,11 +271,5 @@ footer ul {
 
   #inputBox::placeholder {
     color: lightgray;
-  }
-}
-
-@media (min-width: 1024px) {
-  .navbar {
-    display: block;
   }
 }
