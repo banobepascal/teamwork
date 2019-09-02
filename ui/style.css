@@ -114,7 +114,7 @@ nav li a:hover {
   width: 208px;
 }
 
-.hero h1 {
+.hero h2 {
   font-size: 2em;
   font-weight: 300;
   color: #373046;
@@ -180,7 +180,12 @@ footer ul {
     grid-template-rows: 1fr auto;
     /* display: flex; */
   }
+
   nav ul li:first-child {
+    display: block;
+  }
+
+  nav ul li:nth-child(6) {
     display: block;
   }
 
@@ -190,6 +195,7 @@ footer ul {
     flex-direction: column;
     position: fixed;
     background: none;
+    text-align: center;
   }
 
   .content {
@@ -228,8 +234,8 @@ footer ul {
     float: right;
   }
 
-  .hero h1 {
-    font-size: 3em;
+  .hero h2 {
+    font-size: 2em;
   }
 
   .hero p {
