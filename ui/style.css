@@ -35,6 +35,7 @@ body {
 
 .sidebar {
   padding-right: 20px;
+  text-align: center;
 }
 
 .content,
@@ -56,13 +57,13 @@ nav ul {
   display: flex;
   justify-content: space-between;
   text-align: center;
- 
 }
 
 nav li {
   list-style: none;
   padding-left: 10px;
   padding-top: 1em;
+  text-align: center;
   /* padding-bottom: -1em; */
 }
 
@@ -88,7 +89,6 @@ nav li a:hover {
   fill: #000;
   width: 30px;
   margin-top: -60px;
-
 }
 
 .search input {
@@ -98,7 +98,6 @@ nav li a:hover {
   font-size: 1em;
   margin-left: -20px;
   padding-right: 40px;
-
 }
 
 .hero {
@@ -189,6 +188,26 @@ footer ul {
     background: none;
   }
 
+  .navbar {
+    display: block;
+  }
+
+  .navbar ul li {
+    display: inline-block;
+    font-size: 10px;
+    color: #000;
+    font-size: 1em;
+  }
+
+  .navbar input {
+    height: 40px;
+    width: 90%;
+  }
+
+  .content {
+    padding: 0;
+  }
+
   .sidebar {
     background: linear-gradient(
       rgba(240, 107, 142, 1),
@@ -208,13 +227,13 @@ footer ul {
     display: none;
   }
 
-  .logs{
+  .logs {
     display: none;
   }
 
   .hero {
     text-align: left;
-    margin: 2em auto;
+    margin: 0em auto;
   }
 
   .hero img {
@@ -232,5 +251,37 @@ footer ul {
 
   footer {
     max-width: 960px;
+  }
+
+  #inputBox {
+    width: 70%;
+    margin: 0px !important;
+  }
+
+  header {
+    padding: 10px;
+    color: white;
+    width: 70vw;
+    display: flex;
+    background: #34495e;
+    flex-flow: wrap;
+    justify-content: space-between;
+  }
+
+  #searchit {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+  }
+
+  #inputBox {
+    font-family: "Quicksand", sans-serif;
+    border: none;
+    padding-left: 6px;
+    font-size: 1em;
+    margin: 0px 20px;
+  }
+
+  #inputBox::placeholder {
+    color: lightgray;
   }
 }
