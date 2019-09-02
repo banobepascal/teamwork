@@ -21,9 +21,6 @@ body {
   justify-content: center;
 }
 
-nav {
-}
-
 .container {
   font-size: 1.5em;
   width: 100%;
@@ -92,10 +89,6 @@ nav li a:hover {
   width: 30px;
   margin-top: -60px;
 
-}
-
-.search {
-  /* margin-top: -15%; */
 }
 
 .search input {
