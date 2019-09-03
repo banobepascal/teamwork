@@ -287,4 +287,12 @@ footer ul {
   #inputBox::placeholder {
     color: lightgray;
   }
+
+  .name-time:first-child {
+    float: left;
+  }
+
+  .name-time:last-child {
+    float: right;
+  }
 }
