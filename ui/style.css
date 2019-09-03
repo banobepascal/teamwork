@@ -264,6 +264,27 @@ footer ul {
     padding-top: 2em;
   }
 
+  .hero-content-article ul li {
+    list-style: none;
+    display: inline-block;
+    padding-bottom: 1em;
+  }
+
+  #comment {
+    width: 30px;
+    padding-right: 9em;
+    padding-left: 4em;
+  }
+
+  #thumb-up {
+    width: 30px;
+    padding-right: 9em;
+  }
+
+  #thumb-down {
+    width: 30px;
+  }
+
   footer {
     max-width: 960px;
   }
