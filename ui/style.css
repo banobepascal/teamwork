@@ -244,11 +244,24 @@ footer ul {
 
   .hero-content-article {
     background: #fff;
-    text-align: center;
-    line-height: 0.5em;
+    /* text-align: left; */
+    /* line-height: 1em; */
     margin-left: 8%;
     margin-right: 8%;
     padding-left: 10px; 
+  }
+
+  .hero-content-article p {
+    color: rgb(63, 62, 62);
+    font-size: 0.9em;
+    padding-left: 10px;
+    padding-right: 15px;
+    /* text-align: start; */
+  }
+
+  .hero-content-article h4 {
+    text-align: center;
+    padding-top: 2em;
   }
 
   footer {
@@ -287,12 +300,15 @@ footer ul {
   #inputBox::placeholder {
     color: lightgray;
   }
-
-  .name-time:first-child {
+  .name-time {
+    font-size: 1em;
+    padding-right: 1em; 
+  }
+  .name-time #username-article{
     float: left;
   }
 
-  .name-time:last-child {
+  .name-time #time-article {
     float: right;
   }
 }
