@@ -150,6 +150,58 @@ nav li a:hover {
   opacity: 1;
 }
 
+.hero-content-article {
+  background: #fff;
+  padding-left: 10px; 
+  font-size: 21.6px;
+  margin: 0;
+}
+
+.hero-content-article p {
+  color: rgb(63, 62, 62);
+  /* font-size: 0.9em; */
+  text-align: left;
+}
+
+.hero-content-article h4 {
+  text-align: center;
+  padding-top: 2em;
+}
+
+.hero-content-article ul li {
+  list-style: none;
+  display: inline-block;
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+#comment {
+  width: 30px;
+  padding-right: 8em;
+  /* padding-left: 4em; */
+}
+
+#thumb-up {
+  width: 30px;
+  /* padding-right: 9em; */
+}
+
+#thumb-down {
+  width: 30px;
+}
+
+.name-time {
+  font-size: 1em;
+  padding-right: 1em; 
+}
+.name-time #username-article{
+  float: left;
+}
+
+.name-time #time-article {
+  float: right;
+}
+
 .action-btn {
   display: inline-block;
   text-decoration: none;
@@ -268,12 +320,14 @@ footer ul {
     list-style: none;
     display: inline-block;
     padding-bottom: 1em;
+    /* text-align: center; */
   }
 
   #comment {
     width: 30px;
-    padding-right: 9em;
-    padding-left: 4em;
+    float: left;
+    margin-left: 10em;
+    /* padding-left: 11em; */
   }
 
   #thumb-up {
@@ -283,6 +337,7 @@ footer ul {
 
   #thumb-down {
     width: 30px;
+    float: right
   }
 
   footer {
