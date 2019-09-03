@@ -1,5 +1,5 @@
 body {
-  background: #eff1f7;
+  background: #fff;
   margin: 0;
   padding: 0;
 }
@@ -171,7 +171,7 @@ footer ul {
   display: flex;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .container {
     grid-template-areas:
       "sidebar content"
@@ -239,7 +239,16 @@ footer ul {
   }
 
   .hero p {
-    width: 60%;
+    /* width: 60%; */
+  }
+
+  .hero-content-article {
+    background: #fff;
+    text-align: center;
+    line-height: 0.5em;
+    margin-left: 8%;
+    margin-right: 8%;
+    padding-left: 10px; 
   }
 
   footer {
