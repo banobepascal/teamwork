@@ -200,6 +200,7 @@ nav p a {
 
 #thumb-down {
   width: 30px;
+  fill: #867bfb;
 }
 
 .name-time {
@@ -376,9 +377,7 @@ footer ul {
     width: 30px;
     float: left;
     margin-left: 12em;
-    fill: rgb(124, 191, 224);
-    border: rgb(124, 191, 224);
-    /* padding-right: 10em; */
+   fill: #867bfb;
   }
 
   #thumb-up {
@@ -386,10 +385,11 @@ footer ul {
     padding-right: 9em;
   }
 
-  #thumb-down {
+  img #thumb-down {
     width: 30px;
     float: right;
-    fill: rgb(124, 191, 224);
+   fill: #867bfb;
+
   }
 
   footer {
