@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: rgba(218, 34, 255, 0.1);
+}
+
+#wrapper {
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 40rem;
+    background: #fff;
+    position: relative;
+    padding: 10rem 0;
+    box-shadow: 0 1px 1.5rem rgba(0, 0,0, .1);
+    border-radius: 1rem;
+    z-index: 1;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30rem;
+    background: linear-gradient(to left, #fc6767, #ec008c);
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    z-index: -1;
+}
+
+.form-heading {
+    color: #fff;
+    font-size: 2.5rem;
+    position: absolute;
+    top: 3.5rem;
+    left: 10rem;
+}
+
+form {
+    transform: translateX(10rem);
+    padding: 2rem 0;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
+}
+
+.input-group {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: baseline;
+}
+
+.input-group input {
+    position: relative;
+    width: 100%;
+    padding: 1 rem 0;
+    margin-top: .5rem;
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+    color: #fc6767;
+}
+
+.input-group > i {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: #fc6767;
+}
+
+.input-group .bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.1);
+    width: 100%;
+    height: 1px;
+}
+
+.input-group .ba::before {
+    content: '';
+    position: absolute;
+    background: #fc6767;
+    width: 0;
+    height: 2px;
+    transition: width 650ms;
+}
+
+.input-group input:focus + .ba::before{
+    width: 100%;
+}
+
+.input-group button {
+    margin: 3rem auto;
+    padding: 1rem 5rem;
+    background: linear-gradient(to left, #fc6767, #ec008c);
+    bord
+}
