@@ -12,12 +12,7 @@ body {
 
 .sidebar {
   grid-area: sidebar;
-  background: linear-gradient(
-    to right,
-    rgba(240, 107, 142, 1),
-    rgba(218, 103, 230, 1),
-    rgba(138, 125, 253, 1)
-  );
+  background:  linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(36,116,98,1) 0%, rgba(62,189,201,1) 100%);
   justify-content: center;
 }
 
@@ -289,11 +284,7 @@ footer ul {
   }
 
   .sidebar {
-    background: linear-gradient(
-      rgba(240, 107, 142, 1),
-      rgba(218, 103, 230, 1),
-      rgba(130, 125, 254, 1)
-    );
+    background: #005c97;
     padding-top: 3em;
   }
 
@@ -380,10 +371,6 @@ footer ul {
    fill: #867bfb;
   }
 
-  #thumb-up {
-    width: 30px;
-    padding-right: 9em;
-  }
 
   img #thumb-down {
     width: 30px;
