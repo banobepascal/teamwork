@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background: rgba(218, 34, 255, 0.1);
+    background: #fcf8ef;
 }
 
 #wrapper {
@@ -55,11 +55,17 @@ body {
 }
 
 form {
-    transform: translateX(10rem);
+    /* transform: translateX(10rem); */
     padding: 2rem 0;
     background: #fff;
-    border-radius: 1rem;
-    box-shadow: 0 1px 1.5rem rgba(0,0,0,.1);
+    /* border-radius: 1rem; */
+    /* box-shadow: 0 1px 1.5rem rgba(0,0,0,.1); */
+}
+
+form h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding-bottom: 1em;
 }
 
 .input-group {
@@ -73,11 +79,11 @@ form {
 .input-group input {
     position: relative;
     width: 100%;
-    padding: 1rem 0;
+    padding: 1.3rem 0;
     margin-top: .5rem;
     border: none;
     outline: none;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #000;
 }
 
