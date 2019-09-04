@@ -1,5 +1,5 @@
 body {
-  background: #fff;
+  background:  #eff1f7;;
   margin: 0;
   padding: 0;
 }
@@ -68,7 +68,7 @@ nav li {
   padding-left: 10px;
   padding-top: 1em;
   text-align: center;
-  /* padding-bottom: -1em; */
+  /* padding-bottom: 1em; */
 }
 
 nav li a {
@@ -86,6 +86,11 @@ nav li a {
 
 nav li a:hover {
   opacity: 1;
+}
+
+nav p a {
+  text-decoration: none;
+  color: #373046;
 }
 
 #search-icon {
@@ -112,6 +117,8 @@ nav li a:hover {
 
 .hero img {
   width: 208px;
+  /* border-radius: 50%; */
+  padding-top: 1em;
 }
 
 .hero h2 {
@@ -124,6 +131,10 @@ nav li a:hover {
   font-weight: 300;
   line-height: 1.8em;
   color: #98a0ad;
+}
+
+.hero-content {
+  border-bottom: #373046 solid;
 }
 
 .logs ul li {
@@ -177,7 +188,8 @@ nav li a:hover {
 
 #comment {
   width: 30px;
-  padding-right: 8em;
+  padding-right: 5em;
+  margin-left: -2em;
   /* padding-left: 4em; */
 }
 
@@ -224,6 +236,11 @@ footer ul {
 }
 
 @media (min-width: 900px) {
+
+  .sidebar nav {
+    text-align: center;
+  }
+
   .container {
     grid-template-areas:
       "sidebar content"
@@ -248,6 +265,21 @@ footer ul {
     position: fixed;
     background: none;
     text-align: center;
+    padding-left: 3em; 
+    padding-top: 2em;
+  }
+
+  nav p {
+    margin-top: -1em;
+    font-size: 1.5em;
+    position: fixed;
+    padding-left: 1.8em; 
+
+  }
+
+  nav p a {
+    text-decoration: none;
+    color: #373046;
   }
 
   .content {
@@ -284,14 +316,26 @@ footer ul {
   .hero img {
     width: 250px;
     float: right;
+    padding-right: 1em; 
   }
 
   .hero h2 {
     font-size: 2em;
+    padding-top: 2em; 
   }
 
-  .hero p {
-    /* width: 60%; */
+  .hero h3 {
+    text-align: center;
+  }
+
+  .hero-content {
+    border-bottom: #373046 solid;
+  }
+
+  .hero .profile-name {
+    float: right;
+    padding-right: 3em;
+    /* margin-top: -1em;   */
   }
 
   .hero-content-article {
@@ -301,6 +345,11 @@ footer ul {
     margin-left: 8%;
     margin-right: 8%;
     padding-left: 10px; 
+  }
+
+  .hero-content-article:hover {
+    cursor: pointer;
+    background: #ccc;
   }
 
   .hero-content-article p {
@@ -326,8 +375,10 @@ footer ul {
   #comment {
     width: 30px;
     float: left;
-    margin-left: 10em;
-    /* padding-left: 11em; */
+    margin-left: 12em;
+    fill: rgb(124, 191, 224);
+    border: rgb(124, 191, 224);
+    /* padding-right: 10em; */
   }
 
   #thumb-up {
@@ -337,7 +388,8 @@ footer ul {
 
   #thumb-down {
     width: 30px;
-    float: right
+    float: right;
+    fill: rgb(124, 191, 224);
   }
 
   footer {
