@@ -12,7 +12,7 @@ body {
 
 .sidebar {
   grid-area: sidebar;
-  background:  linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(36,116,98,1) 0%, rgba(62,189,201,1) 100%);
+  background: #005c97;
   justify-content: center;
 }
 
@@ -208,6 +208,30 @@ nav p a {
 
 .name-time #time-article {
   float: right;
+}
+
+.fixed-btn{
+  position: fixed;
+  bottom: 10%;
+  right: 3%;
+  background: #0FACF3;
+  width: 70px;
+  height: 70px;
+  border-radius: 80%;
+  box-shadow: 4px 4px 4px #0a78aa;
+  cursor: pointer;
+}
+
+.fixed-btn:active{
+  box-shadow: 0  0;
+}
+
+#post-article {
+  width: 40px;
+  padding-top: 0.7em;
+  padding-left: 0.7em;
+  padding-bottom: 1em;
+
 }
 
 .action-btn {
@@ -426,4 +450,29 @@ footer ul {
   .name-time #time-article {
     float: right;
   }
+
+  .fixed-btn{
+    position: fixed;
+    bottom: 10%;
+    right: 3%;
+    background-color: #0FACF3;
+    width: 70px;
+    height: 70px;
+    border-radius: 80%;
+    box-shadow: 4px 4px 4px #0a78aa;
+    cursor: pointer;
+  }
+
+  .fixed-btn:active{
+    box-shadow: 0  0;
+  }
+
+  #post-article {
+    width: 40px;
+    padding-top: 0.7em;
+    padding-left: 0.7em;
+    padding-bottom: 1em;
+
+  }
+
 }
