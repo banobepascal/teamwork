@@ -22,9 +22,7 @@ const myPost = document.querySelector("#my-post");
 const topicInput = document.querySelector("#topicInput");
 const sayInput = document.querySelector("#sayInput");
 const topicError = document.querySelector(".topic-msg");
-const topicError1 = document.querySelector(".topic-error1");
 const modalInput = document.querySelector(".bg-modal");
-const postBtn = document.querySelector(".post-button");
 const heroPost = document.querySelector(".hero");
 
 myPost.addEventListener("submit", onSubmit);
@@ -66,7 +64,7 @@ function onSubmit(e) {
     topicError.classList.add("msg");
     topicError.innerHTML = "Your Post was sent successfully";
     heroPost.appendChild(post);
-    // setTimeout(() => modalInput.remove(), 3000);
+    
     // clear fields
     topicInput.value = "";
     sayInput.value = "";
