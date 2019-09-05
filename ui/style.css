@@ -593,4 +593,12 @@ footer ul {
     cursor: pointer;
   }
 
+  .msg-error {
+    color: red;
+  }
+
+  .msg {
+    color: green'
+  }
+
 }
