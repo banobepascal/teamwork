@@ -66,7 +66,7 @@ function onSubmit(e) {
     topicError.classList.add("msg");
     topicError.innerHTML = "Your Post was sent successfully";
     heroPost.appendChild(post);
-    // setTimeout(() => modalInput.remove(), 3000);
+    
     // clear fields
     topicInput.value = "";
     sayInput.value = "";
