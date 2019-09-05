@@ -1,5 +1,5 @@
 body {
-  background:  #eff1f7;;
+  background:  #eff1f7;
   margin: 0;
   padding: 0;
 }
@@ -95,6 +95,14 @@ nav p a {
   margin-top: -60px;
 }
 
+.search {
+  display: none;
+}
+
+/* .search.active {
+  display: block;
+} */
+
 .search input {
   border: none;
   height: 50px;
@@ -103,6 +111,7 @@ nav p a {
   margin-left: -20px;
   padding-right: 40px;
 }
+
 
 .hero {
   max-width: 960px;
@@ -253,6 +262,45 @@ nav p a {
 footer ul {
   padding: 0;
   display: flex;
+}
+
+.bg-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
+}
+
+.modal-content {
+  width: 500px;
+  height: 400px;
+  background-color: white;
+  opacity: 1; 
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content form input {
+  width: 50%;
+  display: block;
+  margin: 15px auto;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 60px;
+  transform: rotate(45deg);
+  cursor: pointer;
 }
 
 @media (min-width: 900px) {
@@ -484,6 +532,65 @@ footer ul {
     padding-left: 0.7em;
     padding-bottom: 1em;
 
+  }
+
+  .bg-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+  }
+
+  .modal-content {
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    opacity: 1; 
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+
+  .modal-content form input {
+    width: 80%;
+    height: 2em;
+    display: block;
+    margin: 2em auto;
+    font-size: 1em;
+  }
+
+  .modal-content form textarea{
+    width: 80%;
+    display: block;
+    font-size: 1.375em;
+    margin: 2em auto;
+  }
+
+  .modal-content a {
+    background: #ae79c4;
+    padding: 0.5em 2em;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.375em;
+    font-weight: 700;
+    margin-top: 2em; 
+}
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 60px;
+    transform: rotate(45deg);
+    cursor: pointer;
   }
 
 }

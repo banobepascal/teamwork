@@ -94,6 +94,10 @@ form  .signin {
     color: #fc6767;
 }
 
+.input-group textarea:focus {
+    outline: none;
+}
+
 .input-group .bar {
     position: absolute;
     left: 0;
