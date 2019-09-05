@@ -593,6 +593,20 @@ footer ul {
     cursor: pointer;
   }
 
+  .msg{
+    color: red;
+  } 
+
+  .topic-error1{
+    color: red;
+    display: none;
+  } 
+
+  .topic-error2 {
+    color: green;
+    display: none;
+  } 
+
   .msg-error {
     color: red;
   }

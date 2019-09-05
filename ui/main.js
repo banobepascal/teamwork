@@ -21,4 +21,25 @@ function(){
 
 // Js for post validation
 
+const myPost = document.querySelector('#my-post');
+const topicInput = document.querySelector('#topicInput');
+const sayInput = document.querySelector('#sayInput');
+const topicError = document.querySelector('.topic-msg');
+const topicError1 = document.querySelector('.topic-error1');
+const topicError2 = document.querySelector('.topic-error2');
+const postBtn = document.querySelector('.post-button');
 
+myPost.addEventListener('submit', onSubmit);
+
+function onSubmit(e){
+    e.preventDefault();
+
+    if(topicInput.value === "" || sayInput.value === "") {
+        topicError.classList.add('msg');
+        topicError.innerHTML = 'Please fill in Topic and Your Say';
+        setTimeout(() => topicError.remove(), 3000);
+    } else {
+        console.log('success');
+    }
+
+}
