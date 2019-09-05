@@ -18,14 +18,14 @@
             <li><a href="home.html">Profile</a></li>
             <li><a href="#">Settings</a></li>
             <li>
-              <a href="#"><img src="svgs/search.svg" alt="" id="search-icon"></a>
+              <a href="#hide-me"><img src="svgs/search.svg" alt="" id="search-icon"></a>
             </li>
             <li><a href="signin.html">Log out</a></li>
           </ul>
         </nav>
       </div>
       <div class="content">
-        <div class="search"><input type="text" placeholder="search" /></div>
+        <div class="search"><input type="text" placeholder="search"/></div>
         <div class="navbar">
           <header id="navbar">
             <div id="search-topic">Articles</div>
@@ -59,7 +59,7 @@
             </ul>
           </div>
         </section>
-        <div class="fixed-btn">
+        <div class="fixed-btn" id="post-btn">
           <img src="svgs/feather-alt.svg" alt="" id="post-article">          
           </div>
         <div class="footer">
@@ -72,5 +72,19 @@
         </div>
       </div>
     </div>
+    <div class="bg-modal">
+      <div class="modal-content">
+        <div class="close">+</div>
+        <form action="">
+          <h4 class="topic-error">Minimum 3 characters for Topic and 20 for Your Say</h4>
+          <h4 class="topic-error1">Please fill in Topic and Your Say</h4>
+          <h4 class="topic-error2">Your Post was sent successfully</h4>
+          <input type="text" placeholder="Topic">
+          <textarea type="text" placeholder="Your words..." rows="6" cols="50"></textarea>
+        </form>
+        <a href="#" class="button">POST</a>
+      </div>
+    </div>
   </body>
+  <script src="main.js"></script>
 </html>
