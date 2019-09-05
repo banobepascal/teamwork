@@ -70,15 +70,16 @@
       </div>
     </div>
     <div class="bg-modal">
-        <div class="modal-content">
-          <div class="close">+</div>
-          <form action="">
-            <input type="text" placeholder="Title">
-            <input type="text" placeholder="Your words...">
-            <a href="#" class="button">POST</a>  
-          </form>
-        </div>
+      <div class="modal-content">
+        <div class="close">+</div>
+        <form action="" id="my-post">
+           <div class="topic-msg"></div>
+          <input type="text" placeholder="Topic" id="topicInput">
+          <textarea type="text" placeholder="Your words..." id="sayInput" rows="6" cols="50"></textarea>
+          <input type="submit" value="POST" class="post-button">
+        </form>
       </div>
+    </div>
   </body>
   <script src="main.js"></script>
 </html>
