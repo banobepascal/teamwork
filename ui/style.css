@@ -450,7 +450,7 @@ footer ul {
   #comment {
     width: 30px;
     float: left;
-    margin-left: 12em;
+    margin-left: 7.8em;
    fill: #867bfb;
   }
 
@@ -593,26 +593,13 @@ footer ul {
     cursor: pointer;
   }
 
-  .msg{
+  .msg-error{
     color: red;
   } 
-
-  .topic-error1{
-    color: red;
-    display: none;
-  } 
-
-  .topic-error2 {
-    color: green;
-    display: none;
-  } 
-
-  .msg-error {
-    color: red;
-  }
 
   .msg {
-    color: green'
-  }
+    color: green;
+  } 
+
 
 }
