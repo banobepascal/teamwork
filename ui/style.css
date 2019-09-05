@@ -266,7 +266,7 @@ footer ul {
 
 .bg-modal {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0; 
@@ -330,6 +330,29 @@ footer ul {
 .msg {
   color: green;
 } 
+
+/* .test-art {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.test {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  opacity: 1; 
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+} */
 
 @media (min-width: 900px) {
 
@@ -628,6 +651,30 @@ footer ul {
   .msg {
     color: green;
   } 
+
+  .test-art {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+
+  .test {
+    width: 800px;
+    height: 500px;
+    background-color: white;
+    opacity: 1; 
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+
 
 
 }

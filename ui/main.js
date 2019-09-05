@@ -17,7 +17,6 @@ document.querySelector("#search-icon").addEventListener("click", function() {
 ///////////////////////////////////////////////////////
 
 // Js for post validation
-
 const myPost = document.querySelector("#my-post");
 const topicInput = document.querySelector("#topicInput");
 const sayInput = document.querySelector("#sayInput");
@@ -70,3 +69,18 @@ function onSubmit(e) {
     sayInput.value = "";
   }
 }
+
+/////////////////////////////////////////////////////////////////////
+
+// js for user to view article
+const heroView = document.querySelector(".hero-content-article");
+const backView = document.querySelector(".test-art");
+const hero_view = document.querySelector(".test");
+
+
+heroView.addEventListener('click', function(){
+  heroView.classList.add('test');
+  // hero_view.appendChild(heroView);
+  // backView.style.display = "flex";
+});
+
