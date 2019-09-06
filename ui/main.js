@@ -78,24 +78,23 @@ const onView = () => {
   const backView = document.querySelector(".test-art");
 
   let viewArticle = document.querySelector(".hero-content-article");
-  backView.style.display = "flex";
-  
-  // for (let i = 0; i < viewArticle.length; i++) {
-  //   viewArticle[i].onclick = function() {
-  //     // remove class from sibling
+  // backView.style.display = "flex";
+  for (let i = 0; i < viewArticle.length; i++) {
+    viewArticle[i].onclick = function() {
+      // remove class from sibling
 
-  //     let el = viewArticle[0];
-  //     while (el) {
-  //       if (el.tagName === "DIV") {
-  //         //remove class
-  //         el.classList.remove("bak");
-  //       }
-  //       // pass to the new sibling
-  //       el = el.nextSibling;
-  //     }
+      let el = viewArticle[0];
+      while (el) {
+        if (el.tagName === "DIV") {
+          //remove class
+          el.classList.remove("test");
+        }
+        // pass to the new sibling
+        el = el.nextSibling;
+      }
 
-  //     this.classList.add("bak");
-  //   };
-  // }
-  viewModal.appendChild(viewArticle);
+      this.classList.add("test");
+    };
+  }
+  // viewModal.appendChild(viewArticle);
 };
