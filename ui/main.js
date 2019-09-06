@@ -77,24 +77,25 @@ const onView = () => {
   const viewModal = document.querySelector(".test");
   const backView = document.querySelector(".test-art");
 
-  var viewArticle = document.querySelector(".hero-content-article");
+  let viewArticle = document.querySelector(".hero-content-article");
   backView.style.display = "flex";
-  for (var i = 0; i < viewArticle.length; i++) {
-    viewArticle[i].onclick = function() {
-      // remove class from sibling
+  
+  // for (let i = 0; i < viewArticle.length; i++) {
+  //   viewArticle[i].onclick = function() {
+  //     // remove class from sibling
 
-      var el = viewArticle[0];
-      while (el) {
-        if (el.tagName === "DIV") {
-          //remove class
-          el.classList.remove("bak");
-        }
-        // pass to the new sibling
-        el = el.nextSibling;
-      }
+  //     let el = viewArticle[0];
+  //     while (el) {
+  //       if (el.tagName === "DIV") {
+  //         //remove class
+  //         el.classList.remove("bak");
+  //       }
+  //       // pass to the new sibling
+  //       el = el.nextSibling;
+  //     }
 
-      this.classList.add("bak");
-    };
-  }
+  //     this.classList.add("bak");
+  //   };
+  // }
   viewModal.appendChild(viewArticle);
 };
