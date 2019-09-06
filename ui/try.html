@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript: Element Siblings</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+       
+        <style>
+            
+            .parent{overflow: hidden;margin-top:50px;}
+            
+            .child{width:200px;height: 150px;float: left;margin-left:20px;border:1px solid #000;
+                   text-align:center;line-height:150px;cursor: pointer;background-color:#ddd;}
+            
+            .bak{ background-color: red; color: #fff; font-weight:bold; }
+            
+        </style>
+        
+    </head>
+    <body>
+        
+        <div class="parent">
+            <div class="child">DIV1</div>
+            <div class="child">DIV2</div>
+            <div class="child">DIV3</div>
+            <div class="child">DIV4</div>
+            <div class="child">DIV5</div>
+        </div>
+        <div class="fixed-btn" id="post-btn">
+        </div>
+        
+        <!-- <script src="script.js"></script> -->
+        <script>
+          const parent = document.querySelector(".parent");
+            document.querySelector(".fixed-btn").addEventListener("click", function() {         
+    var div = document.createElement('div');
+    div.className = "child";
+    var span = document.createElement('span');
+    span.innerHTML = "Hello World!";
+    div.appendChild(span);
+    parent.appendChild(div);
+
+  });
+
+            var elements = document.getElementsByClassName("child");
+            for(var i = 0; i < elements.length; i++)
+            {
+                elements[i].onclick = function(){
+                    
+                    // remove class from sibling
+                    
+                    var el = elements[0];
+                    while(el)
+                    {
+                        if(el.tagName === "DIV"){
+                            //remove class
+                            el.classList.remove("bak");
+                            
+                        }
+                        // pass to the new sibling
+                        el = el.nextSibling;
+                    }
+                    
+                  this.classList.add("bak");  
+                };
+            }
+            
+        </script>    
+        
+    </body>
+</html>

@@ -1,5 +1,5 @@
 body {
-  background:  #eff1f7;
+  background: #eff1f7;
   margin: 0;
   padding: 0;
 }
@@ -67,7 +67,7 @@ nav li {
 }
 
 nav li a {
-  color: #E0EAFC;
+  color: #e0eafc;
   margin: 0;
   padding-left: 0px;
   display: flex;
@@ -111,7 +111,6 @@ nav p a {
   margin-left: -20px;
   padding-right: 40px;
 }
-
 
 .hero {
   max-width: 960px;
@@ -167,7 +166,7 @@ nav p a {
 
 .hero-content-article {
   background: #fff;
-  padding-left: 10px; 
+  padding-left: 10px;
   font-size: 21.6px;
   margin: 0;
 }
@@ -194,12 +193,16 @@ nav p a {
   width: 30px;
   padding-right: 5em;
   margin-left: -2em;
-  /* padding-left: 4em; */
+  fill: #867bfb;
 }
 
-#thumb-up {
-  width: 30px;
-  /* padding-right: 9em; */
+#comment:hover {
+  cursor: pointer;
+  fill: blue;
+}
+
+.comment-active {
+  fill: blue;
 }
 
 #thumb-down {
@@ -207,11 +210,20 @@ nav p a {
   fill: #867bfb;
 }
 
+#thumb-down:hover {
+  cursor: pointer;
+  fill: red;
+}
+
+.thumb-active {
+  fill: red;
+}
+
 .name-time {
   font-size: 1em;
-  padding-right: 1em; 
+  padding-right: 1em;
 }
-.name-time #username-article{
+.name-time #username-article {
   float: left;
 }
 
@@ -219,11 +231,11 @@ nav p a {
   float: right;
 }
 
-.fixed-btn{
+.fixed-btn {
   position: fixed;
   bottom: 10%;
   right: 3%;
-  background: #0FACF3;
+  background: #0facf3;
   width: 70px;
   height: 70px;
   border-radius: 80%;
@@ -231,8 +243,8 @@ nav p a {
   cursor: pointer;
 }
 
-.fixed-btn:active{
-  box-shadow: 0  0;
+.fixed-btn:active {
+  box-shadow: 0 0;
 }
 
 #post-article {
@@ -240,7 +252,6 @@ nav p a {
   padding-top: 0.7em;
   padding-left: 0.7em;
   padding-bottom: 1em;
-
 }
 
 .action-btn {
@@ -266,22 +277,21 @@ footer ul {
 
 .bg-modal {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
-  top: 0; 
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   display: none;
-
 }
 
 .modal-content {
   width: 500px;
   height: 400px;
   background-color: white;
-  opacity: 1; 
+  opacity: 1;
   border-radius: 5px;
   padding: 20px;
   text-align: center;
@@ -296,7 +306,7 @@ footer ul {
   font-size: 1em;
 }
 
-.modal-content form textarea{
+.modal-content form textarea {
   width: 80%;
   display: block;
   font-size: 1.375em;
@@ -311,7 +321,7 @@ footer ul {
   text-decoration: none;
   font-size: 1.375em;
   font-weight: 700;
-  margin-top: 2em; 
+  margin-top: 2em;
 }
 
 .close {
@@ -323,16 +333,38 @@ footer ul {
   cursor: pointer;
 }
 
-.msg-error{
+.msg-error {
   color: red;
-} 
+}
 
 .msg {
   color: green;
-} 
+}
+
+/* .test-art {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.test {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  opacity: 1; 
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+} */
 
 @media (min-width: 900px) {
-
   .sidebar nav {
     text-align: center;
   }
@@ -361,22 +393,20 @@ footer ul {
     position: fixed;
     background: none;
     text-align: center;
-    padding-left: 3em; 
+    padding-left: 3em;
     padding-top: 2em;
   }
 
- nav ul li a:active {
-    color: #D3CCE3;
+  nav ul li a:active {
+    color: #d3cce3;
     opacity: 1;
-
   }
 
   nav p {
     margin-top: -1em;
     font-size: 1.5em;
     position: fixed;
-    padding-left: 1.8em; 
-
+    padding-left: 1.8em;
   }
 
   nav p a {
@@ -419,12 +449,12 @@ footer ul {
   .hero img {
     width: 250px;
     float: right;
-    padding-right: 1em; 
+    padding-right: 1em;
   }
 
   .hero h2 {
     font-size: 2em;
-    padding-top: 2em; 
+    padding-top: 2em;
   }
 
   .hero h3 {
@@ -437,7 +467,7 @@ footer ul {
 
   .hero .profile-name {
     float: right;
-    padding-right: 3em;
+    /* padding-right: 3em; */
     /* margin-top: -1em;   */
   }
 
@@ -447,12 +477,11 @@ footer ul {
     /* line-height: 1em; */
     margin-left: 8%;
     margin-right: 8%;
-    padding-left: 10px; 
+    padding-left: 10px;
   }
 
   .hero-content-article:hover {
-    cursor: pointer;
-    background: #ccc;
+    background: #e0eafc;
   }
 
   .hero-content-article p {
@@ -460,7 +489,10 @@ footer ul {
     font-size: 0.9em;
     padding-left: 10px;
     padding-right: 15px;
-    /* text-align: start; */
+  }
+
+  .hero-content-article p {
+    cursor: pointer;
   }
 
   .hero-content-article h4 {
@@ -472,22 +504,37 @@ footer ul {
     list-style: none;
     display: inline-block;
     padding-bottom: 1em;
-    /* text-align: center; */
   }
 
   #comment {
     width: 30px;
     float: left;
     margin-left: 7.8em;
-   fill: #867bfb;
+    fill: #867bfb;
   }
 
+  #comment:hover {
+    cursor: pointer;
+    fill: blue;
+  }
 
-  img #thumb-down {
+  .comment-active {
+    fill: blue;
+  }
+
+  #thumb-down {
     width: 30px;
     float: right;
-   fill: #867bfb;
+    fill: #867bfb;
+  }
 
+  #thumb-down:hover {
+    cursor: pointer;
+    fill: red;
+  }
+
+  .thumb-active {
+    fill: red;
   }
 
   footer {
@@ -528,9 +575,9 @@ footer ul {
   }
   .name-time {
     font-size: 1em;
-    padding-right: 1em; 
+    padding-right: 1em;
   }
-  .name-time #username-article{
+  .name-time #username-article {
     float: left;
   }
 
@@ -538,11 +585,11 @@ footer ul {
     float: right;
   }
 
-  .fixed-btn{
+  .fixed-btn {
     position: fixed;
     bottom: 10%;
     right: 3%;
-    background-color: #0FACF3;
+    background-color: #0facf3;
     width: 70px;
     height: 70px;
     border-radius: 80%;
@@ -550,8 +597,8 @@ footer ul {
     cursor: pointer;
   }
 
-  .fixed-btn:active{
-    box-shadow: 0  0;
+  .fixed-btn:active {
+    box-shadow: 0 0;
   }
 
   #post-article {
@@ -559,7 +606,6 @@ footer ul {
     padding-top: 0.7em;
     padding-left: 0.7em;
     padding-bottom: 1em;
-
   }
 
   .bg-modal {
@@ -567,19 +613,18 @@ footer ul {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
-    top: 0; 
+    top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     display: none;
-
   }
 
   .modal-content {
     width: 500px;
     height: 400px;
     background-color: white;
-    opacity: 1; 
+    opacity: 1;
     border-radius: 5px;
     padding: 20px;
     text-align: center;
@@ -594,7 +639,7 @@ footer ul {
     font-size: 1em;
   }
 
-  .modal-content form textarea{
+  .modal-content form textarea {
     width: 80%;
     display: block;
     font-size: 1.375em;
@@ -609,8 +654,8 @@ footer ul {
     text-decoration: none;
     font-size: 1.375em;
     font-weight: 700;
-    margin-top: 2em; 
-}
+    margin-top: 2em;
+  }
 
   .close {
     position: absolute;
@@ -621,13 +666,34 @@ footer ul {
     cursor: pointer;
   }
 
-  .msg-error{
+  .msg-error {
     color: red;
-  } 
+  }
 
   .msg {
     color: green;
-  } 
+  }
 
+  .test-art {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
 
+  .test {
+    width: 800px;
+    height: 500px;
+    background-color: white;
+    opacity: 1;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
 }
