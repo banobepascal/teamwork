@@ -219,6 +219,19 @@ nav p a {
   fill: red;
 }
 
+#delete-btn {
+  width: 30px;
+  cursor: pointer;
+}
+
+#edit-btn {
+  padding-right: 5em;
+  margin-left: -2em;
+  fill: #867bfb;
+  width: 30px;
+  cursor: pointer;
+}
+
 .name-time {
   font-size: 1em;
   padding-right: 1em;
@@ -536,6 +549,20 @@ footer ul {
   .thumb-active {
     fill: red;
   }
+
+  #delete-btn {
+    width: 30px;
+    cursor: pointer;
+  }
+
+  #edit-btn {
+    width: 30px;
+    float: left;
+    margin-left: 7.8em;
+    width: 30px;
+    cursor: pointer;
+  }
+
 
   footer {
     max-width: 960px;
