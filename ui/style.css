@@ -11,6 +11,7 @@ body {
 }
 
 .sidebar {
+  height: auto;
   grid-area: sidebar;
   background: #005c97;
   justify-content: center;
@@ -19,13 +20,14 @@ body {
 .container {
   font-size: 1.5em;
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: grid;
   grid-template-areas:
     "sidebar"
     "content";
   grid-template-columns: 1fr;
   grid-template-rows: 130px 800px 250px;
+  
 }
 
 .sidebar {
@@ -354,6 +356,70 @@ footer ul {
   color: green;
 }
 
+ /* comment modal */
+ .bg-comment {
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.7); 
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   display: none;
+}
+
+.modal-comment {
+  width: 700px;
+  height: auto;
+  background-color: white;
+  opacity: 1;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content form input {
+  width: 80%;
+  height: 2em;
+  display: block;
+  margin: 2em auto;
+  font-size: 1em;
+}
+
+.modal-comment form textarea {
+  width: 100%;
+  display: block;
+  font-size: 0.7em;
+  margin: 2em auto;
+}
+
+.modal-comment .hero-content-article:hover {
+ background: none;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 60px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.btn {
+  background: #ae79c4;
+  padding: 0.5em 1em;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 1.5em;
+}
+
 /* .test-art {
   width: 100%;
   height: 100%;
@@ -383,6 +449,7 @@ footer ul {
   }
 
   .container {
+    background: rgba(0, 0, 0, 0.7);
     grid-template-areas:
       "sidebar content"
       "sidebar footer";
@@ -407,7 +474,7 @@ footer ul {
     background: none;
     text-align: center;
     padding-left: 3em;
-    padding-top: 2em;
+    padding-top: 6em;
   }
 
   nav ul li a:active {
@@ -416,10 +483,9 @@ footer ul {
   }
 
   nav p {
-    margin-top: -1em;
+    margin-top: -3em;
     font-size: 1.5em;
     position: fixed;
-    padding-left: 1.8em;
   }
 
   nav p a {
@@ -438,8 +504,13 @@ footer ul {
   }
 
   .sidebar {
-    background: #005c97;
-    padding-top: 3em;
+    bottom: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 280px;
+    z-index: 1000;
+    color: #b7c0cd;
   }
 
   .search {
@@ -723,4 +794,70 @@ footer ul {
     text-align: center;
     position: relative;
   }
+
+  /* comment modal */
+  .bg-comment {
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* position: absolute; */
+    /* top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+    display: none;
+  }
+
+  .modal-comment {
+    width: 700px;
+    height: auto;
+    background-color: white;
+    opacity: 1;
+    border-radius: 5px;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    /* display: none; */
+  }
+
+  .modal-content form input {
+    width: 80%;
+    height: 2em;
+    display: block;
+    margin: 2em auto;
+    font-size: 1em;
+  }
+
+  .modal-comment form textarea {
+    width: 100%;
+    display: block;
+    font-size: 0.7em;
+    margin: 2em auto;
+  }
+
+  .modal-comment .hero-content-article:hover {
+   background: none;
+  }
+
+  .close-icon {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 60px;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+
+  .btn {
+    background: #ae79c4;
+    padding: 0.5em 1em;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 1.5em;
+}
 }

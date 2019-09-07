@@ -72,5 +72,14 @@ function onSubmit(e) {
 
 /////////////////////////////////////////////////////////////////////
 
-// js for user to view article
+// Js for Hide and show comment modal
+document.getElementById("comment").addEventListener("click", function() {
+  // document.querySelector(".bg-comment").style.display = "flex";
+  document.querySelector(".content").classList.add("bg-comment");
+});
 
+document.querySelector(".close-icon").addEventListener("click", function() {
+  // document.querySelector(".bg-comment").style.display = "none";
+  document.querySelector(".container").classList.remove("bg-comment");
+
+});
