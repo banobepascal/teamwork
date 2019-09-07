@@ -1,3 +1,8 @@
+:root {
+  --modal-duration: 1s;
+  --modal-color: #428bca;
+}
+
 body {
   background: #eff1f7;
   margin: 0;
@@ -11,7 +16,6 @@ body {
 }
 
 .sidebar {
-  height: auto;
   grid-area: sidebar;
   background: #005c97;
   justify-content: center;
@@ -20,14 +24,13 @@ body {
 .container {
   font-size: 1.5em;
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: grid;
   grid-template-areas:
     "sidebar"
     "content";
   grid-template-columns: 1fr;
   grid-template-rows: 130px 800px 250px;
-  
 }
 
 .sidebar {
@@ -292,9 +295,9 @@ footer ul {
 
 .bg-modal {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  position: absolute;
+  position: fixed;
   top: 0;
   display: flex;
   justify-content: center;
@@ -313,30 +316,36 @@ footer ul {
   position: relative;
 }
 
-.modal-content form input {
+.modal-content form input{
   width: 80%;
   height: 2em;
   display: block;
-  margin: 2em auto;
   font-size: 1em;
+  margin: 2em auto;
 }
 
+.modal-content form input:last-child {
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+  height: 2em;
+  display: block;
+  font-weight: 700;
+  margin: 2em auto;
+  font-size: 1em;
+  outline: none;
+  background: #0facf3;
+}
+
+.modal-content form input:last-child:hover {
+ background: #f30faf;
+ cursor: pointer;
+}
 .modal-content form textarea {
   width: 80%;
   display: block;
   font-size: 1.375em;
   margin: 2em auto;
-}
-
-.modal-content a {
-  background: #ae79c4;
-  padding: 0.5em 2em;
-  border-radius: 50px;
-  color: white;
-  text-decoration: none;
-  font-size: 1.375em;
-  font-weight: 700;
-  margin-top: 2em;
 }
 
 .close {
@@ -356,50 +365,58 @@ footer ul {
   color: green;
 }
 
- /* comment modal */
- .bg-comment {
+.bg-comment {
   width: 100%;
-  height: auto;
-  background-color: rgba(0, 0, 0, 0.7); 
-  position: absolute;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
   top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-   display: none;
+  display: none;
 }
 
 .modal-comment {
-  width: 700px;
+  width: 800px;
   height: auto;
   background-color: white;
   opacity: 1;
   border-radius: 5px;
-  padding: 20px;
+  /* margin-top: 10em; */
   text-align: center;
   position: relative;
 }
+.modal-comment .hero-content-article:hover{
+  background: none;
+}
 
-.modal-content form input {
-  width: 80%;
+.modal-comment form input {
+  width: 200px;
+  border-radius: 5px;
+  border: none;
   height: 2em;
   display: block;
   margin: 2em auto;
   font-size: 1em;
+  outline: none;
+  background: #0facf3;
 }
+
+.modal-comment form input:hover {
+ background: #f30faf;
+ cursor: pointer;
+}
+
 
 .modal-comment form textarea {
   width: 100%;
   display: block;
   font-size: 0.7em;
-  margin: 2em auto;
+  margin: 1.5em auto;
 }
 
-.modal-comment .hero-content-article:hover {
- background: none;
-}
-
-.close {
+.close-icon {
   position: absolute;
   top: 0;
   right: 14px;
@@ -408,40 +425,12 @@ footer ul {
   cursor: pointer;
 }
 
-.btn {
-  background: #ae79c4;
-  padding: 0.5em 1em;
-  border: none;
-  outline: none;
-  border-radius: 50px;
-  color: white;
-  font-size: 1em;
-  font-weight: 700;
-  margin-bottom: 1.5em;
+@media (min-width: 700px){
+  .modal-comment {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
 }
-
-/* .test-art {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  top: 0; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.test {
-  width: 500px;
-  height: 500px;
-  background-color: white;
-  opacity: 1; 
-  border-radius: 5px;
-  padding: 20px;
-  text-align: center;
-  position: relative;
-} */
 
 @media (min-width: 900px) {
   .sidebar nav {
@@ -449,7 +438,6 @@ footer ul {
   }
 
   .container {
-    background: rgba(0, 0, 0, 0.7);
     grid-template-areas:
       "sidebar content"
       "sidebar footer";
@@ -474,7 +462,7 @@ footer ul {
     background: none;
     text-align: center;
     padding-left: 3em;
-    padding-top: 6em;
+    padding-top: 2em;
   }
 
   nav ul li a:active {
@@ -483,9 +471,10 @@ footer ul {
   }
 
   nav p {
-    margin-top: -3em;
+    margin-top: -1em;
     font-size: 1.5em;
     position: fixed;
+    padding-left: 1.8em;
   }
 
   nav p a {
@@ -504,13 +493,8 @@ footer ul {
   }
 
   .sidebar {
-    bottom: 0;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 280px;
-    z-index: 1000;
-    color: #b7c0cd;
+    background: #005c97;
+    padding-top: 3em;
   }
 
   .search {
@@ -710,7 +694,7 @@ footer ul {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
+    position: fixed;
     top: 0;
     display: flex;
     justify-content: center;
@@ -719,7 +703,7 @@ footer ul {
   }
 
   .modal-content {
-    width: 500px;
+    width: 600px;
     height: 400px;
     background-color: white;
     opacity: 1;
@@ -733,8 +717,26 @@ footer ul {
     width: 80%;
     height: 2em;
     display: block;
+    font-size: 1em;
+    margin: 2em auto;
+  }
+
+  .modal-content form input:last-child {
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    height: 2em;
+    display: block;
+    font-weight: 700;
     margin: 2em auto;
     font-size: 1em;
+    outline: none;
+    background: #0facf3;
+  }
+
+  .modal-content form input:last-child:hover {
+   background: #f30faf;
+   cursor: pointer;
   }
 
   .modal-content form textarea {
@@ -772,6 +774,77 @@ footer ul {
     color: green;
   }
 
+  .bg-comment {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+
+  .modal-comment {
+    width: 800px;
+    height: auto;
+    background-color: white;
+    opacity: 1;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    
+  }
+  .modal-comment .hero-content-article:hover{
+    background: none;
+  }
+
+  .modal-comment form input {
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    height: 2em;
+    display: block;
+    margin: 2em auto;
+    font-size: 1em;
+    outline: none;
+    background: #0facf3;
+  }
+
+  .modal-comment form input:hover {
+   background: #f30faf;
+   cursor: pointer;
+  }
+
+
+  .modal-comment form textarea {
+    width: 100%;
+    display: block;
+    font-size: 0.7em;
+    margin: 1.5em auto;
+  }
+
+  /* .modal-content a {
+    background: #ae79c4;
+    padding: 0.5em 2em;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.375em;
+    font-weight: 700;
+    margin-top: 2em;
+  } */
+
+  .close-icon {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 60px;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+
+
   .test-art {
     width: 100%;
     height: 100%;
@@ -794,70 +867,4 @@ footer ul {
     text-align: center;
     position: relative;
   }
-
-  /* comment modal */
-  .bg-comment {
-    width: 100%;
-    height: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    /* position: absolute; */
-    /* top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-    display: none;
-  }
-
-  .modal-comment {
-    width: 700px;
-    height: auto;
-    background-color: white;
-    opacity: 1;
-    border-radius: 5px;
-    padding: 0;
-    text-align: center;
-    position: relative;
-    /* display: none; */
-  }
-
-  .modal-content form input {
-    width: 80%;
-    height: 2em;
-    display: block;
-    margin: 2em auto;
-    font-size: 1em;
-  }
-
-  .modal-comment form textarea {
-    width: 100%;
-    display: block;
-    font-size: 0.7em;
-    margin: 2em auto;
-  }
-
-  .modal-comment .hero-content-article:hover {
-   background: none;
-  }
-
-  .close-icon {
-    position: absolute;
-    top: 0;
-    right: 14px;
-    font-size: 60px;
-    transform: rotate(45deg);
-    cursor: pointer;
-  }
-
-  .btn {
-    background: #ae79c4;
-    padding: 0.5em 1em;
-    border: none;
-    outline: none;
-    border-radius: 50px;
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-    font-weight: 700;
-    margin-bottom: 1.5em;
-}
 }
