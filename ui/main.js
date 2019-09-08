@@ -7,6 +7,13 @@ document.querySelector(".close").addEventListener("click", function() {
   document.querySelector(".bg-modal").style.display = "none";
 });
 
+window.addEventListener('click', outsidePost);
+function outsidePost(e){
+  if(e.target == document.querySelector(".bg-modal")) {
+    document.querySelector(".bg-modal").style.display = "none";
+  }
+}
+
 /////////////////////////////////////////////////////////
 
 // Js for hide and show search bar
@@ -72,5 +79,34 @@ function onSubmit(e) {
 
 /////////////////////////////////////////////////////////////////////
 
-// js for user to view article
+// Js for Hide and show comment modal
+  // Get DOM Elements
+  const commentModal = document.querySelector('.bg-comment');
+  const commentBtn = document.querySelector('#comment');
+  const closeBtn = document.querySelector('.close-icon');
+  
+  // Events
+  commentBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', outsideClick);
+  
+  // Open
+  function openModal() {
+    commentModal.style.display = 'flex';
+  }
+  
+  // Close
+  function closeModal() {
+    commentModal.style.display = 'none';
+  }
+  
+  // Close If Outside Click
+  function outsideClick(e) {
+    if (e.target == commentModal) {
+      commentModal.style.display = 'none';
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////////
+ 
 
