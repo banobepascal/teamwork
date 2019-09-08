@@ -108,31 +108,5 @@ function onSubmit(e) {
   }
 
   ////////////////////////////////////////////////////////////////////
-  // Js for Hide and show edit modal
-  // Get DOM Elements
-  const editModal = document.querySelector('.bg-comment');
-  const editBtn = document.querySelector('#comment');
-  const closeEdit = document.querySelector('.close-icon');
-  
-  // Events
-  commentBtn.addEventListener('click', openModal);
-  closeBtn.addEventListener('click', closeModal);
-  window.addEventListener('click', outsideClick);
-  
-  // Open
-  function openModal() {
-    commentModal.style.display = 'flex';
-  }
-  
-  // Close
-  function closeModal() {
-    commentModal.style.display = 'none';
-  }
-  
-  // Close If Outside Click
-  function outsideClick(e) {
-    if (e.target == commentModal) {
-      commentModal.style.display = 'none';
-    }
-  }
+ 
 
