@@ -1,13 +1,18 @@
 body { 
     font-family: sans-serif;
-    background: #63d6d6;
-    color: black;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
 }
 
 .container {
     max-width: 1005px;
     margin: 0 auto;
-    padding: 2em 1em;
+    padding: 1em 1em;
+}
+
+.logo h2 {
+    font-family: 'Patua One', cursive;
+    color: #000;
+    font-size: 2em;
 }
 
 header {
@@ -23,18 +28,25 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    color: #000;
     justify-content: space-between;
 }
 
 nav ul li {
     list-style: none;
+    
 }
 
 nav ul li a {
     font-size: 1.25em;
-    color: #000;
+   
     font-weight: 700;
     text-decoration: none;
+    font-family: 'Bree Serif', serif;
+}
+
+nav ul li a:hover{
+    color: #e8cbc0;
 }
 
 main {
@@ -44,14 +56,11 @@ main {
 
 .hero {
     text-align: center;
+    font-family: 'Maven Pro', sans-serif;
 }
 
 .hero h1 {
-    font-size: 1.2em;
-    font-weight: 600;
-    max-width: 500px;
-    /* line-height: 1.8em; */
-    margin: 3em auto;
+    font-family: 'Comfortaa', cursive;
 }
 
 .hero p:before {
@@ -75,7 +84,7 @@ figure img {
     text-align: center;
 }
 .join a {
-    background: #ae79c4;
+    background: linear-gradient(to right, #3494e6, #ec6ead);
     padding: 1em 3em;
     border-radius: 50px;
     color: white;
@@ -83,12 +92,19 @@ figure img {
     font-size: 1.375em;
     font-weight: 700;
     margin-top: 2em; 
+    font-family: 'Comfortaa', cursive;
+}
+
+.join a:hover {
+    background: linear-gradient(to right, #009fff, #ec2f4b);
+     
 }
 
 .footer {
     text-align: center;
     padding-top: 2em;
     font-size: 1.3em;
+    font-family: 'Maven Pro', sans-serif;
 }
 
 @media screen and (min-width: 820px) {
@@ -120,7 +136,7 @@ figure img {
 
     nav ul li a {
         font-size: 1.375em;
-        color: #fff;
+        color: #000;
         font-weight: 700;
         text-decoration: none;
     }
