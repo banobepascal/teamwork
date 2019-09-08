@@ -47,11 +47,8 @@ body {
   display: none;
 }
 
-nav ul li:first-child {
-  display: none;
-}
 
-nav ul li:nth-child(6) {
+nav ul li:nth-child(5) {
   display: none;
 }
 
@@ -66,19 +63,20 @@ nav ul {
 nav li {
   list-style: none;
   padding-left: 10px;
-  padding-top: 1em;
+  padding-top: 0em;
   text-align: center;
   /* padding-bottom: 1em; */
 }
 
 nav li a {
-  color: #e0eafc;
+  color: #fff;
   margin: 0;
-  padding-left: 0px;
+  margin-bottom: 1.5em;
   display: flex;
   justify-content: space-between;
   text-align: center;
   font-weight: 700;
+  font-family: 'Bree Serif', serif;
   opacity: 0.8;
   text-decoration: none;
   transition: 0.3s;
@@ -90,7 +88,8 @@ nav li a:hover {
 
 nav p a {
   text-decoration: none;
-  color: #373046;
+  font-family: 'Modak', cursive;
+  color: #fff;;
 }
 
 #search-icon {
@@ -143,6 +142,7 @@ nav p a {
 
 .hero-content {
   border-bottom: #373046 solid;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 .logs ul li {
@@ -171,6 +171,7 @@ nav p a {
 
 .hero-content-article {
   background: #fff;
+  font-family: 'Manjari', sans-serif;
   padding-left: 10px;
   font-size: 21.6px;
   margin: 0;
@@ -232,8 +233,8 @@ nav p a {
 #edit-btn {
   padding-right: 5em;
   margin-left: -2em;
-  fill: #867bfb;
-  width: 30px;
+  fill: #000;
+  width: 40px;
   cursor: pointer;
 }
 
@@ -532,24 +533,22 @@ footer ul {
     background: none;
     text-align: center;
     padding-left: 3em;
-    padding-top: 2em;
+    padding-top: 3em;
   }
 
   nav ul li a:active {
     color: #d3cce3;
     opacity: 1;
   }
-
+  nav ul li:nth-child(5) {
+    display: block;
+  }
   nav p {
     margin-top: -1em;
     font-size: 1.5em;
     position: fixed;
     padding-left: 1.8em;
-  }
-
-  nav p a {
-    text-decoration: none;
-    color: #373046;
+   
   }
 
   .content {
@@ -565,6 +564,7 @@ footer ul {
   .sidebar {
     background: #005c97;
     padding-top: 3em;
+    color: #fff;
   }
 
   .search {
@@ -593,10 +593,12 @@ footer ul {
   .hero h2 {
     font-size: 2em;
     padding-top: 2em;
+    
   }
 
   .hero h3 {
     text-align: center;
+    color: #000;
   }
 
   .hero-content {
@@ -605,14 +607,10 @@ footer ul {
 
   .hero .profile-name {
     float: right;
-    /* padding-right: 3em; */
-    /* margin-top: -1em;   */
   }
 
   .hero-content-article {
     background: #fff;
-    /* text-align: left; */
-    /* line-height: 1em; */
     margin-left: 8%;
     margin-right: 8%;
     padding-left: 10px;
@@ -678,13 +676,14 @@ footer ul {
   #delete-btn {
     width: 30px;
     cursor: pointer;
+    fill: black;
   }
 
   #edit-btn {
-    width: 30px;
     float: left;
     margin-left: 7.8em;
     width: 30px;
+    fill: black;
     cursor: pointer;
   }
 
@@ -707,7 +706,7 @@ footer ul {
   }
 
   #search-topic {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Manjari', sans-serif;
     font-size: 1em;
     flex: 1;
   }
