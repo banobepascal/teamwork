@@ -110,29 +110,29 @@ function onSubmit(e) {
   ////////////////////////////////////////////////////////////////////
   // Js for Hide and show edit modal
   // Get DOM Elements
-  const editModal = document.querySelector('.bg-comment');
-  const editBtn = document.querySelector('#comment');
-  const closeEdit = document.querySelector('.close-icon');
+  const editModal = document.querySelector('.bg-edit');
+  const editBtn = document.querySelector('#edit-btn');
+  const closeEdit = document.querySelector('.close-edit');
   
   // Events
-  commentBtn.addEventListener('click', openModal);
-  closeBtn.addEventListener('click', closeModal);
-  window.addEventListener('click', outsideClick);
+  editBtn.addEventListener('click', openEdit);
+  closeEdit.addEventListener('click', closeEditModal);
+  window.addEventListener('click', outsideClose);
   
   // Open
-  function openModal() {
-    commentModal.style.display = 'flex';
+  function openEdit() {
+    editModal.style.display = 'flex';
   }
   
   // Close
-  function closeModal() {
-    commentModal.style.display = 'none';
+  function closeEditModal() {
+    editModal.style.display = 'none';
   }
   
   // Close If Outside Click
-  function outsideClick(e) {
-    if (e.target == commentModal) {
-      commentModal.style.display = 'none';
+  function outsideClose(e) {
+    if (e.target == editModal) {
+      editModal.style.display = 'none';
     }
   }
 

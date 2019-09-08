@@ -824,6 +824,56 @@ footer ul {
     margin: 1.5em auto;
   }
 
+  .bg-edit {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+
+  .modal-edit {
+    width: 800px;
+    height: auto;
+    background-color: white;
+    opacity: 1;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    
+  }
+  .modal-edit .hero-content-article:hover{
+    background: none;
+  }
+
+  .modal-edit form input {
+    width: 200px;
+    border-radius: 5px;
+    border: none;
+    height: 2em;
+    display: block;
+    margin: 2em auto;
+    font-size: 1em;
+    outline: none;
+    background: #0facf3;
+  }
+
+  .modal-edit form input:hover {
+   background: #f30faf;
+   cursor: pointer;
+  }
+
+
+  .modal-edit form textarea {
+    width: 100%;
+    display: block;
+    font-size: 0.7em;
+    margin: 1.5em auto;
+  }
+
   /* .modal-content a {
     background: #ae79c4;
     padding: 0.5em 2em;
@@ -835,7 +885,7 @@ footer ul {
     margin-top: 2em;
   } */
 
-  .close-icon {
+  .close-edit {
     position: absolute;
     top: 0;
     right: 14px;
