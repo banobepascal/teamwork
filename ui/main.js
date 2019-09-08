@@ -79,13 +79,6 @@ function onSubmit(e) {
 
 /////////////////////////////////////////////////////////////////////
 
-// Js for voting article
-const onVote = () => {
-  document.querySelector("#thumb-down").style.fill = "red";
-};
-
-////////////////////////////////////////////////////////////////////////
-
 // Js for Hide and show comment modal
   // Get DOM Elements
   const commentModal = document.querySelector('.bg-comment');
@@ -115,4 +108,6 @@ const onVote = () => {
   }
 
   ////////////////////////////////////////////////////////////////////
+
+  
   
