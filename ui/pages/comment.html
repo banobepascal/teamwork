@@ -24,7 +24,7 @@
         <nav>
           <p><a href="#">Teamwork</a></p>
           <ul>
-            <li><a href="#">Articles</a></li>
+            <li><a href="articles.html">Articles</a></li>
             <li><a href="profile.html">Profile</a></li>
             <li><a href="settings.html">Settings</a></li>
             <li>
@@ -59,7 +59,14 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Repellendus temporibus maiores labore eos, non autem culpa
               voluptas dignissimos quae placeat quidem blanditiis harum iste
-              ipsam earum deserunt error magnam perspiciatis!
+              ipsam earum deserunt error magnam perspiciatis! Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Repellendus temporibus
+              maiores labore eos, non autem culpa voluptas dignissimos quae
+              placeat quidem blanditiis harum iste ipsam earum deserunt error
+              magnam perspiciatis! Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Repellendus temporibus maiores labore eos, non
+              autem culpa voluptas dignissimos quae placeat quidem blanditiis
+              harum iste ipsam earum deserunt error magnam perspiciatis!
             </p>
             <ul>
               <li>
@@ -86,10 +93,21 @@
               </li>
             </ul>
           </div>
+          <div class="hero-comment-article">
+              <div class="name-time">
+                <p id="username-article">Username</p>
+                <p id="time-article">post time</p>
+              </div>
+              <textarea
+              type="text"
+              placeholder="Your comment..."
+              id="commentInput"
+              rows="6"
+              cols="50"
+            ></textarea> <br>
+            <input type="submit" value="comment" class="btn" />
+            </div>
         </section>
-        <div class="fixed-btn" id="post-btn">
-          <img src="../svgs/feather-alt.svg" alt="" id="post-article" />
-        </div>
         <div class="footer">
           <div class="logs">
             <ul>
@@ -99,23 +117,39 @@
         </div>
       </div>
     </div>
-    <div class="bg-modal">
-      <div class="modal-content">
-        <div class="close">+</div>
-        <form action="" id="my-post">
+    <!-- <div class="bg-comment">
+      <div class="modal-comment">
+        <div class="close-icon">+</div>
+        <form action="" id="my-comment">
           <div class="topic-msg"></div>
-          <input type="text" placeholder="Topic" id="topicInput" />
-          <textarea
-            type="text"
-            placeholder="Your words..."
-            id="sayInput"
-            rows="7"
-            cols="50"
-          ></textarea>
-          <input type="submit" value="POST" class="btn" />
+          <div class="hero-content-article">
+            <div class="name-time">
+              <p id="username-article">Username</p>
+              <p id="time-article">post time</p>
+            </div>
+            <h4>Topic</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Repellendus temporibus maiores labore eos, non autem culpa
+              voluptas dignissimos quae placeat quidem blanditiis harum iste
+              ipsam earum deserunt error magnam perspiciatis! Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Repellendus temporibus
+              maiores labore eos, non autem culpa voluptas dignissimos quae
+              placeat quidem blanditiis harum iste ipsam earum deserunt error
+              magnam perspiciatis!
+            </p>
+            <textarea
+              type="text"
+              placeholder="Your comment..."
+              id="commentInput"
+              rows="4"
+              cols="50"
+            ></textarea>
+            <input type="submit" value="comment" class="btn" />
+          </div>
         </form>
       </div>
-    </div>
+    </div> -->
   </body>
   <script src="../js/main.js"></script>
 </html>

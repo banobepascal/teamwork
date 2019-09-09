@@ -18,7 +18,7 @@ body {
 .content h3 {
   text-align: center;
   color: #000;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: "Maven Pro", sans-serif;
 }
 
 .sidebar {
@@ -53,7 +53,6 @@ body {
   display: none;
 }
 
-
 nav ul li:nth-child(5) {
   display: none;
 }
@@ -81,7 +80,7 @@ nav li a {
   justify-content: space-between;
   text-align: center;
   font-weight: 700;
-  font-family: 'Bree Serif', serif;
+  font-family: "Bree Serif", serif;
   opacity: 0.8;
   text-decoration: none;
   transition: 0.3s;
@@ -93,8 +92,8 @@ nav li a:hover {
 
 nav p a {
   text-decoration: none;
-  font-family: 'Modak', cursive;
-  color: #fff;;
+  font-family: "Modak", cursive;
+  color: #fff;
 }
 
 #search-icon {
@@ -142,7 +141,7 @@ nav p a {
 
 .hero-content {
   border-bottom: #373046 solid;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: "Maven Pro", sans-serif;
 }
 
 .logs ul li {
@@ -171,7 +170,7 @@ nav p a {
 
 .hero-content-article {
   background: #fff;
-  font-family: 'Manjari', sans-serif;
+  font-family: "Manjari", sans-serif;
   padding-left: 10px;
   font-size: 21.6px;
   margin: 0;
@@ -316,7 +315,7 @@ footer ul {
   position: relative;
 }
 
-.modal-content form input{
+.modal-content form input {
   width: 80%;
   height: 2em;
   display: block;
@@ -338,8 +337,8 @@ footer ul {
 }
 
 .modal-content form input:last-child:hover {
- background: #f30faf;
- cursor: pointer;
+  background: #f30faf;
+  cursor: pointer;
 }
 .modal-content form textarea {
   width: 80%;
@@ -365,51 +364,35 @@ footer ul {
   color: green;
 }
 
-.bg-comment {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: none;
+
+.hero-comment-article {
+  background: #fff;
+  font-family: "Manjari", sans-serif;
+  padding-left: 10px;
+  font-size: 21.6px;
+  padding-bottom: 1em;
+  margin: 0;
 }
 
-.modal-comment {
-  width: 800px;
-  height: auto;
-  background-color: white;
-  opacity: 1;
-  border-radius: 5px;
-  text-align: center;
-  position: relative;
-}
-.modal-comment .hero-content-article:hover{
-  background: none;
-}
-
-.modal-comment form input {
+.hero-comment-article input {
   width: 200px;
   border-radius: 5px;
   border: none;
   height: 2em;
   display: block;
-  margin: 2em auto;
+  margin: 1em auto;
   font-size: 1em;
   outline: none;
   background: #0facf3;
 }
 
-.modal-comment form input:hover {
- background: #f30faf;
- cursor: pointer;
+.hero-comment-article input:hover {
+  background: #f30faf;
+  cursor: pointer;
 }
 
-
-.modal-comment form textarea {
-  width: 100%;
+.hero-comment-article textarea {
+  width: 90%;
   display: block;
   font-size: 0.7em;
   margin: 1.5em auto;
@@ -444,10 +427,9 @@ footer ul {
   border-radius: 5px;
   text-align: center;
   position: relative;
-  
 }
 
-.modal-edit .hero-content-article:hover{
+.modal-edit .hero-content-article:hover {
   background: none;
 }
 
@@ -473,10 +455,9 @@ footer ul {
 }
 
 .modal-edit form input:last-child:hover {
- background: #f30faf;
- cursor: pointer;
+  background: #f30faf;
+  cursor: pointer;
 }
-
 
 .modal-edit form textarea {
   width: 80%;
@@ -494,7 +475,7 @@ footer ul {
   cursor: pointer;
 }
 
-@media (min-width: 700px){
+@media (min-width: 700px) {
   .modal-comment {
     margin-left: 2em;
     margin-right: 2em;
@@ -547,7 +528,6 @@ footer ul {
     font-size: 1.5em;
     position: fixed;
     padding-left: 1.8em;
-   
   }
 
   .content {
@@ -586,7 +566,7 @@ footer ul {
 
   .hero h2 {
     font-size: 2em;
-    padding-top: 2em;  
+    padding-top: 2em;
   }
 
   .hero-content {
@@ -628,6 +608,12 @@ footer ul {
     fill: red;
   }
 
+  .hero-comment-article {
+    margin-left: 8%;
+    margin-right: 8%;
+    padding-left: 10px;
+  }
+
   #edit-btn {
     float: left;
     margin-left: 11em;
@@ -651,7 +637,7 @@ footer ul {
   }
 
   #search-topic {
-    font-family: 'Manjari', sans-serif;
+    font-family: "Manjari", sans-serif;
     font-size: 1em;
     flex: 1;
   }
@@ -675,12 +661,26 @@ footer ul {
     height: 400px;
   }
 
-  .modal-content form input {
+  /* .modal-comment {
+    width: 700px;
+    height: 200px;
+  } */
+
+  /* .modal-content form input {
     font-size: 1.2em;
-  }
+  } */
+
+  /* .modal-comment {
+    width: 800px;
+    height: 200px;
+    background-color: white;
+    opacity: 1;
+    border-radius: 5px;
+    text-align: center;
+    /* position: relative; */
+  /* }  */
 
   .vote {
     fill: red;
   }
-
 }

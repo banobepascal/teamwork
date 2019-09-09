@@ -28,7 +28,7 @@
 
 
   const onDelete = () => {
-    if (confirm('Are you sure to delete this record ?')) {
+    if (prompt('Are you sure to delete this record ?')) {
         document.querySelector(".hero-content-article").outerHTML = "";
     }
 }
