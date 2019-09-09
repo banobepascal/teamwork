@@ -76,13 +76,13 @@ figure {
 }
 
 figure img {
-    text-align: center;
     width: 100%;
+    text-align: center;
 }
 
 .join {
-    text-align: center;
-    margin-top: 2em; 
+    margin-top: 2em;
+    text-align: center; 
 }
 .join a {
     background: linear-gradient(to right, #3494e6, #ec6ead);
