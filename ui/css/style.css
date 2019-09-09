@@ -15,6 +15,12 @@ body {
   margin: 0;
 }
 
+.content h3 {
+  text-align: center;
+  color: #000;
+  font-family: 'Maven Pro', sans-serif;
+}
+
 .sidebar {
   grid-area: sidebar;
   background: #005c97;
@@ -178,7 +184,7 @@ nav p a {
 
 .hero-content-article h4 {
   text-align: center;
-  padding-top: 2em;
+  padding-top: 4em;
 }
 
 .hero-content-article ul li {
@@ -547,11 +553,6 @@ footer ul {
   .content {
     padding: 0;
     margin: 0;
-  }
-
-  .content h3 {
-    text-align: center;
-    color: #ee9ca7;
   }
 
   .sidebar {
