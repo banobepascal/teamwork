@@ -364,7 +364,6 @@ footer ul {
   color: green;
 }
 
-
 .hero-comment-article {
   background: #fff;
   font-family: "Manjari", sans-serif;
@@ -475,12 +474,139 @@ footer ul {
   cursor: pointer;
 }
 
-@media (min-width: 700px) {
-  .modal-comment {
-    margin-left: 2em;
-    margin-right: 2em;
+.confirm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  box-sizing: border-box;
+  display: none;
+
+  opacity: 0;
+  animation-name: confirm---open;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm--close {
+  animation-name: confirm---close;
+}
+
+.confirm__window {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  font-size: 1.1em;
+  font-family: "Noto Sans", sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  opacity: 0;
+  transform: scale(0.75);
+  animation-name: confirm__window---open;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+}
+
+.confirm__titlebar,
+.confirm__content,
+.confirm__buttons {
+  padding: 1.25em;
+}
+
+.confirm__titlebar {
+  background: #222222;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.confirm__title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.confirm__close {
+  background: none;
+  outline: none;
+  border: none;
+  transform: scale(2.5);
+  color: #ffffff;
+  transition: color 0.15s;
+}
+
+.confirm__close:hover {
+  color: #ff0000;
+  cursor: pointer;
+}
+
+.confirm__content {
+  line-height: 1.8em;
+}
+
+.confirm__buttons {
+  background: #eeeeee;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.confirm__button {
+  padding: 0.4em 0.8em;
+  border: 2px solid #009879;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #009879;
+  font-weight: bold;
+  font-size: 1.1em;
+  font-family: "Noto Sans", sans-serif;
+  margin-left: 0.6em;
+  cursor: pointer;
+  outline: none;
+}
+
+.confirm__button--fill {
+  background: #009879;
+  color: #ffffff;
+}
+
+.confirm__button:focus {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes confirm---open {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
+
+@keyframes confirm---close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes confirm__window---open {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
 @media (min-width: 900px) {
   .sidebar nav {
@@ -661,26 +787,11 @@ footer ul {
     height: 400px;
   }
 
-  /* .modal-comment {
-    width: 700px;
-    height: 200px;
-  } */
-
-  /* .modal-content form input {
-    font-size: 1.2em;
-  } */
-
-  /* .modal-comment {
-    width: 800px;
-    height: 200px;
-    background-color: white;
-    opacity: 1;
-    border-radius: 5px;
-    text-align: center;
-    /* position: relative; */
-  /* }  */
-
   .vote {
     fill: red;
+  }
+
+  .confirm {
+    display: none;
   }
 }
