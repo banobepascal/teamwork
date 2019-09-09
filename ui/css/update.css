@@ -4,11 +4,19 @@
   box-sizing: border-box;
 }
 
+#signin-heading {
+  color: #000;
+  font-size: 3rem;
+  padding-top: 1em;
+  text-align: center;
+}
+
 .form-container1 {
   display: grid;
   grid-template-columns: 45% 55%;
   padding: 4rem 10rem;
 }
+
 
 .signin-box1 {
   background: #fff;
@@ -24,8 +32,7 @@ form h3 {
   font-size: 2rem;
   text-align: center;
   padding-bottom: 1em;
-  font-family: "Comfortaa", cursive;
-  color: #000;
+  font-family: 'Maven Pro', sans-serif;
 }
 
 form .signin {

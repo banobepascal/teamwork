@@ -4,7 +4,7 @@ body {
 }
 
 .container {
-    max-width: 1005px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 1em 1em;
 }
@@ -77,15 +77,16 @@ figure {
 
 figure img {
     text-align: center;
-    width: 300px;
+    width: 100%;
 }
 
 .join {
     text-align: center;
+    margin-top: 2em; 
 }
 .join a {
     background: linear-gradient(to right, #3494e6, #ec6ead);
-    padding: 1em 3em;
+    padding: 0.7em 2em;
     border-radius: 50px;
     color: white;
     text-decoration: none;
