@@ -26,27 +26,19 @@ body {
     display: grid;
     grid-template-columns: 45% 55%;
     padding: 4rem 10rem;
-    /* box-sizing: border-box; */
   }
 
   .signin-box1 {
-    /* flex: 1; */
-    /* grid-area: signin-box1; */
     background: #fff;
   }
   .signin-box2 {
-    /* flex: 1.3; */
-    /* grid-area: signin-box2; */
     background: url(img/bg-2.jpg);
     background-size: cover;
   }
 
 form {
-    /* transform: translateX(10rem); */
     padding: 2rem 0;
     background: #fff;
-    /* border-radius: 1rem; */
-    /* box-shadow: 0 1px 1.5rem rgba(0,0,0,.1); */
 }
 
 form h2 {
