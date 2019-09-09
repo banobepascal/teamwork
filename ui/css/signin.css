@@ -151,6 +151,22 @@ form  .signin {
     padding-bottom: 2px;
     border-bottom: 2px solid #fc6767;
 }
+
+.switch-login2{
+    text-align: center;
+    padding-top: 1em; 
+}
+
+.switch-login2 a {
+    text-decoration: none;
+    color: #a1a1a1;
+    font-size: 1.5rem;
+}
+
+.switch-login2 a span:hover{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #fc6767;
+}
 @media screen and (max-width: 900px) {
     .form-container1 {
         padding: 6rem 3rem;
