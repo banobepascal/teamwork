@@ -925,14 +925,14 @@ footer ul {
   }
 
 
-  .modal-comment form textarea {
+  /* .modal-comment form textarea {
     width: 100%;
     display: block;
     font-size: 0.7em;
     margin: 1.5em auto;
-  }
+  } */
 
-  .bg-edit {
+  /* .bg-edit {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
@@ -942,9 +942,9 @@ footer ul {
     justify-content: center;
     align-items: center;
     display: none;
-  }
+  } */
 
-  .modal-edit {
+  /* .modal-edit {
     width: 800px;
     height: auto;
     background-color: white;
@@ -953,21 +953,21 @@ footer ul {
     text-align: center;
     position: relative;
     
-  }
+  } */
 
-  .modal-edit .hero-content-article:hover{
+  /* .modal-edit .hero-content-article:hover{
     background: none;
-  }
+  } */
 
-  .modal-edit form input {
+  /* .modal-edit form input {
     width: 80%;
     height: 2em;
     display: block;
     font-size: 1em;
     margin: 2em auto;
-  }
+  } */
 
-  .modal-edit form input:last-child {
+  /* .modal-edit form input:last-child {
     width: 200px;
     border-radius: 5px;
     border: none;
@@ -978,29 +978,29 @@ footer ul {
     font-size: 1em;
     outline: none;
     background: #0facf3;
-  }
+  } */
 
-  .modal-edit form input:last-child:hover {
+  /* .modal-edit form input:last-child:hover {
    background: #f30faf;
    cursor: pointer;
-  }
+  } */
 
 
-  .modal-edit form textarea {
+  /* .modal-edit form textarea {
     width: 80%;
     display: block;
     font-size: 1.3em;
     margin: 1.5em auto;
-  }
+  } */
 
-  .close-edit {
+  /* .close-edit {
     position: absolute;
     top: 0;
     right: 14px;
     font-size: 60px;
     transform: rotate(45deg);
     cursor: pointer;
-  }
+  } */
 
   .vote {
     fill: red;
