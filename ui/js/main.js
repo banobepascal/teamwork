@@ -88,35 +88,6 @@ function onSubmit(e) {
 
 /////////////////////////////////////////////////////////////////////
 
-// Js for Hide and show comment modal
-  // Get DOM Elements
-  const commentModal = document.querySelector('.bg-comment');
-  const commentBtn = document.querySelector('#comment');
-  const closeBtn = document.querySelector('.close-icon');
-  
-  // Events
-  commentBtn.addEventListener('click', openModal);
-  closeBtn.addEventListener('click', closeModal);
-  window.addEventListener('click', outsideClick);
-  
-  // Open
-  function openModal() {
-    commentModal.style.display = 'flex';
-  }
-  
-  // Close
-  function closeModal() {
-    commentModal.style.display = 'none';
-  }
-  
-  // Close If Outside Click
-  function outsideClick(e) {
-    if (e.target == commentModal) {
-      commentModal.style.display = 'none';
-    }
-  }
-
-  ////////////////////////////////////////////////////////////////////
 
   
   
