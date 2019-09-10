@@ -19,6 +19,15 @@ function outsidePost(e){
 // Js for hide and show search bar
 document.querySelector("#search-icon").addEventListener("click", function() {
   document.querySelector(".search").style.display = "block";
+  document.querySelector("#search-icon").style.display = "none";
+  document.querySelector(".close-search").style.display = "block";
+
+});
+
+document.querySelector(".close-search").addEventListener("click", function() {
+  document.querySelector(".search").style.display = "none";
+  document.querySelector("#search-icon").style.display = "block";
+  document.querySelector(".close-search").style.display = "none";
 });
 
 ///////////////////////////////////////////////////////
