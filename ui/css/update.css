@@ -78,28 +78,6 @@ form .signin {
   outline: none;
 }
 
-.input-group .bar {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: 1px;
-}
-
-.input-group .bar::before {
-  content: "";
-  position: absolute;
-  background-color: #fc6767;
-  width: 0;
-  height: 2px;
-  transition: width 650ms;
-}
-
-.input-group input:focus + .bar::before {
-  width: 100%;
-}
-
 #signup-btn {
   width: 200px;
 }
@@ -136,6 +114,7 @@ form .signin {
     font-size: 10px;
     outline: none;
   }
+   
 }
 
 @media screen and (max-width: 600px) {
@@ -146,4 +125,5 @@ form .signin {
   .form-container1 {
     margin-top: 0em;
   }
+
 }
