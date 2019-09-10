@@ -223,7 +223,7 @@ nav p a {
   width: 30px;
   padding-right: 5em;
   margin-left: -2em;
-  fill: #867bfb;
+  fill: #5549df;
 }
 
 #comment:hover {
@@ -237,7 +237,7 @@ nav p a {
 
 #thumb-down {
   width: 30px;
-  fill: #867bfb;
+  fill: #5549df;
 }
 
 #thumb-down:hover {
