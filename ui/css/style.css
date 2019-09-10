@@ -421,6 +421,7 @@ footer ul {
 .modal-edit {
   width: 800px;
   height: auto;
+  margin-right: 2em; 
   background-color: white;
   opacity: 1;
   border-radius: 5px;
@@ -437,7 +438,7 @@ footer ul {
   height: 2em;
   display: block;
   font-size: 1em;
-  margin: 2em auto;
+  margin: 4em auto; 
 }
 
 .modal-edit form input:last-child {
@@ -462,7 +463,7 @@ footer ul {
   width: 80%;
   display: block;
   font-size: 1.3em;
-  margin: 1.5em auto;
+  margin: 0em auto;
 }
 
 .close-edit {
@@ -523,7 +524,7 @@ footer ul {
 }
 
 .confirm__titlebar {
-  background: #222222;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -713,6 +714,14 @@ footer ul {
     font-size: 0.9em;
     padding-left: 10px;
     padding-right: 15px;
+  }
+
+  .modal-edit form input {
+    width: 80%;
+    height: 2em;
+    display: block;
+    font-size: 1em;
+    margin: 2em auto; 
   }
 
   #comment {
