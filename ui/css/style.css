@@ -54,7 +54,7 @@ body {
 }
 
 
-nav ul li:nth-child(5) {
+nav ul li:nth-child(6) {
   display: none;
 }
 
@@ -105,8 +105,9 @@ nav p a {
 
 #search-icon {
   display: block;
-  fill: #000;
-  width: 30px;
+  fill: #fff;
+  opacity: 0.8;
+  width: 25px;
   margin-top: -60px;
 }
 
@@ -123,6 +124,22 @@ nav p a {
   font-size: 1em;
   margin-left: -20px;
   padding-right: 40px;
+}
+
+.close-search {
+  font-size: 60px;
+  transform: rotate(45deg);
+  cursor: pointer;
+  opacity: 0.8;
+  color: #fff;
+  width: 30px;
+  margin-top: -30px;
+  display: none;
+}
+
+.close-search:hover {
+  color: #e0eafc;
+  opacity: 1;
 }
 
 .hero {
