@@ -1,0 +1,32 @@
+{
+  "name": "teamwork",
+  "version": "1.0.0",
+  "description": "An internal social network for employees",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banobepascal/teamwork.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "Express",
+    "Eslint",
+    "Html",
+    "css"
+  ],
+  "author": "Banobe Pascal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/banobepascal/teamwork/issues"
+  },
+  "homepage": "https://github.com/banobepascal/teamwork#readme",
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.0"
+  }
+}
