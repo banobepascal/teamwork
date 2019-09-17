@@ -1,3 +1,4 @@
+
 const User = [
   {
     firstname: {
@@ -15,8 +16,8 @@ const User = [
     email: {
       type: String,
       required: true,
-      minlength: 3,
-      maxlength: 20,
+      minlength: 5,
+      maxlength: 255,
       unique: true,
     },
     password: {
@@ -28,8 +29,6 @@ const User = [
     gender: {
       type: String,
       required: true,
-      minlength: 3,
-      maxlength: 20,
     },
     jobRole: {
       type: String,

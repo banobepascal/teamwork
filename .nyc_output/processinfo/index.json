@@ -1,1 +1,1 @@
-{"processes":{},"files":{},"externalIds":{}}
+{"processes":{"40b42f96-1daf-4a82-8259-b239102fb41d":{"parent":null,"children":[]}},"files":{"/home/pascal/Documents/teamwork/api/index.js":["40b42f96-1daf-4a82-8259-b239102fb41d"],"/home/pascal/Documents/teamwork/api/Auth/signup.js":["40b42f96-1daf-4a82-8259-b239102fb41d"],"/home/pascal/Documents/teamwork/api/models/userSignUp.js":["40b42f96-1daf-4a82-8259-b239102fb41d"],"/home/pascal/Documents/teamwork/api/validation/validateUser.js":["40b42f96-1daf-4a82-8259-b239102fb41d"]},"externalIds":{}}
