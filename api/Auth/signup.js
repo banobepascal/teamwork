@@ -1,0 +1,4 @@
+
+const createUser = (req, res) => {
+    
+}
