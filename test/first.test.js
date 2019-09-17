@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
-const assert = require('assert');
+import { assert } from 'chai';
 
 describe('Basic mocha string test', () => {
   it('should return number of characters in a string', () => {
-    assert.equal('hello'.length, 4);
+    assert.equal('hello'.length, 5);
   });
 
   it('should return first character of the string', () => {
