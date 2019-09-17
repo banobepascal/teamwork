@@ -13,6 +13,7 @@ signup.post('/', async (req, res) => {
   const { error } = validateUserSignUp(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
+  const email = 
   const newUser = _.pick(req.body, [
     'firstname',
     'lastname',
