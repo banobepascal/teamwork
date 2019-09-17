@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/banobepascal/teamwork.git"
+    "url": "https://github.com/banobepascal/teamwork.git"
   },
   "keywords": [
     "Nodejs",
