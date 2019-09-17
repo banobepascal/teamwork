@@ -15,11 +15,6 @@ signin.use(express.json());
 signin.post('/api/v1/auth/signup', (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send('Invalid email or password');
-
-  const loginUser = _.pick(req.body, [
-    'email',
-    'password',
-  )];
   
   const salt = await bcrypt.genSalt(10);
   loginUser.password = await bcrypt.hash(loginUser.password, salt);
@@ -32,9 +27,12 @@ signin.post('/api/v1/auth/signup', (req, res) => {
 });
 
 const validate = (user) => {
-  const shema {
-      email: Joi.string().min(5).
+  const schema = {
+      email: Joi.string().min(5).required(),
+      password: Joi.string().min(8).required(),
   };
+
+  return Joi.validate(user, schema);
 };
 
 module.exports = app;
