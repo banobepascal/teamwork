@@ -1,3 +1,4 @@
+
 const user = [
   {
     firstname: 'John',
@@ -11,4 +12,4 @@ const user = [
   },
 ];
 
-module.exports = { user };
+export default user;
