@@ -1,6 +1,6 @@
 import express from 'express';
 
-const signup = require('./Auth/signup');
+import signup from './Auth/signup';
 
 const app = express();
 app.use(express.json());

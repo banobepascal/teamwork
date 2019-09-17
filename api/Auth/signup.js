@@ -1,10 +1,11 @@
 import express from 'express';
-import user from '../models/data';
+import jwt from 'jsonwebtoken';
+import user from '../models/userSignUp';
 
-const app = express();
-app.use(express.json());
+const signup = express.Router();
+signup.use(express.json());
 
-app.post('/api/v1/auth/signup', (req, res) => {
+signup.post('/', (req, res) => {
   const newUser = {
     firstname: req.body.firstname,
     lastname: req.body.lastname,
@@ -24,4 +25,4 @@ app.post('/api/v1/auth/signup', (req, res) => {
   });
 });
 
-export default app;
+export default signup;

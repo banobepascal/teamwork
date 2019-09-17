@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../api/Auth/signup';
+import app from '../api/index';
 
 chai.use(chaiHttp);
 chai.should();
