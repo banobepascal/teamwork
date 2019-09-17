@@ -1,5 +1,9 @@
 import express from 'express';
-import 
-const app = express();
+import router from './Auth/signup';
 
-app.post('/api/v1/auth/signup', );
+const app = express();
+app.use(express.json());
+
+app.use('/api/v1/auth/signup', router);
+
+export default app;
