@@ -1,5 +1,6 @@
 /* eslint-disable consistent-return */
 import express from 'express';
+import bcrypt from 'bcrypt';
 import _ from 'lodash';
 import jwt from 'jsonwebtoken';
 import User from '../models/userSignUp';
@@ -8,7 +9,7 @@ import validateUserSignUp from '../validation/validateUser';
 const signup = express.Router();
 signup.use(express.json());
 
-signup.post('/', (req, res) => {
+signup.post('/', async (req, res) => {
   const { error } = validateUserSignUp(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -22,6 +23,8 @@ signup.post('/', (req, res) => {
     'department',
     'address',
   ]);
+  const salt = await bcrypt.genSalt(10);
+  newUser.password = await bcrypt.hash(newUser.password, salt);
 
   const token = jwt.sign({ email: User.email }, 'secretKey');
   User.push(newUser);
