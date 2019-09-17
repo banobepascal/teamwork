@@ -1,27 +1,34 @@
+/* eslint-disable consistent-return */
 import express from 'express';
+import _ from 'lodash';
 import jwt from 'jsonwebtoken';
-import user from '../models/userSignUp';
+import User from '../models/userSignUp';
+import validateUserSignUp from '../validation/validateUser';
 
 const signup = express.Router();
 signup.use(express.json());
 
 signup.post('/', (req, res) => {
-  const newUser = {
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    email: req.body.email,
-    password: req.body.password,
-    gender: req.body.gender,
-    jobRole: req.body.jobRole,
-    department: req.body.department,
-    address: req.body.address,
-  };
+  const { error } = validateUserSignUp(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
 
-  user.push(newUser);
-  res.status(200).json({
-    status: 200,
+  const newUser = _.pick(req.body, [
+    'firstname',
+    'lastname',
+    'email',
+    'password',
+    'gender',
+    'jobRole',
+    'department',
+    'address',
+  ]);
+
+  const token = jwt.sign({ email: User.email }, 'secretKey');
+  User.push(newUser);
+  res.status(201).json({
+    status: 201,
     message: 'User created successfully',
-    data: newUser,
+    data: token,
   });
 });
 

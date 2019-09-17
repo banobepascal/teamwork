@@ -12,7 +12,8 @@ describe('Create user', () => {
       chai.request(app)
         .post('/api/v1/auth/signup')
         .end((err, res) => {
-          res.should.have.status(200);
+          res.should.have.status(201);
+          res.body.should.have.property('message', 'User created successfully');
           done();
         });
     });
