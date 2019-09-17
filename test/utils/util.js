@@ -1,7 +1,7 @@
 exports.user = {
   firstname: 'John',
   lastname: 'Doe',
-  email: 'john@test.com',
+  email: 'johndoe@test.com',
   password: 'johndoetest',
   gender: 'Male',
   jobRole: 'ux designer',
