@@ -16,7 +16,7 @@ signin.post('/', async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const checkEmail = users.find((user) => user.email === req.body.email);
+  const checkEmail = await users.find((user) => user.email === req.body.email);
   if (!checkEmail) {
     res.status(404).json({
       status: 404,
