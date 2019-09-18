@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import util from './utils/util';
 import app from '../api/index';
+import util from './utils/util';
 
 chai.use(chaiHttp);
 chai.should();
@@ -12,7 +12,7 @@ describe('Create user', () => {
     it('Should create user and register to the API', (done) => {
       chai.request(app)
         .post('/api/v1/auth/signup')
-        .send(util.user)
+        .send(util.signUpUser)
         .end((err, res) => {
           res.should.have.status(201);
           res.body.should.have.property('message', 'User created successfully');
