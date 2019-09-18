@@ -1,13 +1,13 @@
 
 const User = [
   {
-    firstname: {
+    first_name: {
       type: String,
       required: true,
       minlength: 3,
       maxlength: 20,
     },
-    lastname: {
+    last_name: {
       type: String,
       required: true,
       minlength: 3,

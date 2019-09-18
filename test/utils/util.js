@@ -19,3 +19,8 @@ exports.baduser = {
   department: 'design',
   address: 'm',
 };
+
+exports.loginuser = {
+  email: 'johndoe@test.com',
+  password: 'johndoetest',
+};

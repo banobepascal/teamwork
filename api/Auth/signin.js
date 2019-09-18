@@ -4,7 +4,7 @@
 import jwt from 'jsonwebtoken';
 import express from 'express';
 import bcrypt from 'bcrypt';
-import validate from '../helpers/validateSignIn';
+import validateUser from '../helpers/validateSignIn';
 import users from '../migrations/users';
 
 
@@ -12,8 +12,18 @@ const signin = express.Router();
 
 signin.use(express.json());
 
+signin.get('/', async (req, res) => {
+  // const salt = await bcrypt.genSalt(10);
+  // users.password = await bcrypt.hash(users.password, salt);
+
+  res.status(200).json({
+    status: 200,
+    data: users,
+  });
+});
+
 signin.post('/', async (req, res) => {
-  const { error } = validate(req.body);
+  const { error } = validateUser(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
   const checkEmail = await users.find((user) => user.email === req.body.email);
@@ -37,10 +47,6 @@ signin.post('/', async (req, res) => {
     lastname: checkEmail.lastname,
     email: checkEmail.email,
     password: checkEmail.password,
-    gender: checkEmail.gender,
-    jobRole: checkEmail.jobRole,
-    department: checkEmail.department,
-    address: checkEmail.address,
   };
 
   const token = jwt.sign({ signinPayLoad }, 'secretkey');
