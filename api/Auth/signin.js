@@ -1,8 +1,8 @@
 /* eslint-disable consistent-return */
 /* eslint-disable radix */
 /* eslint-disable no-console */
-import config from 'config';
 import jwt from 'jsonwebtoken';
+import ENV from 'dotenv';
 import express from 'express';
 import bcrypt from 'bcrypt';
 import validateUser from '../helpers/validateSignIn';
@@ -10,6 +10,7 @@ import users from '../models/users';
 
 const signin = express.Router();
 signin.use(express.json());
+ENV.config();
 
 signin.post('/', async (req, res) => {
   const { error } = validateUser(req.body);
@@ -36,7 +37,7 @@ signin.post('/', async (req, res) => {
     password: checkEmail.password,
   };
 
-  const token = jwt.sign({ signinPayLoad }, config.get('jwtPrivateKey'));
+  const token = jwt.sign(signinPayLoad, process.env.JWT_KEY);
   res.status(200).json({
     status: 200,
     message: 'User is successfuly logged in',
