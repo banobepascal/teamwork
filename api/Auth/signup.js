@@ -41,7 +41,7 @@ signup.post('/', async (req, res) => {
     'password',
     'gender',
   ]);
-
+           
   const token = jwt.sign(signUpPayload, process.env.JWT_KEY);
   users.push(newUser);
   res.status(201).json({
