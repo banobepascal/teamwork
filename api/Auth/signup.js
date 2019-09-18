@@ -14,11 +14,11 @@ signup.post('/', async (req, res) => {
   const { error } = validateUserSignUp(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const email = users.find((user) => user.email === req.body.email);
-  if (email) {
+  const checkemail = users.find((user) => user.email === req.body.email);
+  if (checkemail) {
     res.status(401).json({
       status: 401,
-      error: 'Email already exist',
+      error: 'Email already exists',
     });
   }
 
