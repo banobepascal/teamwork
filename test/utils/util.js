@@ -1,3 +1,4 @@
+// mock data for user authentication
 exports.signUpUser = {
   firstname: 'Chris',
   lastname: 'Evans',
@@ -6,7 +7,18 @@ exports.signUpUser = {
   gender: 'Male',
   jobRole: 'ux designer',
   department: 'design',
-  address: 'm',
+  address: 'kampala',
+};
+
+exports.emailExists = {
+  firstname: 'Jessica',
+  lastname: 'Jones',
+  email: 'jessica@test.com',
+  password: 'jessicatests',
+  gender: 'female',
+  jobRole: 'Backend developer',
+  department: 'Engineering',
+  address: 'Kigali',
 };
 
 exports.baduser = {
@@ -17,7 +29,7 @@ exports.baduser = {
   gender: 'Male',
   jobRole: 'ux designer',
   department: 'design',
-  address: 'm',
+  address: 'kampala',
 };
 
 exports.loginuser = {
@@ -35,7 +47,13 @@ exports.badpassword = {
   password: 'johndoe',
 };
 
-exports.badlogin = {
-  email: '',
-  password: '',
+// mock data for posting article
+exports.article = {
+  title: 'Backend Development',
+  article: 'Do you want to be a backend and developer dont missout on the workshop',
+};
+
+exports.badArticle = {
+  title: 'Back',
+  article: 'Do you know',
 };
