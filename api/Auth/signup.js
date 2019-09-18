@@ -4,9 +4,8 @@ import express from 'express';
 import bcrypt from 'bcrypt';
 import _ from 'lodash';
 import jwt from 'jsonwebtoken';
-import User from '../models/userSignUp';
 import users from '../models/users';
-import validateUserSignUp from '../validation/validateUser';
+import validateUserSignUp from '../helpers/validateUser';
 
 const signup = express.Router();
 signup.use(express.json());
@@ -41,8 +40,9 @@ signup.post('/', async (req, res) => {
     'password',
     'gender',
   ]);
+
   const token = jwt.sign({ signUpPayload }, config.get('jwtPrivateKey'));
-  User.push(newUser);
+  users.push(newUser);
   res.status(201).json({
     status: 201,
     message: 'User created successfully',

@@ -24,3 +24,18 @@ exports.loginuser = {
   email: 'johndoe@test.com',
   password: 'johndoetest',
 };
+
+exports.bademail = {
+  email: 'johndo@test.com',
+  password: 'johndoetest',
+};
+
+exports.badpassword = {
+  email: 'johndoe@test.com',
+  password: 'johndoe',
+};
+
+exports.badlogin = {
+  email: '',
+  password: '',
+};

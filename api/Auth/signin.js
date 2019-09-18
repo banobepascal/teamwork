@@ -17,16 +17,16 @@ signin.post('/', async (req, res) => {
 
   const checkEmail = await users.find((user) => user.email === req.body.email);
   if (!checkEmail) {
-    res.status(404).json({
-      status: 404,
+    res.status(400).json({
+      status: 400,
       error: 'Invalid email or password',
     });
   }
 
   const validPassword = await bcrypt.compare(req.body.password, checkEmail.password);
   if (!validPassword) {
-    res.status(404).end().json({
-      status: 404,
+    res.status(400).json({
+      status: 400,
       error: 'Invalid email or password',
     });
   }
