@@ -8,16 +8,17 @@ chai.use(chaiHttp);
 chai.should();
 
 describe('Signin User', () => {
-  describe('POST /', () => {
+  describe('POST /api/v1/auth/signin', () => {
     it('Should successfully login a user', (done) => {
       chai.request(app)
-        .post('api/v1/auth/signin')
-        // .send(util.loginuser)
+        .post('/api/v1/auth/signin')
+        .send(util.loginuser)
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.have.property('message', 'User is successfuly logged in');
           done();
         });
     });
+
   });
 });

@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
 import express from 'express';
 import signin from './Auth/signin';
 import signup from './Auth/signup';
+
 
 const app = express();
 app.use(express.json());

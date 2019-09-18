@@ -1,26 +1,15 @@
 /* eslint-disable consistent-return */
 /* eslint-disable radix */
 /* eslint-disable no-console */
+import config from 'config';
 import jwt from 'jsonwebtoken';
 import express from 'express';
 import bcrypt from 'bcrypt';
 import validateUser from '../helpers/validateSignIn';
-import users from '../migrations/users';
-
+import users from '../models/users';
 
 const signin = express.Router();
-
 signin.use(express.json());
-
-signin.get('/', async (req, res) => {
-  // const salt = await bcrypt.genSalt(10);
-  // users.password = await bcrypt.hash(users.password, salt);
-
-  res.status(200).json({
-    status: 200,
-    data: users,
-  });
-});
 
 signin.post('/', async (req, res) => {
   const { error } = validateUser(req.body);
@@ -36,20 +25,18 @@ signin.post('/', async (req, res) => {
 
   const validPassword = await bcrypt.compare(req.body.password, checkEmail.password);
   if (!validPassword) {
-    res.status(404).json({
+    res.status(404).end().json({
       status: 404,
       error: 'Invalid email or password',
     });
   }
 
   const signinPayLoad = {
-    firstname: checkEmail.firstname,
-    lastname: checkEmail.lastname,
     email: checkEmail.email,
     password: checkEmail.password,
   };
 
-  const token = jwt.sign({ signinPayLoad }, 'secretkey');
+  const token = jwt.sign({ signinPayLoad }, config.get('jwtPrivateKey'));
   res.status(200).json({
     status: 200,
     message: 'User is successfuly logged in',

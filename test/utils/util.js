@@ -1,8 +1,8 @@
-exports.user = {
-  firstname: 'John',
-  lastname: 'Doe',
-  email: 'johndoe@test.com',
-  password: 'johndoetest',
+exports.signUpUser = {
+  firstname: 'Chris',
+  lastname: 'Evans',
+  email: 'chris@test.com',
+  password: 'chrisevanstest',
   gender: 'Male',
   jobRole: 'ux designer',
   department: 'design',
