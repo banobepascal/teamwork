@@ -30,5 +30,16 @@ describe('Create user', () => {
           done();
         });
     });
+
+    // should not sign up user incase email exists
+    it('should not singup user incase email exists', (done) => {
+      chai.request(app)
+        .post('/api/v1/auth/signup')
+        .send(util.emailExists)
+        .end((err, res) => {
+          res.should.have.status(401);
+          done();
+        });
+    });
   });
 });
