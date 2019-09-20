@@ -2,10 +2,11 @@
 import express from 'express';
 import signin from './Auth/signin';
 import signup from './Auth/signup';
-import articlePost from './controllers/articles';
+import articlePost from './controllers/postArticle';
 import editArticle from './controllers/editArticle';
 import deleteArticle from './controllers/deleteArticle';
 import comentArticle from './controllers/comentArticle';
+import viewArticles from './controllers/viewArticles';
 import auth from './middleware/auth';
 
 const app = express();
@@ -17,5 +18,6 @@ app.use('/api/v1/articles', auth, articlePost);
 app.use('/api/v1/articles', auth, editArticle);
 app.use('/api/v1/articles', auth, deleteArticle);
 app.use('/api/v1/articles', auth, comentArticle);
+app.use('/api/v1/feeds', auth, viewArticles);
 
 export default app;
