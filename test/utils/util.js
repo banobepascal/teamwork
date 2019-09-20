@@ -49,7 +49,7 @@ exports.badpassword = {
 
 // mock data for posting article
 exports.article = {
-  title: 'Backend Development',
+  title: 'Backend development',
   article: 'Do you want to be a backend and developer dont missout on the workshop',
 };
 
@@ -57,3 +57,5 @@ exports.badArticle = {
   title: 'Back',
   article: 'Do you know',
 };
+
+// mock data for edit article
