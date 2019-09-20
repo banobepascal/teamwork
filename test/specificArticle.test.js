@@ -4,7 +4,6 @@ import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
 import jwt from 'jsonwebtoken';
 import app from '../api/index';
-import util from './utils/util';
 
 require('dotenv').config;
 
@@ -19,45 +18,28 @@ const payload = {
 const token = jwt.sign(payload, process.env.JWT_KEY);
 
 describe('Updating Article', () => {
-  describe('PATCH /api/v1/articles/:id', () => {
-    it('should update article after meeting requirements', (done) => {
+  describe('GET /api/v1/articles/:id', () => {
+    it('should show specific article', (done) => {
       chai
         .request(app)
-        .patch('/api/v1/articles/1')
+        .get('/api/v1/articles/1')
         .set('x-auth-token', token)
-        .send(util.article)
         .end((err, res) => {
           expect(res.body.status).to.equals(200);
-          expect(res.body).to.have.property('message');
-          expect(res.body.message).to.equals('article successfully edited');
           done();
         });
     });
 
     // should not accept update on invalid article
-    it('should fail to edit on invalid article', (done) => {
+    it('should fail to view on invalid article', (done) => {
       chai
         .request(app)
-        .patch('/api/v1/articles/4')
+        .get('/api/v1/articles/7')
         .set('x-auth-token', token)
-        .send(util.article)
         .end((err, res) => {
           expect(res.body.status).to.equals(404);
           expect(res.body).to.have.property('message');
           expect(res.body.message).to.equals('article not found');
-          done();
-        });
-    });
-
-    // should not accept update on invalid token
-    it('should fail to edit on unsatisfied article', (done) => {
-      chai
-        .request(app)
-        .patch('/api/v1/articles/1')
-        .set('x-auth-token', token)
-        .send(util.badArticle)
-        .end((err, res) => {
-          res.should.have.status(400);
           done();
         });
     });
