@@ -21,7 +21,8 @@ const token = jwt.sign(payload, process.env.JWT_KEY);
 describe('Updating Article', () => {
   describe('PATCH /api/v1/articles/:id', () => {
     it('should update article after meeting requirements', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .patch('/api/v1/articles/1')
         .set('x-auth-token', token)
         .send(util.article)
@@ -35,7 +36,8 @@ describe('Updating Article', () => {
 
     // should not accept update on invalid user
     it('should fail to edit on invalid user', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .patch('/api/v1/articles/3')
         .set('x-auth-token', token)
         .send(util.article)
@@ -49,7 +51,8 @@ describe('Updating Article', () => {
 
     // should not accept update on invalid token
     it('should fail to edit on unsatisfied article', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .patch('/api/v1/articles/1')
         .set('x-auth-token', token)
         .send(util.badArticle)
