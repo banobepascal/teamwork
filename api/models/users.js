@@ -1,5 +1,6 @@
 const users = [
   {
+    id: 1,
     firstname: 'John',
     lastname: 'Doe',
     email: 'johndoe@test.com',
@@ -10,6 +11,7 @@ const users = [
     address: 'Kampala',
   },
   {
+    id: 2,
     firstname: 'Jessica',
     lastname: 'Jones',
     email: 'jessica@test.com',
