@@ -21,7 +21,7 @@ describe('Signin User', () => {
         });
     });
 
-    // Should not register user if password is incorrect
+    // Should not register user if email is incorrect
     it('Should not login if email doesnt exist', (done) => {
       chai.request(app)
         .post('/api/v1/auth/signin')

@@ -58,4 +58,11 @@ exports.badArticle = {
   article: 'Do you know',
 };
 
-// mock data for edit article
+// mock data for  comment article
+exports.goodComment = {
+  comment: 'thats awesome',
+};
+
+exports.badComment = {
+  comment: '',
+};
