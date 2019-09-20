@@ -4,6 +4,7 @@ import signin from './Auth/signin';
 import signup from './Auth/signup';
 import articlePost from './controllers/articles';
 import editArticle from './controllers/editArticle';
+import deleteArticle from './controllers/deleteArticle';
 import auth from './middleware/auth';
 
 const app = express();
@@ -13,5 +14,6 @@ app.use('/api/v1/auth/signup', signup);
 app.use('/api/v1/auth/signin', signin);
 app.use('/api/v1/articles', auth, articlePost);
 app.use('/api/v1/articles', auth, editArticle);
+app.use('/api/v1/articles', auth, deleteArticle);
 
 export default app;

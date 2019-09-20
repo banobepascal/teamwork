@@ -3,12 +3,15 @@
 /* eslint-disable consistent-return */
 import express from 'express';
 import moment from 'moment';
-import _ from 'lodash';
 import validateArticle from '../helpers/validateArticle';
 import articles from '../models/article';
 
 const articlePost = express.Router();
 articlePost.use(express.json());
+
+articlePost.get('/', async (req, res) => {
+  res.send(articles);
+});
 
 articlePost.post('/', async (req, res) => {
   const { error } = validateArticle(req.body);
