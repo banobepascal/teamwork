@@ -22,5 +22,4 @@ app.use('/api/v1/auth/signin', signin);
 app.use('/api/v1/feeds', auth, viewFeeds);
 app.use('/api/v1/articles', auth, articles);
 
-
 export default app;
