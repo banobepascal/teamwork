@@ -9,10 +9,6 @@ import articles from '../models/article';
 const articlePost = express.Router();
 articlePost.use(express.json());
 
-articlePost.get('/', async (req, res) => {
-  res.send(articles);
-});
-
 articlePost.post('/', async (req, res) => {
   const { error } = validateArticle(req.body);
   if (error) return res.status(400).send(error.details[0].message);
