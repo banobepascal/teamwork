@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import express from 'express';
+import winston from 'winston';
 import signin from './Auth/signin';
 import signup from './Auth/signup';
 import articlePost from './controllers/postArticle';
@@ -12,6 +13,13 @@ import auth from './middleware/auth';
 
 const app = express();
 app.use(express.json());
+
+process.on('unhandledRejection', (ex) => {
+  console.log('WE GOT AN UNHANDLED REJECTION');
+  winston.error(ex.message, ex);
+});
+
+winston.add(new winston.transports.File({ filename: 'logfile.log' }));
 
 app.use('/api/v1/auth/signup', signup);
 app.use('/api/v1/auth/signin', signin);
