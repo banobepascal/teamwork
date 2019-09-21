@@ -32,6 +32,7 @@ exports.baduser = {
   address: 'kampala',
 };
 
+// sigin mock data
 exports.loginuser = {
   email: 'johndoe@test.com',
   password: 'johndoetest',
