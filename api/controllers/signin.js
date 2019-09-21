@@ -4,16 +4,12 @@
 import jwt from 'jsonwebtoken';
 import ENV from 'dotenv';
 import bcrypt from 'bcrypt';
-import validateUser from '../helpers/validateSignIn';
 import users from '../models/users';
 
 ENV.config();
 
 const signin = ('/', async (req, res) => {
-  const { error } = validateUser(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-
-  const checkEmail = await users.find((user) => user.email === req.body.email);
+  const checkEmail = users.find((user) => user.email === req.body.email);
   if (!checkEmail) {
     res.status(400).json({
       status: 400,
