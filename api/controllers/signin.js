@@ -3,16 +3,13 @@
 /* eslint-disable no-console */
 import jwt from 'jsonwebtoken';
 import ENV from 'dotenv';
-import express from 'express';
 import bcrypt from 'bcrypt';
 import validateUser from '../helpers/validateSignIn';
 import users from '../models/users';
 
-const signin = express.Router();
-signin.use(express.json());
 ENV.config();
 
-signin.post('/', async (req, res) => {
+const signin = ('/', async (req, res) => {
   const { error } = validateUser(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
