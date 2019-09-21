@@ -1,14 +1,10 @@
 /* eslint-disable no-console */
 import express from 'express';
 import winston from 'winston';
-import signin from './Auth/signin';
-import signup from './Auth/signup';
-import articlePost from './controllers/postArticle';
-import editArticle from './controllers/editArticle';
-import deleteArticle from './controllers/deleteArticle';
-import comentArticle from './controllers/comentArticle';
-import viewArticles from './controllers/viewArticles';
-import viewSpecific from './controllers/specificArticle';
+import signin from './routes/signIn';
+import signup from './routes/signUp';
+import articles from './routes/articles';
+import viewFeeds from './routes/viewFeed';
 import auth from './middleware/auth';
 
 const app = express();
@@ -23,11 +19,7 @@ winston.add(new winston.transports.File({ filename: 'logfile.log' }));
 
 app.use('/api/v1/auth/signup', signup);
 app.use('/api/v1/auth/signin', signin);
-app.use('/api/v1/articles', auth, articlePost);
-app.use('/api/v1/articles', auth, editArticle);
-app.use('/api/v1/articles', auth, deleteArticle);
-app.use('/api/v1/articles', auth, comentArticle);
-app.use('/api/v1/feeds', auth, viewArticles);
-app.use('/api/v1/articles', auth, viewSpecific);
+app.use('/api/v1/feeds', auth, viewFeeds);
+app.use('/api/v1/articles', auth, articles);
 
 export default app;

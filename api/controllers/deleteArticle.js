@@ -1,11 +1,7 @@
 /* eslint-disable radix */
-import express from 'express';
 import articles from '../models/article';
 
-const deleteArticle = express.Router();
-deleteArticle.use(express.json());
-
-deleteArticle.delete('/:id', async (req, res) => {
+const deleteArticle = ('/:id', async (req, res) => {
   const article = articles.find((a) => a.id === parseInt(req.params.id));
   if (!article) {
     res.status(404).json({

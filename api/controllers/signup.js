@@ -1,5 +1,4 @@
 /* eslint-disable consistent-return */
-import express from 'express';
 import bcrypt from 'bcrypt';
 import ENV from 'dotenv';
 import _ from 'lodash';
@@ -7,11 +6,9 @@ import jwt from 'jsonwebtoken';
 import users from '../models/users';
 import validateUserSignUp from '../helpers/validateUser';
 
-const signup = express.Router();
-signup.use(express.json());
 ENV.config();
 
-signup.post('/', async (req, res) => {
+const signup = ('/', async (req, res) => {
   const { error } = validateUserSignUp(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 

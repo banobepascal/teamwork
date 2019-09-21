@@ -1,13 +1,10 @@
 /* eslint-disable consistent-return */
 /* eslint-disable radix */
-import express from 'express';
 import articles from '../models/article';
 import validateComment from '../helpers/validateComment';
 
-const comentArticle = express.Router();
-comentArticle.use(express.json());
 
-comentArticle.post('/:id/comments', (req, res) => {
+const comentArticle = ('/', (req, res) => {
   const article = articles.find((a) => a.id === parseInt(req.params.id));
   if (!article) {
     res.status(404).json({

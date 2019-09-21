@@ -1,14 +1,11 @@
 /* eslint-disable consistent-return */
 /* eslint-disable radix */
-import express from 'express';
 import moment from 'moment';
 import articles from '../models/article';
 import validateArticle from '../helpers/validateArticle';
 
-const editArticle = express.Router();
-editArticle.use(express.json());
 
-editArticle.patch('/:id', async (req, res) => {
+const editArticle = ('/:id', async (req, res) => {
   // eslint-disable-next-line eqeqeq
   const article = articles.find((a) => a.id === parseInt(req.params.id));
   if (!article) {
