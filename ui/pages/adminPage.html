@@ -18,7 +18,8 @@
             <p><a href="articles.html">Teamwork</a></p>
           <ul>
             <li><a href="articles.html">Articles</a></li>
-            <li><a href="#" class="active">Profile</a></li>
+            <li><a href="profile.html" class="">Profile</a></li>
+            <li><a href="#" class="active">Admin</a></li>
             <li><a href="settings.html">Settings</a></li>
             <li><a href="#" class="close-search">+</a></li>
             <li>
@@ -29,15 +30,9 @@
         </nav>
       </div>
       <div class="content">
-        <h3>Profile</h3>
+        <h3>Admin Page</h3>
         <div class="search"><input type="text" placeholder="search" /></div>
         <section class="hero">
-          <img src="../img/john.jpg" alt="" />
-          <div class="hero-content">
-            <h2>Full<br />Name</h2>
-            <p>Job title</p>
-            <h3>My Posts</h3>
-          </div>
           <div class="hero-content-article">
               <div class="name-time">
                 <p id="username-article">Username</p>
@@ -51,8 +46,16 @@
                 ipsam earum deserunt error magnam perspiciatis!
               </p>     
               <ul>   
-                  <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" id="edit-btn"><path d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"/></svg>    
+                <li>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                      id="thumb-down1"
+                    >
+                      <path
+                        d="M0 56v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H24C10.745 32 0 42.745 0 56zm40 200c0-13.255 10.745-24 24-24s24 10.745 24 24-10.745 24-24 24-24-10.745-24-24zm272 256c-20.183 0-29.485-39.293-33.931-57.795-5.206-21.666-10.589-44.07-25.393-58.902-32.469-32.524-49.503-73.967-89.117-113.111a11.98 11.98 0 0 1-3.558-8.521V59.901c0-6.541 5.243-11.878 11.783-11.998 15.831-.29 36.694-9.079 52.651-16.178C256.189 17.598 295.709.017 343.995 0h2.844c42.777 0 93.363.413 113.774 29.737 8.392 12.057 10.446 27.034 6.148 44.632 16.312 17.053 25.063 48.863 16.382 74.757 17.544 23.432 19.143 56.132 9.308 79.469l.11.11c11.893 11.949 19.523 31.259 19.439 49.197-.156 30.352-26.157 58.098-59.553 58.098H350.723C358.03 364.34 384 388.132 384 430.548 384 504 336 512 312 512z"
+                      />
+                    </svg>
                   </li>
                   <li onclick="onDelete()">
                     <img src="../svgs/trash-alt.svg" alt="" id="delete-btn" />

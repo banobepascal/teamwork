@@ -54,7 +54,7 @@ body {
 }
 
 
-nav ul li:nth-child(6) {
+nav ul li:nth-child(7) {
   display: none;
 }
 
@@ -259,6 +259,14 @@ nav p a {
   margin-left: -2em;
   fill: #000;
   width: 40px;
+  cursor: pointer;
+}
+
+#thumb-down1 {
+  padding-right: 5em;
+  margin-left: -2em;
+  width: 32px;
+  fill: red;
   cursor: pointer;
 }
 
@@ -652,7 +660,7 @@ footer ul {
     display: block;
   }
 
-  nav ul li:nth-child(6) {
+  nav ul li:nth-child(7) {
     display: block;
   }
 
@@ -780,6 +788,11 @@ footer ul {
   }
 
   #edit-btn {
+    float: left;
+    margin-left: 11em;
+  }
+
+  #thumb-down1 {
     float: left;
     margin-left: 11em;
   }
