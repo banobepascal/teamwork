@@ -8,6 +8,9 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "nodemon server.js --exec babel-node --presets babel-preset-env"
   },
+  "engines": {
+    "node": "8.10.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/banobepascal/teamwork.git"
