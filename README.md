@@ -39,7 +39,7 @@ npm start
 ### Testing with [Postman](www.postman.com)
 ```
 * Install and setup Postman 
-* Navigate to localhost 4000 
+* Navigate to localhost 3000 
 ```
 
 ### Testing with Mocha and Chai
