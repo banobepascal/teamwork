@@ -22,4 +22,6 @@ app.use('/api/v1/auth/signin', signin);
 app.use('/api/v1/feeds', auth, viewFeeds);
 app.use('/api/v1/articles', auth, articles);
 
+require('../api/helpers/prod')(app);
+
 export default app;

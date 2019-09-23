@@ -8,6 +8,9 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "nodemon server.js --exec babel-node --presets babel-preset-env"
   },
+  "engines": {
+    "node": "8.10.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/banobepascal/teamwork.git"
@@ -27,9 +30,11 @@
   "homepage": "https://github.com/banobepascal/teamwork",
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "compression": "^1.7.4",
     "config": "^3.2.2",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "helmet": "^3.18.0",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
