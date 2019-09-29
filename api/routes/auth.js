@@ -3,7 +3,7 @@ import authentication from '../controllers/userController';
 
 const userRoute = express.Router();
 
-userRoute.post('/signup', authentication.signUp);
-userRoute.post('/signin', authentication.loginUser);
+userRoute.post('/api/v1/auth/signup', authentication.signUp);
+userRoute.post('/api/v1/auth/signin', authentication.loginUser);
 
 export default userRoute;
