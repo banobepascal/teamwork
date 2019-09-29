@@ -5,7 +5,6 @@ import validateArticle from '../middleware/validateArticle';
 import articles from '../models/article';
 import comments from '../models/comment';
 
-
 class Article {
   // view feeds and all articles posted with date
 
