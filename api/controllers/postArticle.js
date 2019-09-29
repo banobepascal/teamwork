@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable consistent-return */
+
 import moment from 'moment';
 import validateArticle from '../helpers/validateArticle';
 import articles from '../models/article';
