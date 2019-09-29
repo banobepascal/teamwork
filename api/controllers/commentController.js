@@ -1,7 +1,7 @@
 /* eslint-disable consistent-return */
 /* eslint-disable radix */
 import articles from '../models/article';
-import validateComment from '../helpers/validateComment';
+import validateComment from '../middleware/validateComment';
 
 class ArticleComment {
   // comment on a posted article

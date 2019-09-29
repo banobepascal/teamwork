@@ -19,6 +19,6 @@ app.use(userRoute);
 app.use(articleRoute);
 app.use(commentRoute);
 
-require('../api/helpers/prod')(app);
+require('../api/middleware/prod')(app);
 
 export default app;

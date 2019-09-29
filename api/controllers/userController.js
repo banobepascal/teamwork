@@ -3,7 +3,7 @@ import ENV from 'dotenv';
 import _ from 'lodash';
 import jwt from 'jsonwebtoken';
 import users from '../models/users';
-import validateUserSignUp from '../helpers/validateUser';
+import validateUserSignUp from '../middleware/validateUser';
 
 ENV.config();
 

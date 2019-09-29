@@ -1,7 +1,7 @@
 /* eslint-disable radix */
 import moment from 'moment';
 import _ from 'lodash';
-import validateArticle from '../helpers/validateArticle';
+import validateArticle from '../middleware/validateArticle';
 import articles from '../models/article';
 import comments from '../models/comment';
 
