@@ -17,7 +17,7 @@ class UserController {
     const email = users.find((user) => user.email === req.body.email);
     if (email) {
       return res.status(401).json({
-        status: 401,
+        status: 409,
         error: 'Email already exist',
       });
     }
