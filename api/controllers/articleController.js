@@ -7,7 +7,6 @@ import comments from '../models/comment';
 
 class Article {
   // view feeds and all articles posted with date
-
   static async viewFeeds(req, res) {
     const articlesOrder = _.sortBy(articles, 'createdOn').reverse();
     return res.status(200).json({
