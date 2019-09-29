@@ -1,16 +1,12 @@
 import express from 'express';
-import articlePost from '../controllers/postArticle';
-import editArticle from '../controllers/editArticle';
-import deleteArticle from '../controllers/deleteArticle';
-import comentArticle from '../controllers/comentArticle';
-import viewSpecific from '../controllers/specificArticle';
+import article from '../controllers/articleController';
 
-const router = express();
+const articleRoute = express.Router();
 
-router.get('/:id', viewSpecific);
-router.post('/:id/comments', comentArticle);
-router.post('/', articlePost);
-router.patch('/:id', editArticle);
-router.delete('/:id', deleteArticle);
+articleRoute.get('/feeds', article.viewFeeds);
+articleRoute.get('/articles/:id', article.viewSpecific);
+articleRoute.post('/articles', article.postArticle);
+articleRoute.patch('/articles/:id', article.editArticle);
+articleRoute.delete('/articles/:id', article.deleteArticle);
 
-export default router;
+export default articleRoute;
