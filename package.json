@@ -40,6 +40,7 @@
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
+    "uuidv4": "^5.0.1",
     "winston": "^3.2.1"
   },
   "devDependencies": {
