@@ -23,7 +23,7 @@ describe('Updating Article', () => {
       chai
         .request(app)
         .get('/api/v1/articles/1')
-        .set('x-auth-token', token)
+        .set('authorization', token)
         .end((err, res) => {
           expect(res.body.status).to.equals(200);
           done();
@@ -35,7 +35,7 @@ describe('Updating Article', () => {
       chai
         .request(app)
         .get('/api/v1/articles/7')
-        .set('x-auth-token', token)
+        .set('authorization', token)
         .end((err, res) => {
           expect(res.body.status).to.equals(404);
           expect(res.body).to.have.property('message');

@@ -24,12 +24,12 @@ describe('Comment Article', () => {
       chai
         .request(app)
         .post('/api/v1/articles/1/comments')
-        .set('x-auth-token', token)
+        .set('authorization', token)
         .send(util.goodComment)
         .end((err, res) => {
           expect(res.body.status).to.equals(201);
           expect(res.body).to.have.property('message');
-          expect(res.body.message).to.equals('Your comment has been sent');
+          expect(res.body.message).to.equals('your comment has been sent');
           done();
         });
     });
@@ -39,12 +39,12 @@ describe('Comment Article', () => {
       chai
         .request(app)
         .post('/api/v1/articles/6/comments')
-        .set('x-auth-token', token)
+        .set('authorization', token)
         .send(util.goodComment)
         .end((err, res) => {
           expect(res.body.status).to.equals(404);
           expect(res.body).to.have.property('message');
-          expect(res.body.message).to.equals('Article not found');
+          expect(res.body.message).to.equals('article not found');
           done();
         });
     });
@@ -54,7 +54,7 @@ describe('Comment Article', () => {
       chai
         .request(app)
         .post('/api/v1/articles/1/comments')
-        .set('x-auth-token', token)
+        .set('authorization', token)
         .send(util.badComment)
         .end((err, res) => {
           res.should.have.status(400);

@@ -24,7 +24,7 @@ describe('Updating Article', () => {
       chai
         .request(app)
         .patch('/api/v1/articles/1')
-        .set('x-auth-token', token)
+        .set('authorization', token)
         .send(util.article)
         .end((err, res) => {
           expect(res.body.status).to.equals(200);
@@ -39,7 +39,7 @@ describe('Updating Article', () => {
       chai
         .request(app)
         .patch('/api/v1/articles/10')
-        .set('x-auth-token', token)
+        .set('authorization', token)
         .send(util.article)
         .end((err, res) => {
           expect(res.body.status).to.equals(404);
@@ -54,7 +54,7 @@ describe('Updating Article', () => {
       chai
         .request(app)
         .patch('/api/v1/articles/1')
-        .set('x-auth-token', token)
+        .set('authorization', token)
         .send(util.badArticle)
         .end((err, res) => {
           res.should.have.status(400);

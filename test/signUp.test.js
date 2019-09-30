@@ -15,7 +15,7 @@ describe('Create user', () => {
         .send(util.signUpUser)
         .end((err, res) => {
           res.should.have.status(201);
-          res.body.should.have.property('message', 'User created successfully');
+          res.body.should.have.property('message', 'user created successfully');
           done();
         });
     });

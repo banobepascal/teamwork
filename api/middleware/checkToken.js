@@ -3,12 +3,12 @@ import ENV from 'dotenv';
 
 ENV.config();
 
-const auth = (req, res, next) => {
-  const token = req.header('x-auth-token');
+const checkToken = (req, res, next) => {
+  const token = req.header('authorization');
   if (!token) {
     res.status(401).json({
       status: 401,
-      message: 'Access denied. No token provided.',
+      message: 'unauthorised to use this resource, please signup/login',
     });
   }
 
@@ -17,11 +17,11 @@ const auth = (req, res, next) => {
     req.user = decoded;
     next();
   } catch (ex) {
-    res.status(400).json({
-      status: 400,
-      message: 'Invalid token.',
+    res.status(401).json({
+      status: 401,
+      message: 'unauthorised to use this resource, please signup/login',
     });
   }
 };
 
-export default auth;
+export default checkToken;

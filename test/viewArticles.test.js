@@ -20,7 +20,7 @@ describe('GET /feeds', () => {
   it('should show the most recently posted articles first.', (done) => {
     chai.request(app)
       .get('/api/v1/feeds')
-      .set('x-auth-token', token)
+      .set('authorization', token)
       .end((err, res) => {
         res.should.have.status(200);
         done();
