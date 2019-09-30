@@ -1,3 +1,4 @@
+/* eslint-disable padded-blocks */
 import bcrypt from 'bcrypt';
 import ENV from 'dotenv';
 import _ from 'lodash';
@@ -8,8 +9,8 @@ import validateUserSignUp from '../middleware/validateUser';
 ENV.config();
 
 class UserController {
-  // create user account
 
+  // create user account
   static async signUp(req, res) {
     const { error } = validateUserSignUp(req.body);
     if (error) return res.status(400).send(error.details[0].message);
@@ -54,7 +55,6 @@ class UserController {
   }
 
   // login a user successfully
-
   static async loginUser(req, res) {
     const checkEmail = users.find((user) => user.email === req.body.email);
     if (!checkEmail) {
