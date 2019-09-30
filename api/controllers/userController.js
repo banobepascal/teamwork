@@ -19,7 +19,7 @@ class UserController {
     if (email) {
       return res.status(401).json({
         status: 409,
-        error: 'Email already exist',
+        error: 'email already exist',
       });
     }
 
@@ -46,7 +46,7 @@ class UserController {
     users.push(newUser);
     return res.status(201).json({
       status: 201,
-      message: 'User created successfully',
+      message: 'user created successfully',
       data: {
         token,
         newUser,
@@ -60,7 +60,7 @@ class UserController {
     if (!checkEmail) {
       return res.status(400).json({
         status: 400,
-        error: 'Invalid email or password',
+        error: 'invalid email or password',
       });
     }
 
@@ -68,7 +68,7 @@ class UserController {
     if (!validPassword) {
       return res.status(400).json({
         status: 400,
-        error: 'Invalid email or password',
+        error: 'invalid email or password',
       });
     }
 
@@ -80,7 +80,7 @@ class UserController {
     const token = jwt.sign(signinPayLoad, process.env.JWT_KEY);
     return res.status(200).json({
       status: 200,
-      message: 'User is successfuly logged in',
+      message: 'user is successfuly logged in',
       data: token,
     });
   }

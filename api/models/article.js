@@ -5,6 +5,7 @@ const articles = [
     title: 'Frontend',
     article: 'Do you want to be a front end developer',
     authorId: 1,
+    comments: [],
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ const articles = [
     title: 'Backend',
     article: 'Do you want to be a Backend developer',
     authorId: 2,
+    comments: [],
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ const articles = [
     title: 'Backend',
     article: 'Do you want to be a Backend developer',
     authorId: 3,
+    comments: [],
   },
 ];
 

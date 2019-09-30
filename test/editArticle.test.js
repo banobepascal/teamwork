@@ -38,7 +38,7 @@ describe('Updating Article', () => {
     it('should fail to edit on invalid article', (done) => {
       chai
         .request(app)
-        .patch('/api/v1/articles/4')
+        .patch('/api/v1/articles/10')
         .set('x-auth-token', token)
         .send(util.article)
         .end((err, res) => {
