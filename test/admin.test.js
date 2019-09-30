@@ -18,7 +18,7 @@ const payload = {
 
 const token = jwt.sign(payload, process.env.JWT_KEY);
 
-describe('Getting Flagged articles', () => {
+describe('Admin Routes', () => {
   describe('GET /api/v1/flagged/articles', () => {
     it('should get all articles flagged innapropiate', (done) => {
       chai

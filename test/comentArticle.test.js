@@ -43,8 +43,8 @@ describe('Comment Article', () => {
         .send(util.goodComment)
         .end((err, res) => {
           expect(res.body.status).to.equals(404);
-          expect(res.body).to.have.property('message');
-          expect(res.body.message).to.equals('article not found');
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.equals('article not found');
           done();
         });
     });
@@ -57,7 +57,8 @@ describe('Comment Article', () => {
         .set('authorization', token)
         .send(util.badComment)
         .end((err, res) => {
-          res.should.have.status(400);
+          expect(res.body.status).to.equals(400);
+          expect(res.body).to.have.property('error');
           done();
         });
     });

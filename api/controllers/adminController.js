@@ -17,7 +17,7 @@ class AdminAccess {
   // delete specific flagged article
   static async deleteFlagged(req, res) {
     const flaggedArticle = articles.find((a) => a.id === parseInt(req.params.id));
-    if (flaggedArticle === flaggedArticle.flag) {
+    if (flaggedArticle) {
       const index = articles.indexOf(flaggedArticle);
       articles.splice(index, 1);
     }

@@ -10,7 +10,7 @@ class ArticleComment {
     if (!article) {
       return res.status(404).json({
         status: 404,
-        message: 'article not found',
+        error: 'article not found',
       });
     }
 

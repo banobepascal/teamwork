@@ -43,8 +43,8 @@ describe('Updating Article', () => {
         .send(util.article)
         .end((err, res) => {
           expect(res.body.status).to.equals(404);
-          expect(res.body).to.have.property('message');
-          expect(res.body.message).to.equals('article not found');
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.equals('article not found');
           done();
         });
     });
