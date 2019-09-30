@@ -1,3 +1,4 @@
+/* eslint-disable padded-blocks */
 /* eslint-disable radix */
 import moment from 'moment';
 import _ from 'lodash';
@@ -6,6 +7,7 @@ import articles from '../models/article';
 import comments from '../models/comment';
 
 class Article {
+
   // view feeds and all articles posted with date
   static async viewFeeds(req, res) {
     const articlesOrder = _.sortBy(articles, 'createdOn').reverse();
@@ -86,7 +88,6 @@ class Article {
   }
 
   // delete posted article
-
   static async deleteArticle(req, res) {
     const article = articles.find((a) => a.id === parseInt(req.params.id));
     if (!article) {
