@@ -9,6 +9,7 @@ const users = [
     jobRole: 'ux designer',
     department: 'design',
     address: 'Kampala',
+    isAdmin: true,
   },
   {
     id: 2,

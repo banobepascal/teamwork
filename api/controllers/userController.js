@@ -13,11 +13,16 @@ class UserController {
   // create user account
   static async signUp(req, res) {
     const { error } = validateUserSignUp(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
+    if (error) {
+      return res.status(400).json({
+        status: 400,
+        error: error.details[0].message,
+      });
+    }
 
     const email = users.find((user) => user.email === req.body.email);
     if (email) {
-      return res.status(401).json({
+      return res.status(409).json({
         status: 409,
         error: 'email already exist',
       });
@@ -28,6 +33,7 @@ class UserController {
       'lastname',
       'email',
       'password',
+      'confirmPassword',
       'gender',
       'jobRole',
       'department',
@@ -40,16 +46,16 @@ class UserController {
       'email',
       'password',
       'gender',
+      'isAdmin',
     ]);
 
-    const token = jwt.sign(signUpPayload, process.env.JWT_KEY);
+    const genToken = jwt.sign(signUpPayload, process.env.JWT_KEY);
     users.push(newUser);
     return res.status(201).json({
       status: 201,
       message: 'user created successfully',
       data: {
-        token,
-        newUser,
+        token: genToken,
       },
     });
   }
@@ -75,13 +81,16 @@ class UserController {
     const signinPayLoad = {
       email: checkEmail.email,
       password: checkEmail.password,
+      isAdmin: checkEmail.isAdmin,
     };
 
-    const token = jwt.sign(signinPayLoad, process.env.JWT_KEY);
+    const gentoken = jwt.sign(signinPayLoad, process.env.JWT_KEY);
     return res.status(200).json({
       status: 200,
       message: 'user is successfuly logged in',
-      data: token,
+      data: {
+        token: gentoken,
+      },
     });
   }
 }

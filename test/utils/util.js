@@ -3,7 +3,8 @@ exports.signUpUser = {
   firstname: 'Chris',
   lastname: 'Evans',
   email: 'chris@test.com',
-  password: 'chrisevanstest',
+  password: 'Chrisevanstest1!',
+  confirmPassword: 'Chrisevanstest1!',
   gender: 'Male',
   jobRole: 'ux designer',
   department: 'design',
@@ -14,7 +15,8 @@ exports.emailExists = {
   firstname: 'Jessica',
   lastname: 'Jones',
   email: 'jessica@test.com',
-  password: 'jessicatests',
+  password: 'Jessicatests1!',
+  confirmPassword: 'Jessicatests1!',
   gender: 'female',
   jobRole: 'Backend developer',
   department: 'Engineering',
@@ -66,4 +68,13 @@ exports.goodComment = {
 
 exports.badComment = {
   comment: '',
+};
+
+// mock data for flaging article
+exports.goodFlag = {
+  flag: true,
+};
+
+exports.badFlag = {
+  flag: 'good',
 };

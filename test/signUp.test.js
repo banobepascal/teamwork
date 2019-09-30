@@ -37,7 +37,7 @@ describe('Create user', () => {
         .post('/api/v1/auth/signup')
         .send(util.emailExists)
         .end((err, res) => {
-          res.should.have.status(401);
+          res.should.have.status(409);
           done();
         });
     });

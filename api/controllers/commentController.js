@@ -15,7 +15,12 @@ class ArticleComment {
     }
 
     const { error } = validateComment(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
+    if (error) {
+      return res.status(400).json({
+        status: 400,
+        error: error.details[0].message,
+      });
+    }
 
     const comment = {
       commentId: uuidv4(),

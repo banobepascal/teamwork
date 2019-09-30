@@ -3,6 +3,7 @@
 import moment from 'moment';
 import _ from 'lodash';
 import validateArticle from '../middleware/validateArticle';
+import validateFlag from '../middleware/validateFlag';
 import articles from '../models/article';
 
 class Article {
@@ -35,7 +36,12 @@ class Article {
   // Post article to teamwork
   static async postArticle(req, res) {
     const { error } = validateArticle(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
+    if (error) {
+      return res.status(400).json({
+        status: 400,
+        error: error.details[0].message,
+      });
+    }
 
     const article = {
       id: articles.length + 1,
@@ -70,7 +76,12 @@ class Article {
     }
 
     const { error } = validateArticle(req.body);
-    if (error) return res.status(400).send(error.details[0].message);
+    if (error) {
+      return res.status(400).json({
+        status: 400,
+        error: error.details[0].message,
+      });
+    }
 
     return res.status(200).json({
       status: 200,
@@ -88,7 +99,7 @@ class Article {
   static async deleteArticle(req, res) {
     const article = articles.find((a) => a.id === parseInt(req.params.id));
     if (!article) {
-      res.status(404).json({
+      return res.status(404).json({
         status: 404,
         message: 'article not found',
       });
@@ -97,9 +108,42 @@ class Article {
     const index = articles.indexOf(article);
     articles.splice(index, 1);
 
-    res.status(204).json({
+    return res.status(204).json({
       status: 204,
       message: 'article successfully deleted',
+    });
+  }
+
+  // flag article as inaproppiate
+  static async flagArticle(req, res) {
+    const article = articles.find((a) => a.id === parseInt(req.params.id));
+    if (!article) {
+      return res.status(404).json({
+        status: 404,
+        message: 'article not found',
+      });
+    }
+
+    const flag = {
+      flag: req.body.flag,
+    };
+
+    const { error } = validateFlag(req.body);
+    if (error) {
+      return res.status(400).json({
+        status: 400,
+        error: error.details[0].message,
+      });
+    }
+
+    articles.push(article.flag.push(flag));
+    return res.status(201).json({
+      status: 201,
+      message: 'article has been flagged as inapropiate',
+      data: {
+        id: article.id,
+        flag: req.body.flag,
+      },
     });
   }
 }

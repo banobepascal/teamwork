@@ -4,6 +4,7 @@ import winston from 'winston';
 import userRoute from './routes/auth';
 import articleRoute from './routes/articles';
 import commentRoute from './routes/commentArticle';
+import adminRoute from './routes/admin';
 
 const app = express();
 app.use(express.json());
@@ -18,6 +19,7 @@ winston.add(new winston.transports.File({ filename: 'logfile.log' }));
 app.use(userRoute);
 app.use(articleRoute);
 app.use(commentRoute);
+app.use(adminRoute);
 
 require('../api/middleware/prod')(app);
 

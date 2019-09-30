@@ -5,6 +5,7 @@ const articles = [
     title: 'Frontend',
     article: 'Do you want to be a front end developer',
     authorId: 1,
+    flag: [],
     comments: [],
   },
   {
@@ -13,6 +14,7 @@ const articles = [
     title: 'Backend',
     article: 'Do you want to be a Backend developer',
     authorId: 2,
+    flag: [],
     comments: [],
   },
   {
@@ -21,6 +23,16 @@ const articles = [
     title: 'Backend',
     article: 'Do you want to be a Backend developer',
     authorId: 3,
+    flag: [],
+    comments: [],
+  },
+  {
+    id: 4,
+    createdOn: 'September 19, 2019 8:36 PM',
+    title: 'Freelancing',
+    article: 'Do you want to become a top class freelancer',
+    authorId: 4,
+    flag: [],
     comments: [],
   },
 ];
