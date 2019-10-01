@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,28 +16,27 @@
     <div class="container">
       <div class="sidebar">
         <nav>
-          <p><a href="#">Teamwork</a></p>
+          <p><a href="adminPage.html">Teamwork</a></p>
           <ul>
-            <li><a href="#" class="active">Articles</a></li>
-            <li><a href="flaggedArticles.html">Flagged</a></li>
-            <li><a href="adminProfile.html">Profile</a></li>
+            <li><a href="adminPage.html">Articles</a></li>
+            <li><a href="flaggedArticles.html" class="active">Flagged</a></li>
+            <li><a href="#">Profile</a></li>
             <li><a href="../index.html">Log out</a></li>
           </ul>
         </nav>
       </div>
       <div class="content">
+        <h3>Profile</h3>
         <div class="search"><input type="text" placeholder="search" /></div>
-        <div class="navbar">
-          <header id="navbar">
-            <div id="search-topic">Articles</div>
-            <input
-              id="inputBox"
-              type="text"
-              placeholder="search topic or category"
-            />
-          </header>
-        </div>
-        <section class="hero">
+        <section class="hero1">
+          <img src="../img/john.jpg" alt="" />
+          <div class="hero-content">
+            <h2>Bruce<br />Wayne</h2>
+            <p>Backend Developer</p>
+            <h3>My Posts</h3>
+          </div>
+          </section>
+          <section class="hero">
           <div class="hero-content-article">
             <div class="name-time">
               <p id="username-article">Bruce Wayne</p>
@@ -65,18 +65,16 @@
             <p><a href="viewArticle.html">continue reading</a></p>
             <ul>
               <li>
-                <a href="viewArticle.html">
-                  <i class="fa fa-comment" id="comment"></i>
-                </a>
+                <i class="fa fa-edit" id="edit-btn"></i>
               </li>
-              <li>
-                <i class="fa fa-thumbs-down" id="thumb-down"></i>
+              <li onclick="onDelete()">
+                <i class="fa fa-trash" id="delete-btn"></i>
               </li>
             </ul>
           </div>
           <div class="hero-content-article">
             <div class="name-time">
-              <p id="username-article">Jessica Jones</p>
+              <p id="username-article">Bruce Wayne</p>
               <p id="time-article">Sept 28, 2019</p>
             </div>
             <h4>Achieving success is simpler than you think</h4>
@@ -94,7 +92,7 @@
               help beat the odds. Ultimately, we all want our dreams to come
               true, but few of us are willing to pay the price it takes to get
               there. The truth is, there’s never been a silver bullet for
-              finding success. </p>
+              finding success.</p>
               <div class="hero-img">
                   <img src="../img/smthg.jpeg" alt="">
               </div>
@@ -108,57 +106,14 @@
             <p><a href="viewArticle.html">continue reading</a></p>
             <ul>
               <li>
-                <a href="viewArticle.html">
-                  <i class="fa fa-comment" id="comment"></i>
-                </a>
+                <i class="fa fa-edit" id="edit-btn"></i>
               </li>
-              <li>
-                <i class="fa fa-thumbs-down" id="thumb-down"></i>
-              </li>
-            </ul>
-          </div>
-          <div class="hero-content-article">
-            <div class="name-time">
-              <p id="username-article">John Doe</p>
-              <p id="time-article">Sept 28, 2019</p>
-            </div>
-            <h4>10 Ways to Make Your Content Marketing Go Viral</h4>
-            <p>
-              How do you send content viral?
-            </p>
-            <div class="hero-img">
-                <img src="../img/content.jpg" alt="">
-            </div>
-            <p>
-              Viral content is any piece of media that becomes wildly popular
-              overnight. It could be a Youtube video, Facebook post, tweet, or
-              almost any social media content that gets shared thousands and
-              thousands of times. Viral content starts to work for you on
-              autopilot, as your brand gets exposed to a whole new audience that
-              you couldn’t ever quite reach organically. You might think getting
-              your content to go viral is as likely as you hitting the lottery,
-              but nothing could be further from the truth. If you’re looking to
-              generate buzz for your business or if you just want your own 15
-              minutes of fame, continue reading. I’ve put together 10 ways to
-              make your content marketing go viral (and none of them involve
-              buying a lottery ticket!)
-            </p>
-            <p><a href="viewArticle.html">continue reading</a></p>
-            <ul>
-              <li>
-                <a href="viewArticle.html">
-                  <i class="fa fa-comment" id="comment"></i>
-                </a>
-              </li>
-              <li>
-                <i class="fa fa-thumbs-down" id="thumb-down"></i>
+              <li onclick="onDelete()">
+                <i class="fa fa-trash" id="delete-btn"></i>
               </li>
             </ul>
           </div>
         </section>
-        <div class="fixed-btn" id="post-btn">
-          <img src="../svgs/feather-alt.svg" alt="" id="post-article" />
-        </div>
         <div class="footer">
           <div class="logs">
             <ul>
@@ -168,9 +123,9 @@
         </div>
       </div>
     </div>
-    <div class="bg-modal">
-      <div class="modal-content">
-        <div class="close">+</div>
+    <div class="bg-edit">
+      <div class="modal-edit">
+        <div class="close-edit">+</div>
         <form action="" id="my-post">
           <div class="topic-msg"></div>
           <input type="text" placeholder="Topic" id="topicInput" />
@@ -178,13 +133,34 @@
             type="text"
             placeholder="Your words..."
             id="sayInput"
-            rows="7"
+            rows="6"
             cols="50"
           ></textarea>
-          <input type="submit" value="POST" class="btn" />
+          <input type="submit" value="Edit" class="post-button" />
         </form>
       </div>
     </div>
+    <div class="confirm">
+      <div class="confirm__window">
+        <div class="confirm__titlebar">
+          <span class="confirm__title">Delete Article</span>
+          <button class="confirm__close">&times;</button>
+        </div>
+        <div class="confirm__content">
+          Are you sure you want to delete article
+        </div>
+        <div class="confirm__buttons">
+          <button
+            class="confirm__button confirm__button--ok confirm__button--fill"
+          >
+            Yes
+          </button>
+          <button class="confirm__button confirm__button--cancel">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
-  <script src="../js/main.js"></script>
+  <script src="../js/script.js"></script>
 </html>

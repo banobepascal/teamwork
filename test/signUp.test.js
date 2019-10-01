@@ -35,7 +35,7 @@ describe('Create user', () => {
     it('should not singup user incase email exists', (done) => {
       chai.request(app)
         .post('/api/v1/auth/signup')
-        .send(util.emailExists)
+        .send(util.signUpUser)
         .end((err, res) => {
           res.should.have.status(409);
           done();

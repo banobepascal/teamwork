@@ -4,12 +4,6 @@
   box-sizing: border-box;
 }
 
-#signin-heading {
-  color: #000;
-  font-size: 3rem;
-  padding-top: 1em;
-  text-align: center;
-}
 
 .form-container1 {
   display: grid;
@@ -41,12 +35,8 @@ form .signin {
   padding-top: 3em;
   padding-bottom: 2em;
 }
-#signin-btn {
-  padding-bottom: 5em;
-}
 
-#signup-btn p,
-#signin-btn p {
+#signup-btn p {
   font-size: 2rem;
 }
 
@@ -68,6 +58,10 @@ form .signin {
   color: #000;
 }
 
+.input-group input:last-child {
+  color: #fff;
+}
+
 .input-group > i {
   font-size: 1rem;
   margin-right: 1rem;
@@ -80,6 +74,7 @@ form .signin {
 
 #signup-btn {
   width: 200px;
+  color: #fff;
 }
 
 .button {
@@ -87,7 +82,6 @@ form .signin {
   padding: 1rem 2rem;
   background: linear-gradient(to left, #fc6767, #ec008c);
   border: none;
-  color: #fff;
   cursor: pointer;
   border-radius: 3rem;
   outline: none;
