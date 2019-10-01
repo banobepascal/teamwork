@@ -54,7 +54,7 @@ body {
 }
 
 
-nav ul li:nth-child(7) {
+nav ul li:nth-child(6) {
   display: none;
 }
 
@@ -81,7 +81,7 @@ nav li a {
   justify-content: space-between;
   text-align: center;
   font-weight: 700;
-  font-family: "Bree Serif", serif;
+  font-family: "Manjari", sans-serif;
   opacity: 0.8;
   text-decoration: none;
   transition: 0.3s;
@@ -94,7 +94,7 @@ nav li a:hover {
 
 nav p a {
   text-decoration: none;
-  font-family: "Modak", cursive;
+  font-family: 'Patua One', cursive;
   color: #fff;
 }
 
@@ -108,12 +108,10 @@ nav p a {
   fill: #fff;
   opacity: 0.8;
   width: 25px;
-  margin-top: -60px;
 }
 
 .search {
   display: none;
-  /* margin-left: 0.8em; */
   width: 100%;
 }
 
@@ -150,6 +148,7 @@ nav p a {
 
 .hero img {
   width: 208px;
+  border-radius: 180px; 
   padding-top: 1em;
 }
 
@@ -205,6 +204,19 @@ nav p a {
 .hero-content-article p {
   color: rgb(63, 62, 62);
   text-align: left;
+}
+
+.hero-content-article p a {
+  font-size: 0.9em;
+  text-decoration: none;
+  color: #005c97;
+}
+
+.hero-content-article p a:hover {
+  font-size: 0.9em;
+  text-decoration: none;
+  color: #11c08b;
+
 }
 
 .hero-content-article h4 {
@@ -355,6 +367,7 @@ footer ul {
   display: block;
   font-size: 1em;
   margin: 2em auto;
+  outline: none;
 }
 
 .modal-content form input:last-child {
@@ -368,6 +381,7 @@ footer ul {
   font-size: 1em;
   outline: none;
   background: #0facf3;
+  color: #fff;
 }
 
 .modal-content form input:last-child:hover {
@@ -617,6 +631,15 @@ footer ul {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
+#topicInput {
+  outline: none;
+  height: 40px;
+}
+
+#sayInput {
+  outline: none;
+}
+
 @keyframes confirm---open {
   from {
     opacity: 0;
@@ -660,7 +683,7 @@ footer ul {
     display: block;
   }
 
-  nav ul li:nth-child(7) {
+  nav ul li:nth-child(6) {
     display: block;
   }
 
@@ -669,9 +692,10 @@ footer ul {
     justify-content: space-between;
     flex-direction: column;
     position: fixed;
+    font-size: 0.9em; 
     background: none;
     text-align: center;
-    padding-left: 3em;
+    padding-left: 4.4em;
     padding-top: 3em;
   }
 
@@ -725,8 +749,9 @@ footer ul {
 
   .hero img {
     width: 250px;
+    border-radius: 60%; 
     float: right;
-    padding-right: 1em;
+    margin-right: 1em;
   }
 
   .hero h2 {
@@ -739,8 +764,8 @@ footer ul {
   }
 
   .hero-content-article {
-    margin-left: 8%;
-    margin-right: 8%;
+    margin-left: 3%;
+    margin-right: 3%;
     padding-left: 10px;
   }
 
@@ -748,10 +773,11 @@ footer ul {
     background: #e0eafc;
   }
 
-  .hero-content-article p {
+  .hero-content-article p a:hover {
     font-size: 0.9em;
-    padding-left: 10px;
-    padding-right: 15px;
+    text-decoration: none;
+    color: #11c08b;
+
   }
 
   .modal-edit form input {
@@ -828,6 +854,7 @@ footer ul {
     margin: 0px 20px;
     flex: 2;
     height: 40px;
+    outline: none;
   }
 
   #inputBox::placeholder {
