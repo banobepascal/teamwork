@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 // Js for Hide and show modal
 document.getElementById('post-btn').addEventListener('click', () => {
   document.querySelector('.bg-modal').style.display = 'flex';
@@ -75,7 +76,7 @@ function onSubmit(e) {
     </a>
   </li>
   <li>
-    <i class="fa fa-thumbs-down" id="thumb-down"></i>
+  <i class="fa fa-flag" id="thumb-down"></i>
   </li>
     </ul>`;
 
@@ -91,3 +92,15 @@ function onSubmit(e) {
 }
 
 // ///////////////////////////////////////////////////////////////////
+
+
+// Flag  an article as in apptopiate
+
+const flagArticle = document.querySelector('#thumb-down');
+
+flagArticle.addEventListener('click', onClickFlag);
+
+function onClickFlag(e) {
+  e.preventDefault();
+  flagArticle.classList.add('fad-flag');
+}

@@ -3,14 +3,14 @@
 
 // Delete confirm modal
 const onDelete = () => {
-  const deleteBtn = document.querySelector('#delete-btn');
+  const deleteComment = document.querySelector('#delete-comment');
   const confirmBox = document.querySelector('.confirm');
   const closeDelete = document.querySelector('.confirm__close');
   const btnOk = document.querySelector('.confirm__button--ok');
   const btnCancel = document.querySelector('.confirm__button--cancel');
 
   // delete events
-  deleteBtn.addEventListener('click', openDelete);
+  deleteComment.addEventListener('click', openDelete);
   closeDelete.addEventListener('click', closeDeleteModal);
   btnOk.addEventListener('click', deleteArticle);
   btnCancel.addEventListener('click', cancelDelete);
