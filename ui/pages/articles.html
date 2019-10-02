@@ -4,6 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Patua+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css?family=Manjari&display=swap"
       rel="stylesheet"
     />
@@ -26,11 +34,12 @@
           <ul>
             <li><a href="#" class="active">Articles</a></li>
             <li><a href="profile.html">Profile</a></li>
-            <li><a href="adminPage.html">Admin</a></li>            
             <li><a href="settings.html">Settings</a></li>
-            <li><a href="#" class="close-search">+</a></li>            
+            <li><a href="#" class="close-search">+</a></li>
             <li>
-              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="search-icon"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></a>
+              <a href="#">
+              <i class="fa fa-search" id="search-icon"></i>
+                </a>
             </li>
             <li><a href="../index.html">Log out</a></li>
           </ul>
@@ -51,38 +60,108 @@
         <section class="hero">
           <div class="hero-content-article">
             <div class="name-time">
-              <p id="username-article">Username</p>
-              <p id="time-article">post time</p>
+              <p id="username-article">Bruce Wayne</p>
+              <p id="time-article">Oct 1, 2019</p>
             </div>
-            <h4>Topic</h4>
+            <h4>Learn to become a Backend Developer</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Repellendus temporibus maiores labore eos, non autem culpa
-              voluptas dignissimos quae placeat quidem blanditiis harum iste
-              ipsam earum deserunt error magnam perspiciatis!
+              Web development today is completely different from what it was a
+              few years ago; there are lots of different things that can easily
+              baffle anyone entering into the web development. It was one of the
+              reasons that we decided to make these step by step visual guides
+              demonstrating the bigger picture and to give anyone a clear idea
+              about what they have to follow to be in certain roles in web
+              development.
             </p>
+            <p>
+              About a week ago, we had a post titled Learn to become a Frontend
+              Developer in which we promised to release the updated roadmaps for
+              Backend and DevOps. Holding up to that promise, this article is
+              about modern backend developer. If you haven’t checked the
+              frontend developer roadmap already, go ahead and give it a look.
+            </p>
+            <p><a href="viewArticle.html">continue reading</a></p>
             <ul>
-              <li><a href="comment.html">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  id="comment"
-                >
-                  <path
-                    d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"
-                  />
-                </svg></a>
+              <li>
+                <a href="viewArticle.html">
+                  <i class="fa fa-comment" id="comment"></i>
+                </a>
               </li>
               <li>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                  id="thumb-down"
-                >
-                  <path
-                    d="M0 56v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H24C10.745 32 0 42.745 0 56zm40 200c0-13.255 10.745-24 24-24s24 10.745 24 24-10.745 24-24 24-24-10.745-24-24zm272 256c-20.183 0-29.485-39.293-33.931-57.795-5.206-21.666-10.589-44.07-25.393-58.902-32.469-32.524-49.503-73.967-89.117-113.111a11.98 11.98 0 0 1-3.558-8.521V59.901c0-6.541 5.243-11.878 11.783-11.998 15.831-.29 36.694-9.079 52.651-16.178C256.189 17.598 295.709.017 343.995 0h2.844c42.777 0 93.363.413 113.774 29.737 8.392 12.057 10.446 27.034 6.148 44.632 16.312 17.053 25.063 48.863 16.382 74.757 17.544 23.432 19.143 56.132 9.308 79.469l.11.11c11.893 11.949 19.523 31.259 19.439 49.197-.156 30.352-26.157 58.098-59.553 58.098H350.723C358.03 364.34 384 388.132 384 430.548 384 504 336 512 312 512z"
-                  />
-                </svg>
+                <i class="fa fa-thumbs-down" id="thumb-down"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="hero-content-article">
+            <div class="name-time">
+              <p id="username-article">Jessica Jones</p>
+              <p id="time-article">Sept 28, 2019</p>
+            </div>
+            <h4>Achieving success is simpler than you think</h4>
+            <p>
+              Success is simpler than you think !!!
+            </p>
+            <p>
+              By some metrics, success isn’t very common. After all, the odds of
+              building a billion-dollar company are 1.7 million to one. Part of
+              the popularity of “success hack” posts likely reflects the elusive
+              nature of success. Motivation, I’m sure, also plays a role; we all
+              want to achieve our goals and live meaningful lives. But our
+              affinity for this type of content reveals something more telling:
+              many of us are looking for a shortcut — our own silver bullet to
+              help beat the odds. Ultimately, we all want our dreams to come
+              true, but few of us are willing to pay the price it takes to get
+              there. The truth is, there’s never been a silver bullet for
+              finding success. Being successful isn’t a stroke of luck, and
+              there’s no magic, one-size-fits-all hack for achieving our goals.
+              While success might be a bit of a mystery, and it’s most certainly
+              hard-won, it doesn’t have to be complicated. Simply put, success
+              comes from doing the same thing effectively, over and over.
+            </p>
+            <p><a href="viewArticle.html">continue reading</a></p>
+            <ul>
+              <li>
+                <a href="viewArticle.html">
+                  <i class="fa fa-comment" id="comment"></i>
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-thumbs-down" id="thumb-down"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="hero-content-article">
+            <div class="name-time">
+              <p id="username-article">John Doe</p>
+              <p id="time-article">Sept 28, 2019</p>
+            </div>
+            <h4>10 Ways to Make Your Content Marketing Go Viral</h4>
+            <p>
+              How do you send content viral?
+            </p>
+            <p>
+              Viral content is any piece of media that becomes wildly popular
+              overnight. It could be a Youtube video, Facebook post, tweet, or
+              almost any social media content that gets shared thousands and
+              thousands of times. Viral content starts to work for you on
+              autopilot, as your brand gets exposed to a whole new audience that
+              you couldn’t ever quite reach organically. You might think getting
+              your content to go viral is as likely as you hitting the lottery,
+              but nothing could be further from the truth. If you’re looking to
+              generate buzz for your business or if you just want your own 15
+              minutes of fame, continue reading. I’ve put together 10 ways to
+              make your content marketing go viral (and none of them involve
+              buying a lottery ticket!)
+            </p>
+            <p><a href="viewArticle.html">continue reading</a></p>
+            <ul>
+              <li>
+                <a href="viewArticle.html">
+                  <i class="fa fa-comment" id="comment"></i>
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-thumbs-down" id="thumb-down"></i>
               </li>
             </ul>
           </div>

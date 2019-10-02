@@ -19,7 +19,7 @@ body {
     font-size: 3rem;
     padding-top: 1em; 
     text-align: center;
-    font-family: 'Patua One', cursive;
+    font-family: "Modak", cursive;
 }
 
 .form-container1 {
@@ -128,6 +128,11 @@ form  .signin {
 .input-group button:focus,
 .input-group button:hover {
     background: linear-gradient(to right, #fc6767, #ec008c);
+}
+
+button a {
+    text-decoration: none;
+    color: #fff;
 }
 
 .description {

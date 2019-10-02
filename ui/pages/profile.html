@@ -4,10 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://fonts.googleapis.com/css?family=Manjari&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Maven+Pro&display=swap" rel="stylesheet"> 
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Manjari&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Modak&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Maven+Pro&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/style.css" />
     <title>Teamwork</title>
   </head>
@@ -15,16 +31,16 @@
     <div class="container">
       <div class="sidebar">
         <nav>
-            <p><a href="articles.html">Teamwork</a></p>
+          <p><a href="articles.html">Teamwork</a></p>
           <ul>
             <li><a href="articles.html">Articles</a></li>
             <li><a href="#" class="active">Profile</a></li>
-            <li><a href="adminPage.html">Admin</a></li>
             <li><a href="settings.html">Settings</a></li>
             <li><a href="#" class="close-search">+</a></li>
             <li>
-              <a href="articles.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="search-icon"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></a>
-              </li>
+              <a href="articles.html"> 
+                <i class="fa fa-search" id="search-icon"></i></a>
+            </li>
             <li><a href="../index.html">Log out</a></li>
           </ul>
         </nav>
@@ -35,32 +51,79 @@
         <section class="hero">
           <img src="../img/john.jpg" alt="" />
           <div class="hero-content">
-            <h2>Full<br />Name</h2>
-            <p>Job title</p>
+            <h2>Bruce<br />Wayne</h2>
+            <p>Backend Developer</p>
             <h3>My Posts</h3>
           </div>
           <div class="hero-content-article">
-              <div class="name-time">
-                <p id="username-article">Username</p>
-                <p id="time-article">post time</p>
-              </div>
-              <h4>Topic</h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus temporibus maiores labore eos, non autem culpa
-                voluptas dignissimos quae placeat quidem blanditiis harum iste
-                ipsam earum deserunt error magnam perspiciatis!
-              </p>     
-              <ul>   
-                  <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" id="edit-btn"><path d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"/></svg>    
-                  </li>
-                  <li onclick="onDelete()">
-                    <img src="../svgs/trash-alt.svg" alt="" id="delete-btn" />
-                  </li>
-                </ul>
+            <div class="name-time">
+              <p id="username-article">Bruce Wayne</p>
+              <p id="time-article">Oct 1, 2019</p>
             </div>
-        </section>  
+            <h4>Learn to become a Backend Developer</h4>
+            <p>
+              Web development today is completely different from what it was a
+              few years ago; there are lots of different things that can easily
+              baffle anyone entering into the web development. It was one of the
+              reasons that we decided to make these step by step visual guides
+              demonstrating the bigger picture and to give anyone a clear idea
+              about what they have to follow to be in certain roles in web
+              development.
+            </p>
+            <p>
+              About a week ago, we had a post titled Learn to become a Frontend
+              Developer in which we promised to release the updated roadmaps for
+              Backend and DevOps. Holding up to that promise, this article is
+              about modern backend developer. If you haven’t checked the
+              frontend developer roadmap already, go ahead and give it a look.
+            </p>
+            <p><a href="viewArticle.html">continue reading</a></p>
+            <ul>
+              <li>
+                <i class="fa fa-edit" id="edit-btn"></i>
+              </li>
+              <li onclick="onDelete()">
+                <i class="fa fa-trash" id="delete-btn"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="hero-content-article">
+            <div class="name-time">
+              <p id="username-article">Bruce Wayne</p>
+              <p id="time-article">Sept 28, 2019</p>
+            </div>
+            <h4>Achieving success is simpler than you think</h4>
+            <p>
+              Success is simpler than you think !!!
+            </p>
+            <p>
+              By some metrics, success isn’t very common. After all, the odds of
+              building a billion-dollar company are 1.7 million to one. Part of
+              the popularity of “success hack” posts likely reflects the elusive
+              nature of success. Motivation, I’m sure, also plays a role; we all
+              want to achieve our goals and live meaningful lives. But our
+              affinity for this type of content reveals something more telling:
+              many of us are looking for a shortcut — our own silver bullet to
+              help beat the odds. Ultimately, we all want our dreams to come
+              true, but few of us are willing to pay the price it takes to get
+              there. The truth is, there’s never been a silver bullet for
+              finding success. Being successful isn’t a stroke of luck, and
+              there’s no magic, one-size-fits-all hack for achieving our goals.
+              While success might be a bit of a mystery, and it’s most certainly
+              hard-won, it doesn’t have to be complicated. Simply put, success
+              comes from doing the same thing effectively, over and over.
+            </p>
+            <p><a href="viewArticle.html">continue reading</a></p>
+            <ul>
+              <li>
+                <i class="fa fa-edit" id="edit-btn"></i>
+              </li>
+              <li onclick="onDelete()">
+                <i class="fa fa-trash" id="delete-btn"></i>
+              </li>
+            </ul>
+          </div>
+        </section>
         <div class="footer">
           <div class="logs">
             <ul>
@@ -74,26 +137,40 @@
       <div class="modal-edit">
         <div class="close-edit">+</div>
         <form action="" id="my-post">
-           <div class="topic-msg"></div>
-          <input type="text" placeholder="Topic" id="topicInput">
-          <textarea type="text" placeholder="Your words..." id="sayInput" rows="6" cols="50"></textarea>
-          <input type="submit" value="Edit" class="post-button">
+          <div class="topic-msg"></div>
+          <input type="text" placeholder="Topic" id="topicInput" />
+          <textarea
+            type="text"
+            placeholder="Your words..."
+            id="sayInput"
+            rows="6"
+            cols="50"
+          ></textarea>
+          <input type="submit" value="Edit" class="post-button" />
         </form>
       </div>
     </div>
     <div class="confirm">
       <div class="confirm__window">
-          <div class="confirm__titlebar">
-              <span class="confirm__title">Delete Article</span>
-              <button class="confirm__close">&times;</button>
-          </div>
-          <div class="confirm__content">Are you sure you want to delete article</div>
-          <div class="confirm__buttons">
-              <button class="confirm__button confirm__button--ok confirm__button--fill">Yes</button>
-              <button class="confirm__button confirm__button--cancel">Cancel</button>
-          </div>
+        <div class="confirm__titlebar">
+          <span class="confirm__title">Delete Article</span>
+          <button class="confirm__close">&times;</button>
+        </div>
+        <div class="confirm__content">
+          Are you sure you want to delete article
+        </div>
+        <div class="confirm__buttons">
+          <button
+            class="confirm__button confirm__button--ok confirm__button--fill"
+          >
+            Yes
+          </button>
+          <button class="confirm__button confirm__button--cancel">
+            Cancel
+          </button>
+        </div>
       </div>
-  </div>
+    </div>
   </body>
   <script src="../js/script.js"></script>
 </html>
