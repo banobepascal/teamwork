@@ -7,7 +7,6 @@ import validateFlag from '../middleware/validateFlag';
 import articles from '../models/article';
 
 class Article {
-
   // view feeds and all articles posted with date
   static async viewFeeds(req, res) {
     const articlesOrder = _.sortBy(articles, 'createdOn').reverse();
@@ -39,7 +38,7 @@ class Article {
     if (error) {
       return res.status(400).json({
         status: 400,
-        error: error.details[0].message,
+        error: error.details[0].message.replace(/[/"]/g, ''),
       });
     }
 
@@ -48,6 +47,7 @@ class Article {
       createdOn: moment().format('LLL'),
       title: req.body.title,
       article: req.body.article,
+      flag: [],
       comments: [],
     };
 
@@ -60,7 +60,6 @@ class Article {
         createdOn: moment().format('LLL'),
         title: req.body.title,
         article: req.body.article,
-        comments: article.comments,
       },
     });
   }
@@ -79,10 +78,13 @@ class Article {
     if (error) {
       return res.status(400).json({
         status: 400,
-        error: error.details[0].message,
+        error: error.details[0].message.replace(/[/"]/g, ''),
       });
     }
 
+    article.title = req.body.title;
+    article.article = req.body.article;
+    article.createdOn = moment().format('LLL');
     return res.status(200).json({
       status: 200,
       message: 'article successfully edited',
@@ -132,7 +134,7 @@ class Article {
     if (error) {
       return res.status(400).json({
         status: 400,
-        error: error.details[0].message,
+        error: error.details[0].message.replace(/[/"]/g, ''),
       });
     }
 
