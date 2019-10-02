@@ -4,27 +4,15 @@ import chai, { expect } from 'chai';
 import chaiHttp from 'chai-http';
 import jwt from 'jsonwebtoken';
 import app from '../api/index';
+import utils from './utils/util';
 
 require('dotenv').config;
 
 chai.use(chaiHttp);
 chai.expect();
 
-const payload = {
-  email: 'johndoe@test.com',
-  password: 'johndoetest',
-  isAdmin: true,
-};
-
-const token = jwt.sign(payload, process.env.JWT_KEY);
-
-const notAdminPayload = {
-  email: 'johndoe@test.com',
-  password: 'johndoetest',
-  isAdmin: false,
-};
-
-const badToken = jwt.sign(notAdminPayload, process.env.JWT_KEY);
+const token = jwt.sign(utils.admin, process.env.JWT_KEY);
+const badToken = jwt.sign(utils.notAdmin, process.env.JWT_KEY);
 
 describe('Admin Routes', () => {
   describe('GET /api/v1/flagged/articles', () => {

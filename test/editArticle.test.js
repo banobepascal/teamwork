@@ -11,12 +11,7 @@ require('dotenv').config;
 chai.use(chaiHttp);
 chai.expect();
 
-const payload = {
-  email: 'johndoe@test.com',
-  password: 'johndoetest',
-};
-
-const token = jwt.sign(payload, process.env.JWT_KEY);
+const token = jwt.sign(util.payload, process.env.JWT_KEY);
 
 describe('Updating Article', () => {
   describe('PATCH /api/v1/articles/:id', () => {

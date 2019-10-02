@@ -179,3 +179,21 @@ exports.goodFlag = {
 exports.badFlag = {
   flag: 'good',
 };
+
+exports.payload = {
+  email: 'johndoe@test.com',
+  password: 'johndoetest',
+};
+
+// mock data for admin
+exports.admin = {
+  email: 'johndoe@test.com',
+  password: 'johndoetest',
+  isAdmin: true,
+};
+
+exports.notAdmin = {
+  email: 'johndoe@test.com',
+  password: 'johndoetest',
+  isAdmin: false,
+};
