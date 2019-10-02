@@ -19,7 +19,7 @@ body {
     font-size: 3rem;
     padding-top: 1em; 
     text-align: center;
-    font-family: "Modak", cursive;
+    font-family: 'Patua One', cursive;
 }
 
 .form-container1 {
@@ -31,8 +31,14 @@ body {
   .signin-box1 {
     background: #fff;
   }
+
   .signin-box2 {
     background: url(../img/grp2.jpg);
+    background-size: cover;
+  }
+
+  .signin-box3 {
+    background: url(../img/admin.jpg);
     background-size: cover;
   }
 
