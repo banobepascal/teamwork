@@ -53,8 +53,11 @@ body {
   display: none;
 }
 
-
 nav ul li:nth-child(6) {
+  display: none;
+}
+
+nav ul .log {
   display: none;
 }
 
@@ -94,7 +97,7 @@ nav li a:hover {
 
 nav p a {
   text-decoration: none;
-  font-family: 'Patua One', cursive;
+  font-family: "Patua One", cursive;
   color: #fff;
 }
 
@@ -105,7 +108,7 @@ nav p a {
 
 #search-icon {
   display: block;
-  fill: #fff;
+  color: #fff;
   opacity: 0.8;
   width: 25px;
 }
@@ -140,16 +143,34 @@ nav p a {
   opacity: 1;
 }
 
-.hero {
+.hero1 {
   max-width: 960px;
   margin: 0 auto;
   text-align: center;
 }
 
-.hero img {
+.hero1 img {
   width: 208px;
-  border-radius: 180px; 
+  border-radius: 180px;
   padding-top: 1em;
+}
+
+.hero1 h2 {
+  font-size: 2em;
+  font-weight: 300;
+  color: #373046;
+}
+
+.hero1 p {
+  font-weight: 300;
+  line-height: 1.8em;
+  color: #98a0ad;
+}
+
+.hero {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .hero h2 {
@@ -204,6 +225,7 @@ nav p a {
 .hero-content-article p {
   color: rgb(63, 62, 62);
   text-align: left;
+  font-size: 0.9em;
 }
 
 .hero-content-article p a {
@@ -216,7 +238,6 @@ nav p a {
   font-size: 0.9em;
   text-decoration: none;
   color: #11c08b;
-
 }
 
 .hero-content-article h4 {
@@ -247,9 +268,12 @@ nav p a {
   fill: blue;
 }
 
+ul li a i {
+  color: #fc6767;
+}
+
 #thumb-down {
   width: 30px;
-  fill: #5549df;
 }
 
 #thumb-down:hover {
@@ -368,6 +392,7 @@ footer ul {
   font-size: 1em;
   margin: 2em auto;
   outline: none;
+  /* border-radius: 5px;  */
 }
 
 .modal-content form input:last-child {
@@ -380,12 +405,12 @@ footer ul {
   margin: 2em auto;
   font-size: 1em;
   outline: none;
-  background: #0facf3;
+  background: #005c97;
   color: #fff;
 }
 
 .modal-content form input:last-child:hover {
-  background: #f30faf;
+  background: #0facf3;
   cursor: pointer;
 }
 .modal-content form textarea {
@@ -430,6 +455,7 @@ footer ul {
   margin: 1em auto;
   font-size: 1em;
   outline: none;
+  color: #fff;
   background: #0facf3;
 }
 
@@ -443,6 +469,7 @@ footer ul {
   display: block;
   font-size: 0.7em;
   margin: 1.5em auto;
+  outline: none;
 }
 
 .close-icon {
@@ -469,7 +496,7 @@ footer ul {
 .modal-edit {
   width: 800px;
   height: auto;
-  margin-right: 2em; 
+  margin-right: 2em;
   background-color: white;
   opacity: 1;
   border-radius: 5px;
@@ -486,7 +513,7 @@ footer ul {
   height: 2em;
   display: block;
   font-size: 1em;
-  margin: 4em auto; 
+  margin: 4em auto;
 }
 
 .modal-edit form input:last-child {
@@ -640,6 +667,45 @@ footer ul {
   outline: none;
 }
 
+ul li i {
+  color: #fc6767;
+}
+
+.hero-img img {
+  width: 90%;
+  margin-right: 0.7em;
+}
+
+.pagination {
+  text-align: center;
+  padding-top: 1em; 
+}
+
+.pagination ul li {
+  list-style: none;
+  display: inline-block;
+  border: 1px solid #428bca;
+  padding: 0.5em;
+}
+
+.pagination ul li:hover {
+  background: #428bca;
+}
+
+.pagination ul li a:hover {
+  color: #fff;
+}
+
+
+.pagination ul li a{
+  text-decoration: none;
+  color: #34495e;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
 @keyframes confirm---open {
   from {
     opacity: 0;
@@ -665,8 +731,12 @@ footer ul {
   }
 }
 
-
 @media (min-width: 900px) {
+  .hero-img img {
+    width: 90%;
+    margin-left: 2em;
+  }
+
   .sidebar nav {
     text-align: center;
   }
@@ -692,7 +762,7 @@ footer ul {
     justify-content: space-between;
     flex-direction: column;
     position: fixed;
-    font-size: 0.9em; 
+    font-size: 0.9em;
     background: none;
     text-align: center;
     padding-left: 4.4em;
@@ -742,16 +812,26 @@ footer ul {
     display: none;
   }
 
-  .hero {
+  .hero1 {
     text-align: left;
     margin: 0em auto;
   }
 
-  .hero img {
+  .hero1 img {
     width: 250px;
-    border-radius: 60%; 
     float: right;
     margin-right: 1em;
+  }
+
+  .hero1 h2 {
+    font-size: 2em;
+    padding-top: 2em;
+  }
+
+
+  .hero {
+    text-align: left;
+    margin: 0em auto;
   }
 
   .hero h2 {
@@ -777,7 +857,6 @@ footer ul {
     font-size: 0.9em;
     text-decoration: none;
     color: #11c08b;
-
   }
 
   .modal-edit form input {
@@ -785,7 +864,7 @@ footer ul {
     height: 2em;
     display: block;
     font-size: 1em;
-    margin: 2em auto; 
+    margin: 2em auto;
   }
 
   #comment {
@@ -808,18 +887,16 @@ footer ul {
   }
 
   .hero-comment-article {
-    margin-left: 8%;
-    margin-right: 8%;
+    margin-left: 3%;
+    margin-right: 3%;
     padding-left: 10px;
   }
 
   #edit-btn {
-    float: left;
     margin-left: 11em;
   }
 
   #thumb-down1 {
-    float: left;
     margin-left: 11em;
   }
 
@@ -855,6 +932,7 @@ footer ul {
     flex: 2;
     height: 40px;
     outline: none;
+    border-radius: 30px;
   }
 
   #inputBox::placeholder {
