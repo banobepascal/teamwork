@@ -17,7 +17,7 @@ const payload = {
 
 const token = jwt.sign(payload, process.env.JWT_KEY);
 
-describe('Updating Article', () => {
+describe('GET SPECIFIC ARTICLE', () => {
   describe('GET /api/v1/articles/:id', () => {
     it('should show specific article', (done) => {
       chai

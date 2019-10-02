@@ -49,7 +49,7 @@ describe('Updating Article', () => {
         });
     });
 
-    // should not accept update on invalid token
+    // should not accept update on unsatisfied article
     it('should fail to edit on unsatisfied article', (done) => {
       chai
         .request(app)

@@ -23,15 +23,111 @@ exports.emailExists = {
   address: 'Kigali',
 };
 
-exports.baduser = {
-  firstname: 'John',
+exports.badFirstname = {
+  firstname: '...',
   lastname: 'Doe',
   email: 'john@test.com',
-  password: 'johndoe',
+  password: 'Johndoetest1!',
+  confirmPassword: 'Johndoetest1!',
   gender: 'Male',
   jobRole: 'ux designer',
   department: 'design',
   address: 'kampala',
+};
+
+exports.badLastname = {
+  firstname: 'John',
+  lastname: '111',
+  email: 'john@test.com',
+  password: 'johndoetest1!',
+  confirmPassword: 'johndoetest1!',
+  gender: 'Male',
+  jobRole: 'ux designer',
+  department: 'design',
+  address: 'kampala',
+};
+
+exports.badEmail = {
+  firstname: 'John',
+  lastname: 'Doe',
+  email: 'johntest.com',
+  password: 'johndoetest1!',
+  confirmPassword: 'johndoetest1!',
+  gender: 'Male',
+  jobRole: 'ux designer',
+  department: 'design',
+  address: 'kampala',
+};
+
+exports.weakPassword = {
+  firstname: 'John',
+  lastname: 'Doe',
+  email: 'john@test.com',
+  password: 'johndoetest',
+  confirmPassword: 'johndoetest',
+  gender: 'Male',
+  jobRole: 'ux designer',
+  department: 'design',
+  address: 'kampala',
+};
+
+exports.passwordConfirm = {
+  firstname: 'John',
+  lastname: 'Doe',
+  email: 'john@test.com',
+  password: 'Johndoetest!1',
+  confirmPassword: 'johndoetest',
+  gender: 'Male',
+  jobRole: 'ux designer',
+  department: 'design',
+  address: 'kampala',
+};
+
+exports.badGender = {
+  firstname: 'John',
+  lastname: 'Doe',
+  email: 'john@test.com',
+  password: 'johndoetest1!',
+  confirmPassword: 'johndoetest1!',
+  gender: 'none',
+  jobRole: 'ux designer',
+  department: 'design',
+  address: 'kampala',
+};
+
+exports.wrongJobRole = {
+  firstname: 'John',
+  lastname: 'Doe',
+  email: 'john@test.com',
+  password: 'Johndoetest1!',
+  confirmPassword: 'Johndoetest1!',
+  gender: 'Male',
+  jobRole: '..111',
+  department: 'design',
+  address: 'kampala',
+};
+exports.wrongDepartment = {
+  firstname: 'John',
+  lastname: 'Doe',
+  email: 'john@test.com',
+  password: 'Johndoetest1!',
+  confirmPassword: 'Johndoetest1!',
+  gender: 'Male',
+  jobRole: 'ux designer',
+  department: '911',
+  address: 'kampala',
+};
+
+exports.wrongAddress = {
+  firstname: 'John',
+  lastname: 'Doe',
+  email: 'john@test.com',
+  password: 'Johndoetest1!',
+  confirmPassword: 'Johndoetest1!',
+  gender: 'Male',
+  jobRole: 'ux designer',
+  department: 'design',
+  address: '8991',
 };
 
 // sigin mock data
@@ -40,7 +136,7 @@ exports.loginuser = {
   password: 'johndoetest',
 };
 
-exports.bademail = {
+exports.invalidLoginEmail = {
   email: 'johndo@test.com',
   password: 'johndoetest',
 };
@@ -54,6 +150,11 @@ exports.badpassword = {
 exports.article = {
   title: 'Backend development',
   article: 'Do you want to be a backend and developer dont missout on the workshop',
+};
+
+exports.badTitle = {
+  title: '....555',
+  article: 'Do you know',
 };
 
 exports.badArticle = {
