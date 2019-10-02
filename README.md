@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 [![Build Status](https://travis-ci.org/banobepascal/teamwork.svg?branch=develop)](https://travis-ci.org/banobepascal/teamwork)
 [![Coverage Status](https://coveralls.io/repos/github/banobepascal/teamwork/badge.svg)](https://coveralls.io/github/banobepascal/teamwork)
@@ -79,4 +80,6 @@ npm test in terminal
 
 #### Credit
 * All credit given to [Andela](https://andela.com)
+=======
+>>>>>>> 3dea6989dea23fd0edbf58f1ab35d23b5dd2f3f6
 
