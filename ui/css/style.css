@@ -285,6 +285,26 @@ ul li a i {
   fill: red;
 }
 
+#flag {
+  width: 30px;
+  margin-left: -2em;
+  text-align: center;
+  color: red;
+  cursor: pointer;
+}
+
+#delete-comment {
+  margin-left: 4em; 
+  width: 30px;
+  cursor: pointer;
+}
+
+#delete-flagged {
+  margin-left: 8em; 
+  width: 30px;
+  cursor: pointer;
+}
+
 #delete-btn {
   width: 30px;
   cursor: pointer;
@@ -583,7 +603,6 @@ footer ul {
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
   opacity: 0;
   transform: scale(0.75);
   animation-name: confirm__window---open;
@@ -684,7 +703,6 @@ ul li i {
 .pagination ul li {
   list-style: none;
   display: inline-block;
-  border: 1px solid #428bca;
   padding: 0.5em;
 }
 
@@ -694,12 +712,40 @@ ul li i {
 
 .pagination ul li a:hover {
   color: #fff;
+  border: 1px solid #428bca;
 }
-
 
 .pagination ul li a{
   text-decoration: none;
   color: #34495e;
+  font-family: "Maven Pro", sans-serif;
+}
+
+.name-time img {
+  width: 80px;
+  border-radius: 50%;
+  margin-top: 1em;
+  position: absolute; 
+}
+
+#username-article {
+  padding-top: 5em; 
+}
+
+#time-article {
+  padding-top: 5em; 
+}
+
+.hero-content-article h4 {
+  padding-top: 8em; 
+}
+
+.fa-comment {
+  color: #867bfb;
+}
+
+.fa-flag {
+  color: #867bfb;
 }
 
 table, th, td {
@@ -859,6 +905,10 @@ table, th, td {
     color: #11c08b;
   }
 
+  .hero-content-article h4 {
+    padding-top: 6em; 
+  }
+
   .modal-edit form input {
     width: 80%;
     height: 2em;
@@ -872,6 +922,10 @@ table, th, td {
     margin-left: 11em;
   }
 
+  #flag {
+    margin-left: 13em;
+  }
+
   #comment:hover {
     cursor: pointer;
     fill: #867bfb;
@@ -883,7 +937,7 @@ table, th, td {
 
   #thumb-down:hover {
     cursor: pointer;
-    fill: red;
+    color: red;
   }
 
   .hero-comment-article {
@@ -944,11 +998,27 @@ table, th, td {
     height: 400px;
   }
 
-  .vote {
-    fill: red;
+  .fad-flag {
+    color: red;
   }
 
   .confirm {
     display: none;
+  }
+
+  .name-time img {
+    width: 80px;
+    border-radius: 50%;
+    margin-top: 1em;
+    position: absolute; 
+  }
+  
+  #username-article {
+    padding-top: 1em; 
+    margin-left: 5em; 
+  }
+  
+  #time-article {
+    padding-top: 1em; 
   }
 }
