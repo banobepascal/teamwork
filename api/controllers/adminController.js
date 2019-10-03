@@ -1,18 +1,8 @@
 /* eslint-disable padded-blocks */
 /* eslint-disable radix */
-import _ from 'lodash';
 import articles from '../models/article';
 
 class AdminAccess {
-
-  // view all fagged articles posted with date
-  static async viewFlagged(req, res) {
-    const flagged = _.sortBy(articles, ['flag']).reverse();
-    return res.status(200).json({
-      status: 200,
-      data: flagged,
-    });
-  }
 
   // delete specific flagged article
   static async deleteFlagged(req, res) {

@@ -43,8 +43,8 @@ class UserController {
     newUser.password = await bcrypt.hash(newUser.password, salt);
 
     const signUpPayload = _.pick(req.body, [
+      'firstname',
       'email',
-      'password',
       'gender',
       'isAdmin',
     ]);

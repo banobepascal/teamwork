@@ -5,7 +5,7 @@ import adminAuth from '../middleware/admin';
 
 const adminRoute = express.Router();
 
-adminRoute.get('/api/v1/flagged/articles', [authToken, adminAuth], admin.viewFlagged);
+// adminRoute.get('/api/v1/flagged/articles', [authToken, adminAuth], admin.viewFlagged);
 adminRoute.delete('/api/v1/flagged/articles/:id', [authToken, adminAuth], admin.deleteFlagged);
 
 export default adminRoute;

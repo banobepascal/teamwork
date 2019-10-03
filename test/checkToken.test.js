@@ -20,7 +20,7 @@ describe('TEST Token authorization', () => {
       .end((err, res) => {
         expect(res.body.status).to.equals(401);
         expect(res.body).to.have.property('message');
-        expect(res.body.message).to.equals('unauthorised to use this resource, please signup/login');
+        expect(res.body.message).to.equals('please provide token');
         done();
       });
   });

@@ -40,7 +40,9 @@ describe('Signin User', () => {
         .post('/api/v1/auth/signin')
         .send(util.badpassword)
         .end((err, res) => {
-          res.should.have.status(400);
+          expect(res.body.status).to.equals(400);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.equals('wrong email or password');
           done();
         });
     });

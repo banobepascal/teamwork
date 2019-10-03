@@ -8,7 +8,7 @@ const checkToken = (req, res, next) => {
   if (!token) {
     res.status(401).json({
       status: 401,
-      message: 'unauthorised to use this resource, please signup/login',
+      message: 'please provide token',
     });
   }
 

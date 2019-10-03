@@ -10,7 +10,7 @@ import articles from '../models/article';
 class Article {
   // view feeds and all articles posted with date
   static viewFeeds(req, res) {
-    const articlesOrder = _.sortBy(articles, 'createdOn').reverse();
+    const articlesOrder = _.sortBy(articles, ['createdOn']).reverse();
     return res.status(200).json({
       status: 200,
       message: 'articles retrieved',
@@ -51,6 +51,13 @@ class Article {
       article: req.body.article,
       comments: [],
     };
+
+    if (req.body.title === article.title) {
+      return res.status(409).json({
+        status: 400,
+        error: 'article alreday posted',
+      });
+    }
 
     articles.push(article);
     return res.status(201).json({
