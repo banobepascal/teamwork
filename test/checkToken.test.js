@@ -14,7 +14,8 @@ const token = jwt.sign(util.payload, process.env.JWT_KEY);
 
 describe('TEST Token authorization', () => {
   it('should fail on wrong token provided', (done) => {
-    chai.request(app)
+    chai
+      .request(app)
       .delete('/api/v1/articles/4')
       .set('x-auth', token)
       .end((err, res) => {

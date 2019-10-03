@@ -9,7 +9,6 @@ import validateUserSignUp from '../middleware/validateUser';
 ENV.config();
 
 class UserController {
-
   // create user account
   static async signUp(req, res) {
     const { error } = validateUserSignUp(req.body);
@@ -71,7 +70,10 @@ class UserController {
       });
     }
 
-    const validPassword = await bcrypt.compare(req.body.password, checkEmail.password);
+    const validPassword = await bcrypt.compare(
+      req.body.password,
+      checkEmail.password,
+    );
     if (!validPassword) {
       return res.status(400).json({
         status: 400,

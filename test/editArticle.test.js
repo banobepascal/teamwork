@@ -54,7 +54,9 @@ describe('Updating Article', () => {
         .end((err, res) => {
           expect(res.body.status).to.equals(400);
           expect(res.body).to.have.property('error');
-          expect(res.body.error).to.equals('article should have a letter and minimum of 50 characters');
+          expect(res.body.error).to.equals(
+            'article should have a letter and minimum of 50 characters',
+          );
           done();
         });
     });

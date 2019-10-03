@@ -3,7 +3,6 @@
 import articles from '../models/article';
 
 class AdminAccess {
-
   // delete specific flagged article
   static async deleteFlagged(req, res) {
     const flaggedArticle = articles.find((a) => a.id === parseInt(req.params.id));

@@ -2,7 +2,6 @@
 /* eslint-disable radix */
 import moment from 'moment';
 import _ from 'lodash';
-// import uuidv4 from 'uuidv4';
 import validateArticle from '../middleware/validateArticle';
 import validateFlag from '../middleware/validateFlag';
 import articles from '../models/article';

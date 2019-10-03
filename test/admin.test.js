@@ -18,7 +18,8 @@ describe('Admin Routes', () => {
   describe('GET /api/v1/flagged/articles', () => {
     // should successfully delete an article flagged inappropiate
     it('should successfully delete an article', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .delete('/api/v1/flagged/articles/4')
         .set('authorization', token)
         .end((err, res) => {
