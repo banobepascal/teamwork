@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="../img/logo1.jpg"/>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Manjari|Maven+Pro|Patua+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Flagged Comments</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <nav>
+          <p><a href="adminPage.html">Teamwork</a></p>
+          <ul>
+            <li><a href="adminPage.html">Articles</a></li>
+            <li><a href="flaggedArticles.html">Flagged</a></li>
+            <li><a href="flaggedComments.html" class="active">Comments</a></li>
+            <li><a href="../index.html">Log out</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="content">
+        <h3>Innapropiate Comments</h3>
+        <div class="search"><input type="text" placeholder="search" /></div>
+        <section class="hero">
+          <div class="hero-content-article">
+            <div class="name-time">
+             <img src="../img/john.jpg" alt="">
+              <p id="username-article">James Madsen</p>
+              <p id="time-article">Sept 30, 2019</p>
+            </div>
+            <h4></h4>
+            <p>
+              By some metrics, this wasn,t a success. Try other articles to
+              write or you yourself building a billion-dollar company
+            </p>
+            <p><a href="viewArticle.html">view article</a></p>
+            <ul>
+              <li>
+                <i class="fa fa-flag" id="flag"></i>
+              </li>
+              <li onclick="onDelete()">
+                <i class="fa fa-trash" id="delete-comment"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="hero-content-article">
+            <div class="name-time">
+              <img src="../img/man1.jpg" alt="">
+              <p id="username-article">James Gray</p>
+              <p id="time-article">Sept 29, 2019</p>
+            </div>
+            <h4></h4>
+            <p>
+              Just saying i have just read the most boring article. No pan
+              intended but just speaking my mind out.
+            </p>
+            <p><a href="viewArticle.html">view article</a></p>
+            <ul>
+              <li>
+                <i class="fa fa-flag" id="flag"></i>
+              </li>
+              <li onclick="onDelete()">
+                <i class="fa fa-trash" id="delete-comment"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="hero-content-article">
+            <div class="name-time">
+              <img src="../img/johb.jpg" alt="">
+              <p id="username-article">Micheal Douglas</p>
+              <p id="time-article">Sept 28, 2019</p>
+            </div>
+            <h4></h4>
+            <p>
+              Ant man was the most boring movie i have ever seen. why the hell
+              is marvel still producing it.
+            </p>
+            <p><a href="viewArticle.html">view article</a></p>
+            <ul>
+              <li>
+                <i class="fa fa-flag" id="flag"></i>
+              </li>
+              <li onclick="onDelete()">
+                <i class="fa fa-trash" id="delete-comment"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="hero-content-article">
+            <div class="name-time">
+              <img src="../img/man1.jpg" alt="">
+              <p id="username-article">Brain Howard</p>
+              <p id="time-article">Sept 27, 2019</p>
+            </div>
+            <h4></h4>
+            <p>
+              Just downloaded the most bugged tutorial i dont know what that
+              youtube guy was thinking. Because am even better.
+            </p>
+            <p><a href="viewArticle.html">view article</a></p>
+            <ul>
+              <li>
+                <i class="fa fa-flag" id="flag"></i>
+              </li>
+              <li onclick="onDelete()">
+                <i class="fa fa-trash" id="delete-comment"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="hero-content-article">
+            <div class="name-time">
+              <img src="../img/fg3.jpg" alt="">
+              <p id="username-article">Jessica Winks</p>
+              <p id="time-article">Sept 25, 2019</p>
+            </div>
+            <h4></h4>
+            <p>
+              Politics in Britain just got worse to dead. Members of the
+              parliament cant decide what is right for the country or wrong.
+            </p>
+            <p><a href="viewArticle.html">view article</a></p>
+            <ul>
+              <li>
+                <i class="fa fa-flag" id="flag"></i>
+              </li>
+              <li onclick="onDelete()">
+                <i class="fa fa-trash" id="delete-comment"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="hero-content-article">
+            <div class="name-time">
+              <img src="../img/er3.jpg" alt="">
+              <p id="username-article">Jessica Jones</p>
+              <p id="time-article">Sept 24, 2019</p>
+            </div>
+            <h4></h4>
+            <p>
+              Anyone saying that trump should be impeached just go burry
+              yourself. He is making America great again so shut the hell up.
+            </p>
+            <p><a href="viewArticle.html">view article</a></p>
+            <ul>
+              <li>
+                <i class="fa fa-flag" id="flag"></i>
+              </li>
+              <li onclick="onDelete()">
+                <i class="fa fa-trash" id="delete-comment"></i>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <div class="pagination">
+            <ul>
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">></a></li>
+            </ul>
+          </div>
+        <div class="footer">
+          <div class="logs">
+            <ul>
+              <li><a href="../index.html">Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="confirm">
+      <div class="confirm__window">
+        <div class="confirm__titlebar">
+          <span class="confirm__title">Delete Article</span>
+          <button class="confirm__close">&times;</button>
+        </div>
+        <div class="confirm__content">
+          Are you sure you want to delete article
+        </div>
+        <div class="confirm__buttons">
+          <button
+            class="confirm__button confirm__button--ok confirm__button--fill"
+          >
+            Yes
+          </button>
+          <button class="confirm__button confirm__button--cancel">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../js/admin.js"></script>
+</html>

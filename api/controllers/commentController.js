@@ -1,5 +1,4 @@
 /* eslint-disable radix */
-import uuidv4 from 'uuidv4';
 import articles from '../models/article';
 import validateComment from '../middleware/validateComment';
 
@@ -18,13 +17,13 @@ class ArticleComment {
     if (error) {
       return res.status(400).json({
         status: 400,
-        error: error.details[0].message,
+        error: error.details[0].message.replace(/[/"]/g, ''),
       });
     }
 
     const comment = {
-      commentId: uuidv4(),
-      authorId: uuidv4(),
+      commentId: articles.length + 1,
+      authorId: articles.length + 1,
       comment: req.body.comment,
     };
 
