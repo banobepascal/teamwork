@@ -66,7 +66,7 @@ class UserController {
     if (!checkEmail) {
       return res.status(400).json({
         status: 400,
-        error: 'invalid email or password',
+        error: 'wrong email or password',
       });
     }
 
@@ -74,7 +74,7 @@ class UserController {
     if (!validPassword) {
       return res.status(400).json({
         status: 400,
-        error: 'invalid email or password',
+        error: 'wrong email or password',
       });
     }
 

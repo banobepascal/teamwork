@@ -7,12 +7,12 @@ function validateArticle(req) {
     title: Joi.string().min(3).max(50).regex(validInput)
       .required()
       .error(() => ({
-        message: 'title does not meet expectations',
+        message: 'title should have a letter and minimum of 3 characters',
       })),
     article: Joi.string().min(50).regex(validInput)
       .required()
       .error(() => ({
-        message: 'article does not meet expectations',
+        message: 'article should have a letter and minimum of 3 characters',
       })),
   };
 
