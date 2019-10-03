@@ -725,7 +725,6 @@ ul li i {
   width: 80px;
   border-radius: 50%;
   margin-top: 1em;
-  /* margin-left: -1.5em; */
   position: absolute; 
 }
 
@@ -739,6 +738,14 @@ ul li i {
 
 .hero-content-article h4 {
   padding-top: 8em; 
+}
+
+.fa-comment {
+  color: #867bfb;
+}
+
+.fa-flag {
+  color: #867bfb;
 }
 
 table, th, td {
