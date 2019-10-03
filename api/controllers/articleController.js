@@ -2,7 +2,7 @@
 /* eslint-disable radix */
 import moment from 'moment';
 import _ from 'lodash';
-import uuidv4 from 'uuidv4';
+// import uuidv4 from 'uuidv4';
 import validateArticle from '../middleware/validateArticle';
 import validateFlag from '../middleware/validateFlag';
 import articles from '../models/article';
@@ -27,7 +27,6 @@ class Article {
         error: 'article not found',
       });
     }
-
     res.status(200).json({
       status: 200,
       data: article,
@@ -47,17 +46,10 @@ class Article {
     const article = {
       id: articles.length + 1,
       createdOn: moment().format('LLL'),
-      title: req.body.title + uuidv4(),
+      title: req.body.title,
       article: req.body.article,
       comments: [],
     };
-
-    if (req.body.title === article.title) {
-      return res.status(409).json({
-        status: 400,
-        error: 'article alreday posted',
-      });
-    }
 
     articles.push(article);
     return res.status(201).json({
@@ -90,7 +82,6 @@ class Article {
       });
     }
 
-    article.title = req.body.title;
     article.article = req.body.article;
     article.createdOn = moment().format('LLL');
     return res.status(200).json({
@@ -99,7 +90,7 @@ class Article {
       data: {
         id: article.id,
         createdOn: moment().format('LLL'),
-        title: req.body.title + uuidv4(),
+        title: req.body.title,
         article: req.body.article,
       },
     });

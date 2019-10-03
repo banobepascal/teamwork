@@ -16,18 +16,6 @@ const badToken = jwt.sign(utils.notAdmin, process.env.JWT_KEY);
 
 describe('Admin Routes', () => {
   describe('GET /api/v1/flagged/articles', () => {
-    it('should get all articles flagged innapropiate', (done) => {
-      chai
-        .request(app)
-        .get('/api/v1/flagged/articles')
-        .set('authorization', token)
-        .end((err, res) => {
-          expect(res.body.status).to.equals(200);
-          expect(res.body).to.have.property('data');
-          done();
-        });
-    });
-
     // should successfully delete an article flagged inappropiate
     it('should successfully delete an article', (done) => {
       chai.request(app)

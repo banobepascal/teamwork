@@ -22,7 +22,6 @@ const users = [
     department: 'Engineering',
     address: 'Kigali',
   },
-
 ];
 
 export default users;
