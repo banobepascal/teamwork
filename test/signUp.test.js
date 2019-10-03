@@ -1,11 +1,11 @@
 /* eslint-disable no-undef */
-import chai from 'chai';
+import chai, {expect} from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../api/index';
 import util from './utils/util';
 
 chai.use(chaiHttp);
-chai.should();
+chai.expect();
 
 describe('Create user', () => {
   describe('POST /api/v1/auth/signup', () => {
@@ -14,8 +14,9 @@ describe('Create user', () => {
         .post('/api/v1/auth/signup')
         .send(util.signUpUser)
         .end((err, res) => {
-          res.should.have.status(201);
-          res.body.should.have.property('message', 'user created successfully');
+          expect(res.status).to.equals(201);
+          expect(res.body).to.have.property('message');
+          expect(res.body.message).to.equals('user created successfully');
           done();
         });
     });
@@ -26,7 +27,9 @@ describe('Create user', () => {
         .post('/api/v1/auth/signup')
         .send(util.signUpUser)
         .end((err, res) => {
-          res.should.have.status(409);
+        expect(res.status).to.equals(409);
+        expect(res.body).to.have.property('error');
+        expect(res.body.error).to.equals('email already exist');
           done();
         });
     });
@@ -38,8 +41,9 @@ describe('Create user', () => {
       .post('/api/v1/auth/signup')
       .send(util.badFirstname)
       .end((err, res) => {
-        res.should.have.status(400);
-        res.body.should.have.property('error', 'firstname fails to match required pattern');
+        expect(res.status).to.equals(400);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.equals('firstname should start with letter and minimum of 3 characters');
         done();
       });
   });
@@ -50,8 +54,9 @@ describe('Create user', () => {
       .post('/api/v1/auth/signup')
       .send(util.badLastname)
       .end((err, res) => {
-        res.should.have.status(400);
-        res.body.should.have.property('error', 'lastname fails to match required pattern');
+        expect(res.status).to.equals(400);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.equals('lastname should start with letter and minimum of 3 characters');
         done();
       });
   });
@@ -62,8 +67,9 @@ describe('Create user', () => {
       .post('/api/v1/auth/signup')
       .send(util.badEmail)
       .end((err, res) => {
-        res.should.have.status(400);
-        res.body.should.have.property('error', 'email must be a valid email');
+        expect(res.status).to.equals(400);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.equals('please check the email is in the format: name@domain.com');
         done();
       });
   });
@@ -74,8 +80,9 @@ describe('Create user', () => {
       .post('/api/v1/auth/signup')
       .send(util.weakPassword)
       .end((err, res) => {
-        res.should.have.status(400);
-        res.body.should.have.property('error', 'password is too weak');
+        expect(res.status).to.equals(400);
+        expect(res.body).to.have.property('error');
+        expect(res.body.error).to.equals('password should contain a capital letter, number and a special character (!@#$%^&*)');
         done();
       });
   });
@@ -86,19 +93,22 @@ describe('Create user', () => {
       .post('/api/v1/auth/signup')
       .send(util.passwordConfirm)
       .end((err, res) => {
-        res.should.have.status(400);
-        res.body.should.have.property('error', '!!passwords do not match');
+        expect(res.status).to.equals(400);
+        expect(res.body).to.have.property('error');
+        expect(res.body.error).to.equals('passwords do not match!!');
         done();
       });
   });
 
   // should not singup user incase of any error
-  it('should return error when failed to register', (done) => {
+  it('should return error when failed to register gender', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signup')
       .send(util.badGender)
       .end((err, res) => {
-        res.should.have.status(400);
+        expect(res.status).to.equals(400);
+        expect(res.body).to.have.property('error');
+        expect(res.body.error).to.equals('gender is either male or female');
         done();
       });
   });
@@ -109,8 +119,9 @@ describe('Create user', () => {
       .post('/api/v1/auth/signup')
       .send(util.wrongJobRole)
       .end((err, res) => {
-        res.should.have.status(400);
-        res.body.should.have.property('error', 'please submit your correct job role');
+        expect(res.status).to.equals(400);
+        expect(res.body).to.have.property('error');
+        expect(res.body.error).to.equals('please submit your correct job role starting with a letter');
         done();
       });
   });
@@ -121,8 +132,9 @@ describe('Create user', () => {
       .post('/api/v1/auth/signup')
       .send(util.wrongDepartment)
       .end((err, res) => {
-        res.should.have.status(400);
-        res.body.should.have.property('error', 'please enter correct department');
+        expect(res.status).to.equals(400);
+        expect(res.body).to.have.property('error');
+        expect(res.body.error).to.equals('please enter correct department starting with a letter');
         done();
       });
   });
@@ -133,8 +145,9 @@ describe('Create user', () => {
       .post('/api/v1/auth/signup')
       .send(util.wrongAddress)
       .end((err, res) => {
-        res.should.have.status(400);
-        res.body.should.have.property('error', 'please submit correct address');
+        expect(res.status).to.equals(400);
+        expect(res.body).to.have.property('error');
+        expect(res.body.error).to.equals('please submit correct address starting with a letter');
         done();
       });
   });

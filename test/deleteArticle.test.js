@@ -19,7 +19,9 @@ describe('Delete Article', () => {
         .delete('/api/v1/articles/3')
         .set('authorization', token)
         .end((err, res) => {
-          expect(res.status).to.equals(204);
+          expect(res.status).to.equals(200);
+          expect(res.body).to.have.property('message');
+          expect(res.body.message).to.equals('article successfully deleted');
           done();
         });
     });

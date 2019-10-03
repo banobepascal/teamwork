@@ -19,7 +19,7 @@ const validateUserSignUp = (user) => {
     email: Joi.string().min(3).max(255).required()
       .email()
       .error(() => ({
-        message: 'Please check the email is in the format: name@domain.com',
+        message: 'please check the email is in the format: name@domain.com',
       })),
     password: Joi.string().min(8).max(50).regex(strongPassword)
       .required()

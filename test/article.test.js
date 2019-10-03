@@ -34,7 +34,9 @@ describe('Creating Article', () => {
         .set('authorization', token)
         .send(util.badTitle)
         .end((err, res) => {
-          res.should.have.status(400);
+          expect(res.body.status).to.equals(400);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.equals('title should have a letter and minimum of 3 characters');
           done();
         });
     });
@@ -46,7 +48,9 @@ describe('Creating Article', () => {
         .set('authorization', token)
         .send(util.badArticle)
         .end((err, res) => {
-          res.should.have.status(400);
+          expect(res.body.status).to.equals(400);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.equals('article should have a letter and minimum of 50 characters');
           done();
         });
     });

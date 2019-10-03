@@ -13,6 +13,7 @@ class Article {
     const articlesOrder = _.sortBy(articles, 'createdOn').reverse();
     return res.status(200).json({
       status: 200,
+      message: 'articles retrieved',
       data: articlesOrder,
     });
   }

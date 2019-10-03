@@ -29,7 +29,7 @@ describe('Signin User', () => {
         .end((err, res) => {
           expect(res.body.status).to.equals(400);
           expect(res.body).to.have.property('error');
-          expect(res.body.error).to.equals('invalid email or password');
+          expect(res.body.error).to.equals('wrong email or password');
           done();
         });
     });

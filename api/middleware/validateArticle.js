@@ -12,7 +12,7 @@ function validateArticle(req) {
     article: Joi.string().min(50).regex(validInput)
       .required()
       .error(() => ({
-        message: 'article should have a letter and minimum of 3 characters',
+        message: 'article should have a letter and minimum of 50 characters',
       })),
   };
 

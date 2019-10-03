@@ -10,6 +10,7 @@ const app = express();
 app.use(express.json());
 
 process.on('unhandledRejection', (ex) => {
+  console.log('Got an Unhandled rejection');
   winston.error(ex.message, ex);
 });
 
