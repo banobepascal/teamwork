@@ -8,8 +8,6 @@ import httpErrors from './routes/httpErrors';
 const app = express();
 app.use(express.json());
 
-const server = ''
-
 process.on('unhandledRejection', (ex) => {
   winston.error(ex.message, ex);
 });
