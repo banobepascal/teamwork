@@ -75,7 +75,7 @@ npm test in terminal
 * Frontend on [Github](https://banobepascal.github.io/teamwork/ui/)
 * Backend on [Heroku](https://teamwork-pascal.herokuapp.com/)
 * Tracker on [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2395736)
-* Documentation on [Postman](https://documenter.getpostman.com/view/8823206/SVn2NbR1)
+* Documentation on [Postman](https://documenter.getpostman.com/view/8823206/SVtR2WEj)
 
 #### Credit
 * All credit given to [Andela](https://andela.com)
