@@ -51,7 +51,7 @@ class UserController {
 
     const genToken = jwt.sign(signUpPayload, process.env.JWT_KEY);
     users.push(newUser);
-    return res.status(201).json({
+    return res.status(201).send({
       status: 201,
       message: 'user created successfully',
       data: {
@@ -88,7 +88,7 @@ class UserController {
     };
 
     const gentoken = jwt.sign(signinPayLoad, process.env.JWT_KEY);
-    return res.status(200).json({
+    return res.status(200).send({
       status: 200,
       message: 'user is successfuly logged in',
       data: {
