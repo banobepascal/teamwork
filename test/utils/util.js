@@ -197,3 +197,8 @@ exports.notAdmin = {
   password: 'johndoetest',
   isAdmin: false,
 };
+
+exports.badJson = {
+  email: 'johndoe@test.com',
+  password: 'johndoetest',
+};

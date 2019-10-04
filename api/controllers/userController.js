@@ -4,14 +4,14 @@ import ENV from 'dotenv';
 import _ from 'lodash';
 import jwt from 'jsonwebtoken';
 import users from '../models/users';
-import validateUserSignUp from '../middleware/validateUser';
+import validation from '../middleware/validation';
 
 ENV.config();
 
 class UserController {
   // create user account
   static async signUp(req, res) {
-    const { error } = validateUserSignUp(req.body);
+    const { error } = validation.validateUserSignUp(req.body);
     if (error) {
       return res.status(400).json({
         status: 400,

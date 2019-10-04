@@ -2,8 +2,7 @@
 /* eslint-disable radix */
 import moment from 'moment';
 import _ from 'lodash';
-import validateArticle from '../middleware/validateArticle';
-import validateFlag from '../middleware/validateFlag';
+import validation from '../middleware/validation';
 import articles from '../models/article';
 
 class Article {
@@ -34,7 +33,7 @@ class Article {
 
   // Post article to teamwork
   static postArticle(req, res) {
-    const { error } = validateArticle(req.body);
+    const { error } = validation.validateArticle(req.body);
     if (error) {
       return res.status(400).json({
         status: 400,
@@ -73,7 +72,7 @@ class Article {
       });
     }
 
-    const { error } = validateArticle(req.body);
+    const { error } = validation.validateArticle(req.body);
     if (error) {
       return res.status(400).json({
         status: 400,
@@ -124,7 +123,7 @@ class Article {
       });
     }
 
-    const { error } = validateFlag(req.body);
+    const { error } = validation.validateFlag(req.body);
     if (error) {
       return res.status(400).json({
         status: 400,

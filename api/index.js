@@ -3,9 +3,12 @@
 import express from 'express';
 import winston from 'winston';
 import endPoints from './routes/Allroutes';
+import httpErrors from './routes/httpErrors';
 
 const app = express();
 app.use(express.json());
+
+const server = ''
 
 process.on('unhandledRejection', (ex) => {
   winston.error(ex.message, ex);
@@ -15,14 +18,8 @@ winston.add(new winston.transports.File({ filename: 'logfile.log' }));
 
 // route for all routes
 app.use(endPoints);
+app.use(httpErrors);
 
-// handling invalid route parameters
-app.use('/*', (req, res) => {
-  res.status(404).json({
-    status: 404,
-    error: 'invalid route, please check your route',
-  });
-});
 
 // verifying json data sent for errors in input
 app.use((error, req, res, next) => {
@@ -34,7 +31,7 @@ app.use((error, req, res, next) => {
   } else {
     res.status(error.status || 500);
     res.json({
-      error: 'internal server error, please restart your server',
+      error: 'internal server error',
     });
   }
 });
