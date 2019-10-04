@@ -4,15 +4,14 @@ import ENV from 'dotenv';
 import _ from 'lodash';
 import jwt from 'jsonwebtoken';
 import users from '../models/users';
-import validateUserSignUp from '../middleware/validateUser';
+import validation from '../middleware/validation';
 
 ENV.config();
 
 class UserController {
-
   // create user account
   static async signUp(req, res) {
-    const { error } = validateUserSignUp(req.body);
+    const { error } = validation.validateUserSignUp(req.body);
     if (error) {
       return res.status(400).json({
         status: 400,
@@ -43,15 +42,16 @@ class UserController {
     newUser.password = await bcrypt.hash(newUser.password, salt);
 
     const signUpPayload = _.pick(req.body, [
+      'id',
+      'firstname',
       'email',
-      'password',
       'gender',
       'isAdmin',
     ]);
 
     const genToken = jwt.sign(signUpPayload, process.env.JWT_KEY);
     users.push(newUser);
-    return res.status(201).json({
+    return res.status(201).send({
       status: 201,
       message: 'user created successfully',
       data: {
@@ -66,15 +66,18 @@ class UserController {
     if (!checkEmail) {
       return res.status(400).json({
         status: 400,
-        error: 'invalid email or password',
+        error: 'wrong email or password',
       });
     }
 
-    const validPassword = await bcrypt.compare(req.body.password, checkEmail.password);
+    const validPassword = await bcrypt.compare(
+      req.body.password,
+      checkEmail.password,
+    );
     if (!validPassword) {
       return res.status(400).json({
         status: 400,
-        error: 'invalid email or password',
+        error: 'wrong email or password',
       });
     }
 
@@ -85,7 +88,7 @@ class UserController {
     };
 
     const gentoken = jwt.sign(signinPayLoad, process.env.JWT_KEY);
-    return res.status(200).json({
+    return res.status(200).send({
       status: 200,
       message: 'user is successfuly logged in',
       data: {

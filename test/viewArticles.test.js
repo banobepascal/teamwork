@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import chai from 'chai';
+import chai, {expect} from 'chai';
 import chaiHttp from 'chai-http';
 import jwt from 'jsonwebtoken';
 import app from '../api/index';
@@ -18,7 +18,10 @@ describe('GET /feeds', () => {
       .get('/api/v1/feeds')
       .set('authorization', token)
       .end((err, res) => {
-        res.should.have.status(200);
+        expect(res.body.status).to.equals(200);
+          expect(res.body).to.have.property('message');
+          expect(res.body.message).to.equals('articles retrieved');
+         
         done();
       });
   });

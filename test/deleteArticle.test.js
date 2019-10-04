@@ -15,18 +15,22 @@ const token = jwt.sign(util.payload, process.env.JWT_KEY);
 describe('Delete Article', () => {
   describe('DELETE /articles/:id', () => {
     it('should successfully delete an article', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .delete('/api/v1/articles/3')
         .set('authorization', token)
         .end((err, res) => {
-          expect(res.status).to.equals(204);
+          expect(res.status).to.equals(200);
+          expect(res.body).to.have.property('message');
+          expect(res.body.message).to.equals('article successfully deleted');
           done();
         });
     });
 
     // should fail to delete article that doesnt exist
     it('should fail on invalid article id', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .delete('/api/v1/articles/7')
         .set('authorization', token)
         .end((err, res) => {

@@ -16,21 +16,10 @@ const badToken = jwt.sign(utils.notAdmin, process.env.JWT_KEY);
 
 describe('Admin Routes', () => {
   describe('GET /api/v1/flagged/articles', () => {
-    it('should get all articles flagged innapropiate', (done) => {
-      chai
-        .request(app)
-        .get('/api/v1/flagged/articles')
-        .set('authorization', token)
-        .end((err, res) => {
-          expect(res.body.status).to.equals(200);
-          expect(res.body).to.have.property('data');
-          done();
-        });
-    });
-
     // should successfully delete an article flagged inappropiate
     it('should successfully delete an article', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .delete('/api/v1/flagged/articles/4')
         .set('authorization', token)
         .end((err, res) => {
@@ -62,7 +51,7 @@ describe('Admin Routes', () => {
         .end((err, res) => {
           expect(res.body.status).to.equals(403);
           expect(res.body).to.have.property('message');
-          expect(res.body.message).to.equals('Only admin has access');
+          expect(res.body.message).to.equals('cant access this resource');
           done();
         });
     });

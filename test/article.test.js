@@ -15,7 +15,8 @@ const token = jwt.sign(util.payload, process.env.JWT_KEY);
 describe('Creating Article', () => {
   describe('POST /api/v1/articles', () => {
     it('should create and post article', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .post('/api/v1/articles')
         .set('authorization', token)
         .send(util.article)
@@ -29,24 +30,34 @@ describe('Creating Article', () => {
 
     // should fail to create article that doesnot meet title expectations
     it('should not post unsatisfied article with wrong title', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .post('/api/v1/articles')
         .set('authorization', token)
         .send(util.badTitle)
         .end((err, res) => {
-          res.should.have.status(400);
+          expect(res.body.status).to.equals(400);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.equals(
+            'title should have a letter and minimum of 3 characters',
+          );
           done();
         });
     });
 
     // should fail to create article that doesnot meet expectations
     it('should not post unsatisfied article with wrong article body', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .post('/api/v1/articles')
         .set('authorization', token)
         .send(util.badArticle)
         .end((err, res) => {
-          res.should.have.status(400);
+          expect(res.body.status).to.equals(400);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.equals(
+            'article should have a letter and minimum of 50 characters',
+          );
           done();
         });
     });
@@ -64,7 +75,9 @@ describe('Flagging an Article', () => {
         .end((err, res) => {
           expect(res.body.status).to.equals(201);
           expect(res.body).to.have.property('message');
-          expect(res.body.message).to.equals('article has been flagged as inapropiate');
+          expect(res.body.message).to.equals(
+            'article has been flagged as inapropiate',
+          );
           done();
         });
     });

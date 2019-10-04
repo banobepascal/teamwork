@@ -1,6 +1,6 @@
 /* eslint-disable radix */
 import articles from '../models/article';
-import validateComment from '../middleware/validateComment';
+import validation from '../middleware/validation';
 
 class ArticleComment {
   // comment on a posted article
@@ -13,7 +13,7 @@ class ArticleComment {
       });
     }
 
-    const { error } = validateComment(req.body);
+    const { error } = validation.validateComment(req.body);
     if (error) {
       return res.status(400).json({
         status: 400,

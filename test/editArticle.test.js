@@ -52,7 +52,11 @@ describe('Updating Article', () => {
         .set('authorization', token)
         .send(util.badArticle)
         .end((err, res) => {
-          res.should.have.status(400);
+          expect(res.body.status).to.equals(400);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.equals(
+            'article should have a letter and minimum of 50 characters',
+          );
           done();
         });
     });

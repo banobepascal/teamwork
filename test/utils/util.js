@@ -87,8 +87,8 @@ exports.badGender = {
   firstname: 'John',
   lastname: 'Doe',
   email: 'john@test.com',
-  password: 'johndoetest1!',
-  confirmPassword: 'johndoetest1!',
+  password: 'Johndoetest1!',
+  confirmPassword: 'Johndoetest1!',
   gender: 'none',
   jobRole: 'ux designer',
   department: 'design',
@@ -196,4 +196,9 @@ exports.notAdmin = {
   email: 'johndoe@test.com',
   password: 'johndoetest',
   isAdmin: false,
+};
+
+exports.badJson = {
+  email: 'johndoe@test.com',
+  password: 'johndoetest',
 };
