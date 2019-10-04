@@ -22,14 +22,8 @@ app.use(httpErrors);
 // verifying json data sent for errors in input
 app.use((error, req, res, next) => {
   if (error.status === 400) {
-    res.status(error.status || 500);
-    res.json({
+    res.status(400).json({
       error: 'you have entered bad json data, please check your input',
-    });
-  } else {
-    res.status(error.status || 500);
-    res.json({
-      error: 'internal server error',
     });
   }
 });
