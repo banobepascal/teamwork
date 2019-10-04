@@ -51,7 +51,7 @@ describe('Admin Routes', () => {
         .end((err, res) => {
           expect(res.body.status).to.equals(403);
           expect(res.body).to.have.property('message');
-          expect(res.body.message).to.equals('Only admin has access');
+          expect(res.body.message).to.equals('cant access this resource');
           done();
         });
     });
