@@ -1,6 +1,6 @@
 /* eslint-disable padded-blocks */
 /* eslint-disable radix */
-import articles from '../models/article';
+// import articles from '../models/article';
 
 class AdminAccess {
   // delete specific flagged article

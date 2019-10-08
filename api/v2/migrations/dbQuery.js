@@ -1,6 +1,6 @@
 const users = `
     CREATE TABLE IF NOT EXISTS users(
-        id SERIAL PRIMARY KEY,
+        id UUID PRIMARY KEY,
         firstName VARCHAR(100) NOT NULL,
         lastName VARCHAR(100) NOT NULL,
         email TEXT UNIQUE NOT NULL,
@@ -12,32 +12,28 @@ const users = `
         isAdmin BOOLEAN DEFAULT false
     );`;
 
-const authentication = `
-    CREATE TABLE IF NOT EXISTS authentication (
-        authId INT REFERENCES users(id),
-        email TEXT UNIQUE NOT NULL,
-        password TEXT NOT NULL
-      );`;
-
 const articles = `
     CREATE TABLE IF NOT EXISTS articles (
-        id SERIAL PRIMARY KEY,
-        authorId INT REFERENCES users(id),
+        id UUID PRIMARY KEY,
+        authorId UUID NOT NULL,
         title TEXT NOT NULL,
         article TEXT NOT NULL,
-        comments JSONB[],
         status BOOLEAN DEFAULT false,
         createdOn timestamp (0) without time zone default now(),
-        updatedOn timestamp (0) without time zone default now()
+        updatedOn timestamp (0) without time zone default now(),
+        FOREIGN KEY (authorId) REFERENCES users (id)
 );`;
 
 const comment = `
     CREATE TABLE IF NOT EXISTS comment (
-        id SERIAL PRIMARY KEY,
-        authorId INT  REFERENCES users (id),
+        id UUID PRIMARY KEY,
+        articleId UUID NOT NULL,
+        authorId UUID NOT NULL,
         comment TEXT NOT NULL,
         status BOOLEAN DEFAULT false,
-        createdOn timestamp (0) without time zone default now()
+        createdOn timestamp (0) without time zone default now(),
+        FOREIGN KEY (articleId) REFERENCES articles (id),
+        FOREIGN KEY (authorId) REFERENCES users (id)
     )`;
 
 const dropTables = `
@@ -47,5 +43,5 @@ const dropTables = `
         DROP TABLE IF EXISTS comment cascade;
 `;
 
-export default `${users}${authentication}${articles}${comment}`;
+export default `${users}${articles}${comment}`;
 export { dropTables };
