@@ -7,7 +7,7 @@
     "test": "nyc mocha  --require babel-register --require babel-polyfill --timeout 8000 --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "nodemon server.js --exec babel-node --presets babel-preset-env",
-    "dbSetup": "babel-node api/v2/migrations/dbSetup createTables",
+    "dbSetup": "babel-node api/v2/migrations/dbSetup setUpTables",
     "dropTables": "babel-node api/v2/migrations/dropTables dropTables"
   },
   "engines": {

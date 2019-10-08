@@ -1,7 +1,7 @@
 import express from 'express';
 import admin from '../controllers/adminController';
-import adminAuth from '../middleware/admin';
-import validation from '../middleware/validation';
+import adminAuth from '../../middleware/admin';
+import validation from '../../middleware/validation';
 
 const adminRoute = express.Router();
 

@@ -1,145 +1,241 @@
-/* eslint-disable padded-blocks */
 /* eslint-disable radix */
-import moment from 'moment';
+/* eslint-disable consistent-return */
+//  eslint-disable consistent-return
+//  eslint-disable padded-blocks
+//  eslint-disable radix
 import _ from 'lodash';
-import validation from '../middleware/validation';
-import articles from '../models/article';
+import client from '../helpers/dbConnection';
 
 class Article {
   // view feeds and all articles posted with date
-  static viewFeeds(req, res) {
-    const articlesOrder = _.sortBy(articles, ['createdOn']).reverse();
-    return res.status(200).json({
-      status: 200,
-      message: 'articles retrieved',
-      data: articlesOrder,
-    });
+  static async viewFeeds(req, res) {
+    try {
+      const query = 'SELECT * FROM articles ORDER BY id DESC';
+      await client.query(query, (error, result) => {
+        if (result.rows < '1') {
+          res.status(404).send({
+            status: 404,
+            error: 'no articles found',
+          });
+        } else {
+          res.status(200).json({
+            status: 200,
+            message: 'articles retrieved',
+            results: result.rows,
+          });
+        }
+      });
+    } catch (error) {
+      if (error) return res.status(400).json({ error });
+    }
   }
 
   // view specific article
-  static viewSpecific(req, res) {
-    const article = articles.find((a) => a.id === parseInt(req.params.id));
-    if (!article) {
-      res.status(404).json({
-        status: 404,
-        error: 'article not found',
+  static async viewSpecific(req, res) {
+    const id = parseInt(req.params.id);
+    try {
+      const query = 'SELECT * FROM articles WHERE id = $1';
+      const value = [id];
+      await client.query(query, value, (error, result) => {
+        if (result.rows < '1') {
+          res.status(404).send({
+            status: 404,
+            error: 'article not found',
+          });
+        } else {
+          res.status(200).json({
+            status: 200,
+            message: 'article retrieved',
+            results: result.rows,
+          });
+        }
       });
+    } catch (error) {
+      if (error) return res.status(400).json({ error });
     }
-    res.status(200).json({
-      status: 200,
-      data: article,
-    });
+  }
+
+  // view article of a particular category
+  static async Ta(req, res) {
+    const id = parseInt(req.params.id);
+    try {
+      const query = 'SELECT * FROM articles WHERE id = $1';
+      const value = [id];
+      await client.query(query, value, (error, result) => {
+        if (result.rows < '1') {
+          res.status(404).send({
+            status: 404,
+            error: 'article not found',
+          });
+        } else {
+          res.status(200).json({
+            status: 200,
+            message: 'article retrieved',
+            results: result.rows,
+          });
+        }
+      });
+    } catch (error) {
+      if (error) return res.status(400).json({ error });
+    }
   }
 
   // Post article to teamwork
-  static postArticle(req, res) {
-    const { error } = validation.validateArticle(req.body);
-    if (error) {
-      return res.status(400).json({
-        status: 400,
-        error: error.details[0].message.replace(/[/"]/g, ''),
+  static async postArticle(req, res) {
+    const data = _.pick(req.body, [
+      'title', 'article',
+    ]);
+
+    try {
+      const query = `INSERT INTO articles(title, article)
+      VALUES ($1, $2) RETURNING *`;
+      const values = [data.title, data.article];
+      await client.query(query, values, (error, result) => {
+        res.status(201).json({
+          status: 201,
+          message: 'article successfully created',
+          data: {
+            results: result.rows[0],
+          },
+        });
+      });
+    } catch (error) {
+      return res.status(500).json({
+        status: 500,
+        error: 'an internal error occurred at the server',
       });
     }
-
-    const article = {
-      id: articles.length + 1,
-      createdOn: moment().format('LLL'),
-      title: req.body.title,
-      article: req.body.article,
-      comments: [],
-    };
-
-    articles.push(article);
-    return res.status(201).json({
-      status: 201,
-      message: 'article successfully created',
-      data: {
-        id: article.id,
-        createdOn: moment().format('LLL'),
-        title: req.body.title,
-        article: req.body.article,
-      },
-    });
   }
 
   // edit posted article
-  static editArticle(req, res) {
-    const article = articles.find((a) => a.id === parseInt(req.params.id));
-    if (!article) {
-      return res.status(404).json({
-        status: 404,
-        error: 'article not found',
+  static async editArticle(req, res) {
+    const id = parseInt(req.params.id);
+    const data = _.pick(req.body, [
+      'title', 'article',
+    ]);
+
+    try {
+      const query = 'UPDATE articles SET title = $1, article = $2 WHERE id = $3 RETURNING *';
+      const values = [data.title, data.article, id];
+      await client.query(query, values, (error, result) => {
+        if (result.rows < '1') {
+          res.status(404).json({
+            status: 404,
+            error: 'article not found',
+          });
+        } else {
+          res.status(200).json({
+            status: 200,
+            message: 'article successfully edited',
+            results: result.rows,
+          });
+        }
+      });
+    } catch (error) {
+      return res.status(500).json({
+        status: 500,
+        error: 'an internal error occurred at the server',
       });
     }
-
-    const { error } = validation.validateArticle(req.body);
-    if (error) {
-      return res.status(400).json({
-        status: 400,
-        error: error.details[0].message.replace(/[/"]/g, ''),
-      });
-    }
-
-    article.article = req.body.article;
-    article.createdOn = moment().format('LLL');
-    return res.status(200).json({
-      status: 200,
-      message: 'article successfully edited',
-      data: {
-        id: article.id,
-        createdOn: moment().format('LLL'),
-        title: req.body.title,
-        article: req.body.article,
-      },
-    });
   }
 
   // delete posted article
-  static deleteArticle(req, res) {
-    const article = articles.find((a) => a.id === parseInt(req.params.id));
-    if (!article) {
-      return res.status(404).json({
-        status: 404,
-        error: 'article not found',
+  static async deleteArticle(req, res) {
+    const id = parseInt(req.params.id);
+
+    try {
+      const query = 'DELETE FROM articles WHERE id = $1';
+      const values = [id];
+      await client.query(query, values, (error, result) => {
+        if (result.rows < '1') {
+          res.status(404).send({
+            status: 404,
+            error: 'article not found',
+          });
+        } else {
+          res.status(200).json({
+            status: 204,
+            message: 'successfully deleted',
+          });
+        }
       });
+    } catch (error) {
+      if (error) {
+        return res.status(500).json({
+          status: 500,
+          error: 'an internal error occurred at the server',
+        });
+      }
     }
-
-    const index = articles.indexOf(article);
-    articles.splice(index, 1);
-
-    return res.status(200).json({
-      status: 204,
-      message: 'article successfully deleted',
-    });
   }
 
   // flag article as inaproppiate
-  static flagArticle(req, res) {
-    const article = articles.find((a) => a.id === parseInt(req.params.id));
-    if (!article) {
-      return res.status(404).json({
-        status: 404,
-        error: 'article not found',
-      });
-    }
+  static async flagArticle(req, res) {
+    const id = parseInt(req.params.id);
+    const { flag } = req.body;
 
-    const { error } = validation.validateFlag(req.body);
-    if (error) {
-      return res.status(400).json({
-        status: 400,
-        error: error.details[0].message.replace(/[/"]/g, ''),
+    try {
+      const query = 'UPDATE articles SET status = $1 WHERE id = $2 RETURNING *';
+      const values = [flag, id];
+      await client.query(query, values, (error, result) => {
+        if (result.rows < '1') {
+          res.status(404).send({
+            status: 404,
+            error: 'article not found',
+          });
+        } else {
+          return res.status(201).json({
+            status: 201,
+            message: 'article has been flagged as inapropiate',
+            data: {
+              results: result.rows,
+            },
+          });
+        }
       });
+    } catch (error) {
+      if (error) {
+        return res.status(500).json({
+          status: 500,
+          error: 'an internal error occurred at the server',
+        });
+      }
     }
+  }
 
-    article.status = req.body.flag;
-    return res.status(201).json({
-      status: 201,
-      message: 'article has been flagged as inapropiate',
-      data: {
-        id: article.id,
-        status: req.body.flag,
-      },
-    });
+  // comment article
+  static async commentArticle(req, res) {
+    const id = parseInt(req.params.id);
+    const { comment } = req.body;
+
+    try {
+      const query = `INSERT INTO articles(comments) WHERE id = $2
+       VALUES ($1, $2) RETURNING *`;
+      const values = [comment, id];
+      await client.query(query, values, (error, result) => {
+        if (result.rows < '1') {
+          res.status(404).send({
+            status: 404,
+            error: 'article not found',
+          });
+        } else {
+          return res.status(201).json({
+            status: 201,
+            message: 'comment sent',
+            data: {
+              results: result.rows,
+            },
+          });
+        }
+      });
+    } catch (error) {
+      if (error) {
+        return res.status(500).json({
+          status: 500,
+          error: 'an internal error occurred at the server',
+        });
+      }
+    }
   }
 }
 
