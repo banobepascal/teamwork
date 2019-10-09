@@ -1,13 +1,13 @@
 /* eslint-disable consistent-return */
 import ENV from 'dotenv';
 import jwt from 'jsonwebtoken';
-import client from '../helpers/dbConnection';
+// import client from '../helpers/dbConnection';
 
 ENV.config();
 
 const CheckToken = {
   /**
-   * Verify Token
+   * @method Verify Token
    * @param {object} req
    * @param {object} res
    * @param {object} next
@@ -25,7 +25,7 @@ const CheckToken = {
 
     try {
       const decoded = jwt.verify(token, process.env.JWT_KEY);
-      req.user = decoded.id;
+      req.user = decoded;
       next();
     } catch (ex) {
       res.status(401).json({

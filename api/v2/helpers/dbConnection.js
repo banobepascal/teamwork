@@ -1,19 +1,13 @@
 /* eslint-disable no-console */
-// import dotenv from 'dotenv';
 import { Client } from 'pg';
+import ENV from 'dotenv';
 import createTables from '../migrations/dbQuery';
 
-// dotenv.config();
-const config = {
-  user: 'postgres',
-  database: 'teamworkdb',
-  password: 'postgres',
-  port: 5432,
-  max: 10,
-  idleTimeoutMillis: 30000,
-};
+ENV.config();
 
-const client = new Client(config);
+const connect = process.env.DATABASE_URL;
+
+const client = new Client(connect);
 client.query(createTables);
 console.log('connected to database');
 client.connect();

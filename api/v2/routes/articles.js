@@ -1,7 +1,7 @@
 import express from 'express';
 import article from '../controllers/articleController';
 import CheckToken from '../middleware/verifyToken';
-import rules from '../middleware/validInputs';
+import Helpers from '../helpers/validInputs';
 
 const articleRoute = express.Router();
 
@@ -20,19 +20,19 @@ articleRoute.get(
 articleRoute.post(
   '/api/v2/articles',
   CheckToken.verifyToken,
-  rules.articleRules,
+  Helpers.articleRules,
   article.postArticle,
 );
 articleRoute.patch(
   '/api/v2/articles/:id',
   CheckToken.verifyToken,
-  rules.articleRules,
+  Helpers.articleRules,
   article.editArticle,
 );
 articleRoute.post(
   '/api/v2/articles/:id',
   CheckToken.verifyToken,
-  rules.flagRules,
+  Helpers.flagRules,
   article.flagArticle,
 );
 articleRoute.delete(
@@ -43,7 +43,7 @@ articleRoute.delete(
 articleRoute.post(
   '/api/v2/articles/:id/comments',
   CheckToken.verifyToken,
-  rules.commentRules,
+  Helpers.commentRules,
   article.commentArticle,
 );
 export default articleRoute;

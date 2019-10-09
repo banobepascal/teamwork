@@ -1,6 +1,10 @@
 /* eslint-disable class-methods-use-this */
-/* eslint-disable func-names */
 /* eslint-disable consistent-return */
+/**
+*eslint-disable class-methods-use-this
+* eslint-disable func-names
+* eslint-disable consistent-return
+*/
 import bcrypt from 'bcrypt';
 import ENV from 'dotenv';
 import jwt from 'jsonwebtoken';
@@ -8,9 +12,10 @@ import validation from '../../middleware/validation';
 
 ENV.config();
 
-class Rules {
+class Helpers {
   /**
-   * Hash Password Method
+   * @method hashPassword
+   * @description generates a salt and hashes password sent by the use
    * @param {string} password
    * @returns {string} returns hashed password
    */
@@ -20,7 +25,8 @@ class Rules {
   }
 
   /**
-   * comparePassword
+   * @method comparePassword
+   * @description matches given password with email entered by the user
    * @param {string} hashPassword
    * @param {string} password
    * @returns {Boolean} return True or False
@@ -29,6 +35,14 @@ class Rules {
   static comparePassword(hashPassword, password) {
     return bcrypt.compareSync(password, hashPassword);
   }
+
+  /**
+   * @method authRules
+   * @description provides error message on invalid signup
+   * @param {object} req - The Request Object
+   * @param {object} res - The Response Object
+   * @returns {object} relevant error message
+   */
 
   static authRules(req, res, next) {
     const { error } = validation.validateUserSignUp(req.body);
@@ -41,6 +55,15 @@ class Rules {
     next();
   }
 
+  /**
+   * @method articleRules
+   * @description verifys article data being sent by the user
+   * @param {object} req - The Request Object
+   * @param {object} res - The Response Object
+   * @returns {object} relevant error message
+   */
+
+
   static articleRules(req, res, next) {
     const { error } = validation.validateArticle(req.body);
     if (error) {
@@ -51,6 +74,14 @@ class Rules {
     }
     next();
   }
+
+  /**
+   * @method flagRules
+   * @description verifys flag being sent by the user
+   * @param {object} req - The Request Object
+   * @param {object} res - The Response Object
+   * @returns {object} relevant error message
+   */
 
   static flagRules(req, res, next) {
     const { error } = validation.validateFlag(req.body);
@@ -64,9 +95,11 @@ class Rules {
   }
 
   /**
-   * @description Validating comment sent
-   * @param {string} id
-   * @returns {object} with the comment
+   * @method commentRules
+   * @description verifys comment data being sent by the user
+   * @param {object} req - The Request Object
+   * @param {object} res - The Response Object
+   * @returns {object} relevant error message
    */
 
   static commentRules(req, res, next) {
@@ -92,4 +125,4 @@ class Rules {
   }
 }
 
-export default Rules;
+export default Helpers;

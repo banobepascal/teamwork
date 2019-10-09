@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 /**
 * eslint-disable no-multi-assign
 * eslint-disable consistent-return
@@ -6,10 +5,10 @@
 * eslint-disable no-undef
 * eslint-disable padded-blocks
 */
-// import bcrypt from 'bcrypt';
+
 import uuidv4 from 'uuidv4';
 import _ from 'lodash';
-import Rules from '../middleware/validInputs';
+import Helpers from '../helpers/validInputs';
 import client from '../helpers/dbConnection';
 
 
@@ -28,7 +27,7 @@ class UserController {
       'jobrole', 'department', 'address', 'isAdmin',
     ]);
 
-    const hashpassword = Rules.hashPassword(data.password);
+    const hashpassword = Helpers.hashPassword(data.password);
 
     const query = `INSERT INTO users(id, firstName, lastName,
          email, password, gender, jobRole, department, address, isAdmin)
@@ -38,7 +37,7 @@ class UserController {
 
     try {
       const { rows } = await client.query(query, values);
-      const token = Rules.generateToken(rows[0].id);
+      const token = Helpers.generateToken(rows[0].id);
 
       return res.status(201).send({
         status: 201,
@@ -54,7 +53,7 @@ class UserController {
           error: 'email already exist, please choose another email',
         });
       }
-      res.status(500).json({
+      return res.status(500).json({
         status: 500,
         error: 'an internal error occurred at the server',
       });
@@ -79,13 +78,13 @@ class UserController {
           message: 'invalid email or password',
         });
       }
-      if (!Rules.comparePassword(rows[0].password, req.body.password)) {
+      if (!Helpers.comparePassword(rows[0].password, req.body.password)) {
         return res.status(400).json({
           status: 400,
           message: 'invalid email or password',
         });
       }
-      const token = Rules.generateToken(rows[0].id);
+      const token = Helpers.generateToken(rows[0].id);
       return res.status(200).send({
         status: 200,
         message: 'user is successfuly logged in',
