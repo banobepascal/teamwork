@@ -56,6 +56,7 @@ class UserController {
       message: 'user created successfully',
       data: {
         token: genToken,
+        newUser,
       },
     });
   }

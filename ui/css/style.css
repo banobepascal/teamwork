@@ -896,7 +896,7 @@ table, th, td {
   }
 
   .hero-content-article:hover {
-    background: #e0eafc;
+    cursor: pointer;
   }
 
   .hero-content-article p a:hover {
