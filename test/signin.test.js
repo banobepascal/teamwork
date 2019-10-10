@@ -66,7 +66,7 @@ describe('Signin User', () => {
       chai
         .request(app)
         .post('/api/v2/auth/signin')
-        .send(util.loginUserV2)
+        .send(util.signinV2)
         .end((err, res) => {
           expect(res.body.status).to.equals(200);
           expect(res.body).to.have.property('message');

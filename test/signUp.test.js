@@ -205,7 +205,7 @@ describe('Create user', () => {
       chai
         .request(app)
         .post('/api/v2/auth/signup')
-        .send(util.signUpUser)
+        .send(util.signUpUserV2)
         .end((err, res) => {
           expect(res.status).to.equals(409);
           expect(res.body).to.have.property('error');

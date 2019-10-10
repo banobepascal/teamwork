@@ -35,15 +35,14 @@ describe('GET /feeds', () => {
    */
 
 describe('GET /feeds', () => {
-  it('should show the most recently posted articles first.', (done) => {
+  it('should fail on fetching articles.', (done) => {
     chai.request(app)
       .get('/api/v2/feeds')
       .set('authorization', token)
       .end((err, res) => {
-        expect(res.body.status).to.equals(200);
-        expect(res.body).to.have.property('message');
-        expect(res.body.message).to.equals('articles retrieved');
-
+        expect(res.body.status).to.equals(404);
+        expect(res.body).to.have.property('error');
+        expect(res.body.error).to.equals('no articles found');
         done();
       });
   });

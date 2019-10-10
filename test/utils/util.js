@@ -14,13 +14,17 @@ exports.signUpUser = {
 exports.signUpUserV2 = {
   firstname: 'Chris',
   lastname: 'Evans',
-  email: 'banobe@test.com',
+  email: 'banob@test.com',
   password: 'Chrisevanstest1!',
   confirmPassword: 'Chrisevanstest1!',
   gender: 'Male',
   jobrole: 'ux designer',
   department: 'design',
   address: 'kampala',
+};
+exports.signinV2 = {
+  email: 'banob@test.com',
+  password: 'Chrisevanstest1!',
 };
 
 exports.emailExists = {
