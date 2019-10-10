@@ -12,7 +12,7 @@ chai.use(chaiHttp);
 chai.expect();
 
 const token = jwt.sign(utils.admin, process.env.JWT_KEY);
-// const badToken = jwt.sign(utils.notAdmin, process.env.JWT_KEY);
+const badToken = jwt.sign(utils.notAdmin, process.env.JWT_KEY);
 
 describe('Admin Routes', () => {
   describe('GET /api/v1/flagged/articles', () => {

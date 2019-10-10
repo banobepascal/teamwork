@@ -14,7 +14,7 @@ exports.signUpUser = {
 exports.signUpUserV2 = {
   firstname: 'Chris',
   lastname: 'Evans',
-  email: 'chrisevans@test.com',
+  email: 'banobe@test.com',
   password: 'Chrisevanstest1!',
   confirmPassword: 'Chrisevanstest1!',
   gender: 'Male',
