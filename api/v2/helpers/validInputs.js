@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable consistent-return */
 /**
@@ -9,6 +10,7 @@ import bcrypt from 'bcrypt';
 import ENV from 'dotenv';
 import jwt from 'jsonwebtoken';
 import validation from '../../middleware/validation';
+import client from './dbConnection';
 
 ENV.config();
 
@@ -122,6 +124,26 @@ class Helpers {
       expiresIn: '1d',
     });
     return token;
+  }
+
+  static async getArticleId(req, res, next) {
+    client.query('SELECT * FROM articles where id = $1',
+      [req.params.id], (err, results) => {
+        if (err) {
+          return res.status(400).json({
+            status: 400,
+            error: err.detail,
+          });
+        }
+        if (results.rows < '1') {
+          return res.status(400).json({
+            status: 400,
+            error: 'article does not exist',
+          });
+        }
+        req.article = results.rows[0];
+        next();
+      });
   }
 }
 

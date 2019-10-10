@@ -26,3 +26,25 @@ describe('TEST Token authorization', () => {
       });
   });
 });
+
+/**
+   * @description tests token for the database
+   * @param {object} req - The Request Object
+   * @param {object} res - The Response Object
+   * @returns {object} JSON API Response
+   */
+
+describe('TEST Token authorization', () => {
+  it('should fail on wrong token provided', (done) => {
+    chai
+      .request(app)
+      .delete('/api/v2/articles/443ac559-6fbe-4394-b1c9-74d367498d3a')
+      .set('x-auth', token)
+      .end((err, res) => {
+        expect(res.body.status).to.equals(401);
+        expect(res.body).to.have.property('message');
+        expect(res.body.message).to.equals('please provide token');
+        done();
+      });
+  });
+});

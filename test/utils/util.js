@@ -11,6 +11,18 @@ exports.signUpUser = {
   address: 'kampala',
 };
 
+exports.signUpUserV2 = {
+  firstname: 'Chris',
+  lastname: 'Evans',
+  email: 'chrisevans@test.com',
+  password: 'Chrisevanstest1!',
+  confirmPassword: 'Chrisevanstest1!',
+  gender: 'Male',
+  jobrole: 'ux designer',
+  department: 'design',
+  address: 'kampala',
+};
+
 exports.emailExists = {
   firstname: 'Jessica',
   lastname: 'Jones',
@@ -144,6 +156,11 @@ exports.invalidLoginEmail = {
 exports.badpassword = {
   email: 'johndoe@test.com',
   password: 'johndoe',
+};
+
+exports.loginUserV2 = {
+  email: 'micheal@test.com',
+  password: 'Michealtest1!',
 };
 
 // mock data for posting article

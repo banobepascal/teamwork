@@ -7,7 +7,7 @@ import client from '../helpers/dbConnection';
 class Article {
   /**
    * @method viewFeeds
-   * @description displays all articles shared or posted
+   * @description displays all articles shared or posted in datastructures
    * @param {object} req - The Request Object
    * @param {object} res - The Response Object
    * @returns {JSON}  JSON API Response
@@ -46,7 +46,7 @@ class Article {
       const query = 'SELECT * FROM articles WHERE id = $1';
       const value = [req.params.id];
       await client.query(query, value, (error, result) => {
-        if (result.rows < '1') {
+        if (error) {
           return res.status(404).send({
             status: 404,
             error: 'article not found',
@@ -82,7 +82,11 @@ class Article {
         req.body.article,
       ];
       const { rows } = await client.query(createArticle, values);
-      return res.status(201).send(rows[0]);
+      return res.status(201).json({
+        status: 201,
+        message: 'article successfully created',
+        results: rows[0],
+      });
     } catch (error) {
       return res.status(400).send(error);
     }
@@ -102,7 +106,7 @@ class Article {
       const query = 'UPDATE articles SET title = $1, article = $2 WHERE id = $3 RETURNING *';
       const values = [data.title, data.article, req.params.id];
       await client.query(query, values, (error, result) => {
-        if (result.rows < '1') {
+        if (error) {
           return res.status(404).json({
             status: 404,
             error: 'article not found',
@@ -120,6 +124,47 @@ class Article {
   }
 
   /**
+   * @method commentArticle
+   * @description adds a comment to a particular article
+   * @param {object} req - The Request Object
+   * @param {object} res - The Response Object
+   * @returns {object} JSON API Response
+   */
+
+  static async commentArticle(req, res) {
+    try {
+      const createComment = `INSERT INTO comment(id, articleId, authorId, comment)
+      VALUES($1, $2, $3, $4) RETURNING *`;
+      const values = [uuidv4(), req.params.id, req.user.userId, req.body.comment];
+      await client.query(createComment, values, (error, result) => {
+        if (error) {
+          return res.status(404).json({
+            status: 404,
+            error: 'article not found',
+          });
+        }
+        return res.status(201).json({
+          status: 201,
+          message: 'comment sent',
+          data: {
+            results: result.rows,
+          },
+        });
+      });
+    } catch (error) {
+      if (error) {
+        if (error) {
+          return res.status(404).json({
+            status: 404,
+            error: 'article not found',
+          });
+        }
+      }
+    }
+  }
+
+
+  /**
    * @method deleteArticle
    * @description deletes a particular article all in the database
    * @param {object} req - The Request Object
@@ -132,15 +177,16 @@ class Article {
       const query = 'DELETE FROM articles WHERE id = $1';
       const values = [req.params.id];
       await client.query(query, values, (error, result) => {
+        if (error) return res.status(404).json({ error });
         if (result.rows < '1') {
           return res.status(200).json({
             status: 204,
-            message: 'successfully deleted',
+            result: 'successfully deleted',
           });
         }
       });
     } catch (error) {
-      if (error) return res.status(400).json({ error });
+      if (error) return res.status(404).json({ error });
     }
   }
 
@@ -159,7 +205,7 @@ class Article {
       const query = 'UPDATE articles SET status = $1 WHERE id = $2 RETURNING *';
       const values = [flag, req.params.id];
       await client.query(query, values, (error, result) => {
-        if (result.rows < '1') {
+        if (error) {
           return res.status(404).send({
             status: 404,
             error: 'article not found',
@@ -180,20 +226,13 @@ class Article {
     }
   }
 
-  /**
-   * @method commentArticle
-   * @description adds a comment to a particular article
-   * @param {object} req - The Request Object
-   * @param {object} res - The Response Object
-   * @returns {object} JSON API Response
-   */
+  static async flagComment(req, res) {
+    const { flag } = req.body;
 
-  static async commentArticle(req, res) {
     try {
-      const createComment = `INSERT INTO comment(id, articleId, authorId, comment) WHERE id = ${req.params.id}
-      VALUES($1, $2, $3, $4) RETURNING *`;
-      const values = [uuidv4(), req.params.id, req.user.id, req.body.comment];
-      await client.query(createComment, values, (error, result) => {
+      const query = 'UPDATE comments SET status = $1 WHERE id = $2 RETURNING *';
+      const values = [flag, req.params.id];
+      await client.query(query, values, (error, result) => {
         if (result.rows < '1') {
           return res.status(404).send({
             status: 404,
@@ -202,7 +241,7 @@ class Article {
         }
         return res.status(201).json({
           status: 201,
-          message: 'comment sent',
+          message: 'article has been flagged as inapropiate',
           data: {
             results: result.rows,
           },

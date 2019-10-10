@@ -43,7 +43,16 @@ articleRoute.delete(
 articleRoute.post(
   '/api/v2/articles/:id/comments',
   CheckToken.verifyToken,
+  Helpers.getArticleId,
   Helpers.commentRules,
   article.commentArticle,
+);
+
+articleRoute.post(
+  '/api/v2/articles/:id/comments/:id',
+  CheckToken.verifyToken,
+  Helpers.getArticleId,
+  Helpers.flagRules,
+  article.flagComment,
 );
 export default articleRoute;

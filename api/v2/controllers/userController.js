@@ -91,13 +91,13 @@ class UserController {
       if (!rows[0]) {
         return res.status(400).json({
           status: 400,
-          message: 'invalid email or password',
+          error: 'invalid email or password',
         });
       }
       if (!Helpers.comparePassword(rows[0].password, req.body.password)) {
         return res.status(400).json({
           status: 400,
-          message: 'invalid email or password',
+          error: 'invalid email or password',
         });
       }
       const token = Helpers.generateToken(rows[0].id);
