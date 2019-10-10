@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run dropTables && npm run dbSetup && nyc mocha  --require babel-register --require babel-polyfill --timeout 8000 --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "start": "nodemon server.js --exec babel-node --presets babel-preset-env",
+    "start": "npm run dbSetup && nodemon server.js --exec babel-node --presets babel-preset-env",
     "dbSetup": "babel-node api/v2/migrations/dbSetup setUpTables",
     "dropTables": "babel-node api/v2/migrations/dropTables dropTables",
     "dev": "npm run dbSetup && nodemon server.js --exec babel-node --presets babel-preset-env"
