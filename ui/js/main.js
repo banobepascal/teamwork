@@ -61,6 +61,7 @@ function onSubmit(e) {
 
     post.innerHTML = `
     <div class='name-time'>
+    <img src="../img/man1.jpg" alt="">
       <p id='username-article'>John Doe</p>
       <p id='time-article'>Now</p>
     </div>
