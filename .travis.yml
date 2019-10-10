@@ -1,10 +1,10 @@
 sudo: false
 language: node_js
-node_js: 
+node_js:
   - stable
- 
-cache: 
-  directories: 
+
+cache:
+  directories:
     - node_modules
 install:
   - npm install
@@ -12,9 +12,9 @@ services:
   - postgresql
 before_script:
   - psql -c 'CREATE DATABASE teamworkdb;' -U postgres
-notifications: 
+notifications:
   email: false
-script: 
+script:
   - "npm run test"
-after_success: 
-  - "npm run coverage" 
+after_success:
+  - "npm run coverage"
