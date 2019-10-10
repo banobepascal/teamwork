@@ -32,7 +32,6 @@ const comment = `
         comment TEXT NOT NULL,
         status BOOLEAN DEFAULT false,
         createdOn timestamp (0) without time zone default now(),
-        FOREIGN KEY (articleId) REFERENCES articles (id),
         FOREIGN KEY (authorId) REFERENCES users (id)
     )`;
 
