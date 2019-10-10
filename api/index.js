@@ -3,6 +3,7 @@
 import express from 'express';
 import winston from 'winston';
 import endPoints from './routes/Allroutes';
+import newEndPoints from './v2/routes/newRoutes';
 import httpErrors from './routes/httpErrors';
 
 const app = express();
@@ -16,6 +17,7 @@ winston.add(new winston.transports.File({ filename: 'logfile.log' }));
 
 // route for all routes
 app.use(endPoints);
+app.use(newEndPoints);
 app.use(httpErrors);
 
 

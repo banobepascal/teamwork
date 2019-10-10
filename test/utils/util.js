@@ -6,9 +6,25 @@ exports.signUpUser = {
   password: 'Chrisevanstest1!',
   confirmPassword: 'Chrisevanstest1!',
   gender: 'Male',
-  jobRole: 'ux designer',
+  jobrole: 'ux designer',
   department: 'design',
   address: 'kampala',
+};
+
+exports.signUpUserV2 = {
+  firstname: 'Chris',
+  lastname: 'Evans',
+  email: 'banob@test.com',
+  password: 'Chrisevanstest1!',
+  confirmPassword: 'Chrisevanstest1!',
+  gender: 'Male',
+  jobrole: 'ux designer',
+  department: 'design',
+  address: 'kampala',
+};
+exports.signinV2 = {
+  email: 'banob@test.com',
+  password: 'Chrisevanstest1!',
 };
 
 exports.emailExists = {
@@ -18,7 +34,7 @@ exports.emailExists = {
   password: 'Jessicatests1!',
   confirmPassword: 'Jessicatests1!',
   gender: 'female',
-  jobRole: 'Backend developer',
+  jobrole: 'Backend developer',
   department: 'Engineering',
   address: 'Kigali',
 };
@@ -30,7 +46,7 @@ exports.badFirstname = {
   password: 'Johndoetest1!',
   confirmPassword: 'Johndoetest1!',
   gender: 'Male',
-  jobRole: 'ux designer',
+  jobrole: 'ux designer',
   department: 'design',
   address: 'kampala',
 };
@@ -42,7 +58,7 @@ exports.badLastname = {
   password: 'johndoetest1!',
   confirmPassword: 'johndoetest1!',
   gender: 'Male',
-  jobRole: 'ux designer',
+  jobrole: 'ux designer',
   department: 'design',
   address: 'kampala',
 };
@@ -54,7 +70,7 @@ exports.badEmail = {
   password: 'johndoetest1!',
   confirmPassword: 'johndoetest1!',
   gender: 'Male',
-  jobRole: 'ux designer',
+  jobrole: 'ux designer',
   department: 'design',
   address: 'kampala',
 };
@@ -66,7 +82,7 @@ exports.weakPassword = {
   password: 'johndoetest',
   confirmPassword: 'johndoetest',
   gender: 'Male',
-  jobRole: 'ux designer',
+  jobrole: 'ux designer',
   department: 'design',
   address: 'kampala',
 };
@@ -78,7 +94,7 @@ exports.passwordConfirm = {
   password: 'Johndoetest!1',
   confirmPassword: 'johndoetest',
   gender: 'Male',
-  jobRole: 'ux designer',
+  jobrole: 'ux designer',
   department: 'design',
   address: 'kampala',
 };
@@ -90,7 +106,7 @@ exports.badGender = {
   password: 'Johndoetest1!',
   confirmPassword: 'Johndoetest1!',
   gender: 'none',
-  jobRole: 'ux designer',
+  jobrole: 'ux designer',
   department: 'design',
   address: 'kampala',
 };
@@ -102,7 +118,7 @@ exports.wrongJobRole = {
   password: 'Johndoetest1!',
   confirmPassword: 'Johndoetest1!',
   gender: 'Male',
-  jobRole: '..111',
+  jobrole: '..111',
   department: 'design',
   address: 'kampala',
 };
@@ -113,7 +129,7 @@ exports.wrongDepartment = {
   password: 'Johndoetest1!',
   confirmPassword: 'Johndoetest1!',
   gender: 'Male',
-  jobRole: 'ux designer',
+  jobrole: 'ux designer',
   department: '911',
   address: 'kampala',
 };
@@ -125,7 +141,7 @@ exports.wrongAddress = {
   password: 'Johndoetest1!',
   confirmPassword: 'Johndoetest1!',
   gender: 'Male',
-  jobRole: 'ux designer',
+  jobrole: 'ux designer',
   department: 'design',
   address: '8991',
 };
@@ -144,6 +160,11 @@ exports.invalidLoginEmail = {
 exports.badpassword = {
   email: 'johndoe@test.com',
   password: 'johndoe',
+};
+
+exports.loginUserV2 = {
+  email: 'micheal@test.com',
+  password: 'Michealtest1!',
 };
 
 // mock data for posting article

@@ -39,7 +39,7 @@ class Validation {
         .error(() => ({
           message: 'gender is either male or female',
         })),
-      jobRole: Joi.string().regex(stringValidator).required()
+      jobrole: Joi.string().regex(stringValidator).required()
         .error(() => ({
           message: 'please submit your correct job role starting with a letter',
         })),
@@ -62,7 +62,6 @@ class Validation {
     };
     return Joi.validate(req, schema);
   }
-
 
   static validateComment(req) {
     const validInput = new RegExp('^(?=.*[a-z])');
