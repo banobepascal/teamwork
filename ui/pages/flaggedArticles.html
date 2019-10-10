@@ -9,40 +9,30 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     />
-    <link href="https://fonts.googleapis.com/css?family=Manjari|Maven+Pro|Patua+One&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Manjari|Maven+Pro|Patua+One&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../css/style.css" />
-    <title>My Posts</title>
+    <title>Flagged Articles</title>
   </head>
   <body>
     <div class="container">
       <div class="sidebar">
         <nav>
-          <p><a href="articles.html">Teamwork</a></p>
+          <p><a href="adminPage.html">Teamwork</a></p>
           <ul>
-            <li><a href="articles.html">Articles</a></li>
-            <li><a href="#" class="active">My Posts</a></li>
-            <li><a href="settings.html">Settings</a></li>
-            <li><a href="#" class="close-search">+</a></li>
-            <li>
-              <a href="articles.html"> 
-                <i class="fa fa-search" id="search-icon"></i></a>
-            </li>
+            <li><a href="adminPage.html">Articles</a></li>
+            <li><a href="#" class="active">Flagged</a></li>
+            <li><a href="flaggedComments.html">Comments</a></li>
             <li><a href="../index.html">Log out</a></li>
           </ul>
         </nav>
       </div>
       <div class="content">
-        <h3>Profile</h3>
+        <h3>Innapropiate Articles</h3>
         <div class="search"><input type="text" placeholder="search" /></div>
-        <section class="hero1">
-          <img src="../img/john.jpg" alt="" />
-          <div class="hero-content">
-            <h2>Bruce<br />Wayne</h2>
-            <p>Backend Developer</p>
-            <h3>My Posts</h3>
-          </div>
-          </section>
-          <section class="hero">
+        <section class="hero">
           <div class="hero-content-article">
             <div class="name-time">
              <img src="../img/john.jpg" alt="">
@@ -60,7 +50,7 @@
               development.
             </p>
             <div class="hero-img">
-                <img src="../img/lang.png" alt="">
+              <img src="../img/lang.png" alt="" />
             </div>
             <p>
               About a week ago, we had a post titled Learn to become a Frontend
@@ -72,17 +62,17 @@
             <p><a href="viewArticle.html">continue reading</a></p>
             <ul>
               <li>
-                <i class="fa fa-edit" id="edit-btn"></i>
+                  <i class="fa fa-flag" id="flag"></i>
               </li>
               <li onclick="onDelete()">
-                <i class="fa fa-trash" id="delete-btn"></i>
+                <i class="fa fa-trash" id="delete-flagged"></i>
               </li>
             </ul>
           </div>
           <div class="hero-content-article">
             <div class="name-time">
-             <img src="../img/john.jpg" alt="">
-              <p id="username-article">Bruce Wayne</p>
+             <img src="../img/er3.jpg" alt="">
+              <p id="username-article">Jessica Jones</p>
               <p id="time-article">Sept 28, 2019</p>
             </div>
             <h4>Achieving success is simpler than you think</h4>
@@ -100,24 +90,25 @@
               help beat the odds. Ultimately, we all want our dreams to come
               true, but few of us are willing to pay the price it takes to get
               there. The truth is, there’s never been a silver bullet for
-              finding success.</p>
-              <div class="hero-img">
-                  <img src="../img/smthg.jpeg" alt="">
-              </div>
-              <p>
-              Being successful isn’t a stroke of luck, and
-              there’s no magic, one-size-fits-all hack for achieving our goals.
-              While success might be a bit of a mystery, and it’s most certainly
-              hard-won, it doesn’t have to be complicated. Simply put, success
-              comes from doing the same thing effectively, over and over.
+              finding success.
+            </p>
+            <div class="hero-img">
+              <img src="../img/smthg.jpeg" alt="" />
+            </div>
+            <p>
+              Being successful isn’t a stroke of luck, and there’s no magic,
+              one-size-fits-all hack for achieving our goals. While success
+              might be a bit of a mystery, and it’s most certainly hard-won, it
+              doesn’t have to be complicated. Simply put, success comes from
+              doing the same thing effectively, over and over.
             </p>
             <p><a href="viewArticle.html">continue reading</a></p>
             <ul>
               <li>
-                <i class="fa fa-edit" id="edit-btn"></i>
+                  <i class="fa fa-flag" id="flag"></i>
               </li>
               <li onclick="onDelete()">
-                <i class="fa fa-trash" id="delete-btn"></i>
+                <i class="fa fa-trash" id="delete-flagged"></i>
               </li>
             </ul>
           </div>
@@ -178,5 +169,5 @@
       </div>
     </div>
   </body>
-  <script src="../js/script.js"></script>
+  <script src="../js/admin.js"></script>
 </html>

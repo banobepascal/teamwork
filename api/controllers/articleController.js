@@ -2,23 +2,22 @@
 /* eslint-disable radix */
 import moment from 'moment';
 import _ from 'lodash';
-import validateArticle from '../middleware/validateArticle';
-import validateFlag from '../middleware/validateFlag';
+import validation from '../middleware/validation';
 import articles from '../models/article';
 
 class Article {
-
   // view feeds and all articles posted with date
-  static async viewFeeds(req, res) {
-    const articlesOrder = _.sortBy(articles, 'createdOn').reverse();
+  static viewFeeds(req, res) {
+    const articlesOrder = _.sortBy(articles, ['createdOn']).reverse();
     return res.status(200).json({
       status: 200,
+      message: 'articles retrieved',
       data: articlesOrder,
     });
   }
 
   // view specific article
-  static async viewSpecific(req, res) {
+  static viewSpecific(req, res) {
     const article = articles.find((a) => a.id === parseInt(req.params.id));
     if (!article) {
       res.status(404).json({
@@ -26,7 +25,6 @@ class Article {
         error: 'article not found',
       });
     }
-
     res.status(200).json({
       status: 200,
       data: article,
@@ -34,12 +32,12 @@ class Article {
   }
 
   // Post article to teamwork
-  static async postArticle(req, res) {
-    const { error } = validateArticle(req.body);
+  static postArticle(req, res) {
+    const { error } = validation.validateArticle(req.body);
     if (error) {
       return res.status(400).json({
         status: 400,
-        error: error.details[0].message,
+        error: error.details[0].message.replace(/[/"]/g, ''),
       });
     }
 
@@ -60,13 +58,12 @@ class Article {
         createdOn: moment().format('LLL'),
         title: req.body.title,
         article: req.body.article,
-        comments: article.comments,
       },
     });
   }
 
   // edit posted article
-  static async editArticle(req, res) {
+  static editArticle(req, res) {
     const article = articles.find((a) => a.id === parseInt(req.params.id));
     if (!article) {
       return res.status(404).json({
@@ -75,20 +72,22 @@ class Article {
       });
     }
 
-    const { error } = validateArticle(req.body);
+    const { error } = validation.validateArticle(req.body);
     if (error) {
       return res.status(400).json({
         status: 400,
-        error: error.details[0].message,
+        error: error.details[0].message.replace(/[/"]/g, ''),
       });
     }
 
+    article.article = req.body.article;
+    article.createdOn = moment().format('LLL');
     return res.status(200).json({
       status: 200,
       message: 'article successfully edited',
       data: {
         id: article.id,
-        updatedOn: moment().format('LLL'),
+        createdOn: moment().format('LLL'),
         title: req.body.title,
         article: req.body.article,
       },
@@ -96,7 +95,7 @@ class Article {
   }
 
   // delete posted article
-  static async deleteArticle(req, res) {
+  static deleteArticle(req, res) {
     const article = articles.find((a) => a.id === parseInt(req.params.id));
     if (!article) {
       return res.status(404).json({
@@ -108,14 +107,14 @@ class Article {
     const index = articles.indexOf(article);
     articles.splice(index, 1);
 
-    return res.status(204).json({
+    return res.status(200).json({
       status: 204,
       message: 'article successfully deleted',
     });
   }
 
   // flag article as inaproppiate
-  static async flagArticle(req, res) {
+  static flagArticle(req, res) {
     const article = articles.find((a) => a.id === parseInt(req.params.id));
     if (!article) {
       return res.status(404).json({
@@ -124,25 +123,21 @@ class Article {
       });
     }
 
-    const flag = {
-      flag: req.body.flag,
-    };
-
-    const { error } = validateFlag(req.body);
+    const { error } = validation.validateFlag(req.body);
     if (error) {
       return res.status(400).json({
         status: 400,
-        error: error.details[0].message,
+        error: error.details[0].message.replace(/[/"]/g, ''),
       });
     }
 
-    articles.push(article.flag.push(flag));
+    article.status = req.body.flag;
     return res.status(201).json({
       status: 201,
       message: 'article has been flagged as inapropiate',
       data: {
         id: article.id,
-        flag: req.body.flag,
+        status: req.body.flag,
       },
     });
   }

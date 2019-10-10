@@ -10,7 +10,8 @@ chai.use(chaiHttp);
 describe('Signin User', () => {
   describe('POST /api/v1/auth/signin', () => {
     it('Should successfully login a user', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .post('/api/v1/auth/signin')
         .send(util.loginuser)
         .end((err, res) => {
@@ -23,24 +24,28 @@ describe('Signin User', () => {
 
     // Should not register user if email is incorrect
     it('Should not login if email doesnt exist', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .post('/api/v1/auth/signin')
         .send(util.bademail)
         .end((err, res) => {
           expect(res.body.status).to.equals(400);
           expect(res.body).to.have.property('error');
-          expect(res.body.error).to.equals('invalid email or password');
+          expect(res.body.error).to.equals('wrong email or password');
           done();
         });
     });
 
     // // should fail login user if password is incorrect
     it('Should fail login user if password is incorrect', (done) => {
-      chai.request(app)
+      chai
+        .request(app)
         .post('/api/v1/auth/signin')
         .send(util.badpassword)
         .end((err, res) => {
-          res.should.have.status(400);
+          expect(res.body.status).to.equals(400);
+          expect(res.body).to.have.property('error');
+          expect(res.body.error).to.equals('wrong email or password');
           done();
         });
     });

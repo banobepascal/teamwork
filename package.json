@@ -4,7 +4,7 @@
   "description": "An internal social network for employees",
   "main": "server.js",
   "scripts": {
-    "test": "nyc mocha  --require babel-register --require babel-polyfill",
+    "test": "nyc mocha  --require babel-register --require babel-polyfill --timeout 8000 --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "nodemon server.js --exec babel-node --presets babel-preset-env"
   },

@@ -16,13 +16,12 @@ const users = [
     firstname: 'Jessica',
     lastname: 'Jones',
     email: 'jessica@test.com',
-    password: '$2b$10$8VE3FNDl0Ao1Mf9..X00Q.SZvERsJfZwONbImF1/Em840ctX1Fequ',
+    password: '$2b$10$L2tLrhxqO9CqTJ3shPxKlusN23/pZa/nlAwc3mvAQV9CAIrh5hRgK',
     gender: 'female',
     jobRole: 'Backend developer',
     department: 'Engineering',
     address: 'Kigali',
   },
-
 ];
 
 export default users;
