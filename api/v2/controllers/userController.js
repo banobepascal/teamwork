@@ -55,7 +55,7 @@ class UserController {
       const { rows } = await client.query(query, values);
       const token = Helpers.generateToken(rows[0].id);
 
-      return res.status(201).send({
+      return res.status(201).json({
         status: 201,
         message: 'user created successfully',
         data: {

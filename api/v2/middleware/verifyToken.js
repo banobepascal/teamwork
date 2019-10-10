@@ -1,7 +1,6 @@
 /* eslint-disable consistent-return */
 import ENV from 'dotenv';
 import jwt from 'jsonwebtoken';
-// import client from '../helpers/dbConnection';
 
 ENV.config();
 
@@ -14,10 +13,10 @@ const CheckToken = {
    * @returns {object|void} response object
    */
 
-  async verifyToken(req, res, next) {
+  verifyToken(req, res, next) {
     const token = req.header('authorization');
     if (!token) {
-      res.status(401).json({
+      return res.status(401).json({
         status: 401,
         message: 'please provide token',
       });
@@ -28,7 +27,7 @@ const CheckToken = {
       req.user = decoded;
       next();
     } catch (ex) {
-      res.status(401).json({
+      return res.status(401).json({
         status: 401,
         message: 'unauthorised to use this resource, please signup/login',
       });

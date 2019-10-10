@@ -16,7 +16,7 @@ class Article {
   static async viewFeeds(req, res) {
     try {
       const query = 'SELECT * FROM articles ORDER BY id DESC';
-      await client.query(query, (error, result) => {
+      client.query(query, (error, result) => {
         if (result.rows < '1') {
           return res.status(404).send({
             status: 404,
@@ -45,18 +45,17 @@ class Article {
     try {
       const query = 'SELECT * FROM articles WHERE id = $1';
       const value = [req.params.id];
-      await client.query(query, value, (error, result) => {
-        if (error) {
-          return res.status(404).send({
-            status: 404,
-            error: 'article not found',
-          });
-        }
-        return res.status(200).json({
-          status: 200,
-          message: 'article retrieved',
-          results: result.rows,
+      const result = await client.query(query, value);
+      if (result.rows < '1') {
+        return res.status(404).send({
+          status: 404,
+          error: 'article not found',
         });
+      }
+      return res.status(200).json({
+        status: 200,
+        message: 'article retrieved',
+        results: result.rows,
       });
     } catch (error) {
       if (error) return res.status(400).json({ error });
@@ -88,7 +87,7 @@ class Article {
         results: rows[0],
       });
     } catch (error) {
-      return res.status(400).send(error);
+      if (error) return res.status(400).json({ error });
     }
   }
 
@@ -105,19 +104,20 @@ class Article {
     try {
       const query = 'UPDATE articles SET title = $1, article = $2 WHERE id = $3 RETURNING *';
       const values = [data.title, data.article, req.params.id];
-      await client.query(query, values, (error, result) => {
-        if (error) {
-          return res.status(404).json({
-            status: 404,
-            error: 'article not found',
-          });
-        }
+      const result = await client.query(query, values);
+      if (result.rows < '1') {
+        return res.status(404).send({
+          status: 404,
+          error: 'article not found',
+        });
+      }
+      if (result.rows > 0) {
         return res.status(200).json({
           status: 200,
           message: 'article successfully edited',
           results: result.rows,
         });
-      });
+      }
     } catch (error) {
       if (error) return res.status(400).json({ error });
     }
@@ -136,33 +136,18 @@ class Article {
       const createComment = `INSERT INTO comment(id, articleId, authorId, comment)
       VALUES($1, $2, $3, $4) RETURNING *`;
       const values = [uuidv4(), req.params.id, req.user.userId, req.body.comment];
-      await client.query(createComment, values, (error, result) => {
-        if (error) {
-          return res.status(404).json({
-            status: 404,
-            error: 'article not found',
-          });
-        }
-        return res.status(201).json({
-          status: 201,
-          message: 'comment sent',
-          data: {
-            results: result.rows,
-          },
-        });
+      const result = await client.query(createComment, values);
+      return res.status(201).json({
+        status: 201,
+        message: 'comment sent',
+        data: {
+          results: result.rows,
+        },
       });
     } catch (error) {
-      if (error) {
-        if (error) {
-          return res.status(404).json({
-            status: 404,
-            error: 'article not found',
-          });
-        }
-      }
+      if (error) return res.status(400).json({ error: error.message });
     }
   }
-
 
   /**
    * @method deleteArticle
@@ -172,16 +157,16 @@ class Article {
    * @returns {object} JSON API Response
    */
 
-  static async deleteArticle(req, res) {
+  static deleteArticle(req, res) {
     try {
       const query = 'DELETE FROM articles WHERE id = $1';
       const values = [req.params.id];
-      await client.query(query, values, (error, result) => {
+      client.query(query, values, (error, result) => {
         if (error) return res.status(404).json({ error });
         if (result.rows < '1') {
           return res.status(200).json({
             status: 204,
-            result: 'successfully deleted',
+            message: 'successfully deleted',
           });
         }
       });
@@ -204,36 +189,8 @@ class Article {
     try {
       const query = 'UPDATE articles SET status = $1 WHERE id = $2 RETURNING *';
       const values = [flag, req.params.id];
-      await client.query(query, values, (error, result) => {
+      client.query(query, values, (error, result) => {
         if (error) {
-          return res.status(404).send({
-            status: 404,
-            error: 'article not found',
-          });
-        }
-        return res.status(201).json({
-          status: 201,
-          message: 'article has been flagged as inapropiate',
-          data: {
-            results: result.rows,
-          },
-        });
-      });
-    } catch (error) {
-      if (error) {
-        if (error) return res.status(400).json({ error });
-      }
-    }
-  }
-
-  static async flagComment(req, res) {
-    const { flag } = req.body;
-
-    try {
-      const query = 'UPDATE comments SET status = $1 WHERE id = $2 RETURNING *';
-      const values = [flag, req.params.id];
-      await client.query(query, values, (error, result) => {
-        if (result.rows < '1') {
           return res.status(404).send({
             status: 404,
             error: 'article not found',
@@ -264,19 +221,12 @@ class Article {
 
   static async specificTag(req, res) {
     try {
-      const query = `SELECT * from articles WHERE title LIKE '%${req.params.title}%'`;
-      await client.query(query, (error, result) => {
-        if (result.rows < '1') {
-          return res.status(404).send({
-            status: 404,
-            error: 'article not found',
-          });
-        }
-        return res.status(200).json({
-          status: 200,
-          message: 'article retrieved',
-          results: result.rows,
-        });
+      const query = `SELECT * from articles WHERE title LIKE '${req.params.title}%'`;
+      const result = await client.query(query);
+      return res.status(200).json({
+        status: 200,
+        message: 'article retrieved',
+        results: result.rows,
       });
     } catch (error) {
       if (error) return res.status(400).json({ error });

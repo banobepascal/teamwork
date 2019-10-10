@@ -136,9 +136,9 @@ class Helpers {
           });
         }
         if (results.rows < '1') {
-          return res.status(400).json({
-            status: 400,
-            error: 'article does not exist',
+          return res.status(404).json({
+            status: 404,
+            error: 'article not found',
           });
         }
         req.article = results.rows[0];

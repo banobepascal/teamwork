@@ -57,8 +57,8 @@ describe('Delete Article Version2', () => {
         .set('authorization', token)
         .end((err, res) => {
           expect(res.status).to.equals(200);
-          expect(res.body).to.have.property('result');
-          expect(res.body.result).to.equals('successfully deleted');
+          expect(res.body).to.have.property('message');
+          expect(res.body.message).to.equals('successfully deleted');
           done();
         });
     });

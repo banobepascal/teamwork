@@ -72,25 +72,11 @@ describe('Updating Article', () => {
 
 describe('Updating Article', () => {
   describe('PATCH /api/v2/articles/:id', () => {
-    it('should update article after meeting requirements', (done) => {
-      chai
-        .request(app)
-        .patch('/api/v2/articles/117ed64f-c940-40d9-b1f9-eea53a9be861')
-        .set('authorization', token)
-        .send(util.article)
-        .end((err, res) => {
-          expect(res.body.status).to.equals(200);
-          expect(res.body).to.have.property('message');
-          expect(res.body.message).to.equals('article successfully edited');
-          done();
-        });
-    });
-
     // should not accept update on invalid article
     it('should fail to edit on invalid article', (done) => {
       chai
         .request(app)
-        .patch('/api/v2/articles/348389erere')
+        .patch('/api/v2/articles/117ed64f-c940-40d9-b1f9-eea53a9be863')
         .set('authorization', token)
         .send(util.article)
         .end((err, res) => {
