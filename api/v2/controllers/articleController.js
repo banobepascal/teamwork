@@ -105,19 +105,11 @@ class Article {
       const query = 'UPDATE articles SET title = $1, article = $2 WHERE id = $3 RETURNING *';
       const values = [data.title, data.article, req.params.id];
       const result = await client.query(query, values);
-      if (result.rows < '1') {
-        return res.status(404).send({
-          status: 404,
-          error: 'article not found',
-        });
-      }
-      if (result.rows > 0) {
-        return res.status(200).json({
-          status: 200,
-          message: 'article successfully edited',
-          results: result.rows,
-        });
-      }
+      return res.status(200).json({
+        status: 200,
+        message: 'article successfully edited',
+        results: result.rows,
+      });
     } catch (error) {
       if (error) return res.status(400).json({ error });
     }
