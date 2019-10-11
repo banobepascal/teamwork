@@ -27,6 +27,7 @@ articleRoute.patch(
   '/api/v2/articles/:id',
   CheckToken.verifyToken,
   Helpers.articleRules,
+  Helpers.getArticleId,
   article.editArticle,
 );
 articleRoute.post(
