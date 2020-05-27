@@ -44,32 +44,36 @@ npm start
 
 ## Features
 * Users can create their own user account.
-* Users can sign in.
-* User can place order.
-* User can view their orders placed.
-* User can view a specific order.
-* User can edit specific order.
-* User view their past orders.
-* Admin can view menu items.
-* Admin can create a new menu item.
-* Admin can edit a specific menu item.
-* Admin can delete a specific menu off item.
+* Employees can sign in.
+* Employees can write and/or share articles with colleagues on topics of interest to them.
+* Employees can edit their articles.
+* Employees can delete their articles.
+* Employees can comment on other colleagues' article post.
+* Employees can view all articles showing the most recently posted articles first.
+* Employees can view a specific article.
+* Employees can view all articles that belong to a category (tag).
+* Employees can flag a comment, or article as inappropriate.
+* Admin can delete a comment, or article flagged as inappropriate.
 
 ## Endpoints
 |  Method  |  Endpoint  |  Task  |
 |  --- |  --- |  ---  |
-|  `POST`  |  `/api/auth/signup`  |  `User signup`  |
-|  `POST`  |  `/api/auth/login`  |  `User login`  |
-|  `POST`  |  `/api/fast-food/orders`  |  `User can place order`  |
-|  `GET`  |  `/api/fast-food/users/orders`  |  `User can view their orders placed` |
-|  `GET`  |  `/api/fast-food/orders/:id`  |  `User can view a specific order`  |
-|  `PUT`  |  `/api/fast-food/orders/:id`  |  `User can edit specific order`  |
-|  `GET`  |  `/api/fast-food/orders/history`  |  `User view their past orders`  |
-|  `GET`  |  `/api/fast-food/menu`  |  `Admin can view menu items`  |
-|  `POST`  |  `/api/fast-food/menu`  |  `Admin can create a new menu item`  |
-|  `PUT`  |  `/api/fast-food/menu/:id`  |  `Admin can edit a specific menu item`  |
-|  `DELETE`  |  `/api/fast-food/menu/:id`  |  `Admin can delete a specific menu off item`  |
+|  `POST`  |  `/api/v2/auth/signup`  |  `User signup`  |
+|  `POST`  |  `/api/v2/auth/signin`  |  `User login`  |
+|  `GET`  |  `/api/v2/feeds`  |  `User view all articles posted`  |
+|  `POST`  |  `/api/v2/articles`  |  `User post an article`  |
+|  `PATCH`  |  `/api/v2/articles/:id`  |  `User edit article`  |
+|  `GET`  |  `/api/v2/articles/:id`  |  `User can view specific`  |
+|  `POST`  |  `/api/v2/articles/:id/comments`  |  `User can comment on specific article`  |
+|  `DELETE`  |  `/api/v2/articles/:id`  |  `User can delete specific article`  |
+|  `POST`  |  `/api/v2/articles/:id`  |  `User flag article as inappropiate`  |
+|  `GET`  |  `api/v2/articles/tag/<keyword>`  |  `User can view articles based on tag/keyword`  |
 
-## Credit
-created by myself Banobe Pascal
+## Deployments
+* Frontend on [Github](https://banobepascal.github.io/teamwork/ui/)
+* Backend on [Heroku](https://teamwork-pascal.herokuapp.com/)
+* Tracker on [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2395736)
+* Documentation on [Postman](https://documenter.getpostman.com/view/8823206/SVtR2WEj)
 
+#### Credit
+* All credit given to [Andela](https://andela.com)
