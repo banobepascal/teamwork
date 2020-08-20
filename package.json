@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/banobepascal/teamwork",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "compression": "^1.7.4",
     "config": "^3.2.2",
     "dotenv": "^8.1.0",
